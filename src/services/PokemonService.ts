@@ -1,4 +1,3 @@
-import { rejects } from "assert";
 import axios from "axios";
 import { PokemonEasy } from "../models/Pokemon";
 
