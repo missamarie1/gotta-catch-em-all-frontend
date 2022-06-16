@@ -14,6 +14,6 @@ export const easy = [
 export const getRandomEasy = (): Promise<PokemonEasy> => {
   let randomEasy = easy[Math.floor(Math.random() * easy.length)];
   return axios
-    .get(`${pokemonBaseUrl}/pokemon/${randomEasy}`)
+    .get(`${pokemonBaseUrl}pokemon/${randomEasy}`)
     .then((res) => res.data);
 };
