@@ -6,17 +6,19 @@ import GameRoute from "./components/GameRoute";
 import TopCollectors from "./components/TopCollectors";
 import Collector from "./components/Collector";
 import EasyOne from "./components/EasyOne";
+import EasyTwo from "./components/EasyTwo";
+import EasyThree from "./components/EasyThree";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Header />
-        <EasyOne />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/questions" element={<GameRoute />} />
           <Route path="/profile" element={<Collector />} />
+          <Route path="/questions" element={<GameRoute />} />
           <Route path="/" element={<TopCollectors />} />
         </Routes>
       </Router>
