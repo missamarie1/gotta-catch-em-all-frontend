@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <EasyOne />
+       <GameRoute/>
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/questions" element={<GameRoute />} />
