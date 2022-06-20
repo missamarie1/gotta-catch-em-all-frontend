@@ -10,7 +10,7 @@ const Main = () => {
       </button>
       <button>
         {" "}
-        <Link to="">Sign Up</Link>
+        <Link to="">Signup</Link>
       </button>
     </div>
   );

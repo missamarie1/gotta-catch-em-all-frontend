@@ -1,11 +1,4 @@
-import React from "react";
-import logo from "./logo.svg";
-import {
-  BrowserRouter as Router,
-  Navigate,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -23,6 +16,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/questions" element={<GameRoute />} />
           <Route path="/profile" element={<Collector />} />
           <Route path="/questions" element={<GameRoute />} />
           <Route path="/" element={<TopCollectors />} />
