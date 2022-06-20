@@ -10,9 +10,6 @@ export const easy = [
   122, 123, 124, 125, 126, 127, 128, 129, 132, 137, 138, 140, 147,
 ];
 
-export const getRandomEasy = (): Promise<PokemonEasy> => {
-  let randomEasy = easy[Math.floor(Math.random() * easy.length)];
-  return axios
-    .get(`${pokemonBaseUrl}pokemon/${randomEasy}`)
-    .then((res) => res.data);
+export const getRandomEasy = (id: number): Promise<PokemonEasy> => {
+  return axios.get(`${pokemonBaseUrl}pokemon/${id}`).then((res) => res.data);
 };
