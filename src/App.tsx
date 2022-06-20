@@ -18,8 +18,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/questions" element={<GameRoute />} />
           <Route path="/profile" element={<Collector />} />
-          <Route path="/questions" element={<GameRoute />} />
-          <Route path="/" element={<TopCollectors />} />
+          <Route path="/leaderboard" element={<TopCollectors />} />
         </Routes>
       </Router>
     </div>
