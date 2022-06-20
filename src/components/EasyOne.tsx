@@ -20,6 +20,7 @@ const EasyOne = () => {
       setAnswers(getFourOptions(easyQOne, res.name));
     });
   }, []);
+
   return (
     <div className="EasyOne">
       {pokemon && answers?.length > 0 && (

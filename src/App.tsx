@@ -5,9 +5,6 @@ import Main from "./components/Main";
 import GameRoute from "./components/GameRoute";
 import TopCollectors from "./components/TopCollectors";
 import Collector from "./components/Collector";
-import EasyOne from "./components/EasyOne";
-import EasyTwo from "./components/EasyTwo";
-import EasyThree from "./components/EasyThree";
 
 function App() {
   return (

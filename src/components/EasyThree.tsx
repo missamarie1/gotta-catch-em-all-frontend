@@ -7,11 +7,6 @@ import "./EasyThree.css";
 const EasyThree = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<number[]>([]);
-  // function toTitleCase(str: string) {
-  //   return str.replace(/\w\S*/g, function (txt) {
-  //     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  //   });
-  // }
 
   useEffect(() => {
     getRandomEasy().then((res) => {
@@ -20,6 +15,7 @@ const EasyThree = () => {
       setAnswers(getFourOptionsQThree(easyThree, res.id));
     });
   }, []);
+
   return (
     <div className="EasyThree">
       {pokemon && answers?.length > 0 && (
