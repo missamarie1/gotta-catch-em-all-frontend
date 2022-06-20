@@ -1,6 +1,8 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
-import { getRandomEasy } from "../services/PokemonService";
+import { easy, getRandomEasy } from "../services/PokemonService";
 import { easyQOne, getFourOptions } from "../services/PossibleAnswers";
 import "./EasyOne.css";
 
@@ -8,6 +10,9 @@ const EasyOne = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
+  const { currentScore, updateScore, setCurrentPokemonID } =
+    useContext(GameContext);
+  const navigate = useNavigate();
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -15,7 +20,9 @@ const EasyOne = () => {
   }
 
   useEffect(() => {
-    getRandomEasy().then((res) => {
+    let randomEasy = easy[Math.floor(Math.random() * easy.length)];
+    setCurrentPokemonID(randomEasy);
+    getRandomEasy(randomEasy).then((res) => {
       console.log(res);
       setPokemon(res);
       setAnswers(getFourOptions(easyQOne, res.name));
@@ -24,11 +31,17 @@ const EasyOne = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+    if (selected === pokemon?.name) {
+      updateScore();
+    }
+    //navigate to easy 2
+    //also use context to stay with each pokemon throughout questions
+    navigate("/");
   };
 
   return (
     <div className="EasyOne">
-      <p>Current Score: 0</p>
+      <p>{currentScore}</p>
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
           <h2>Who's that Pokémon?</h2>

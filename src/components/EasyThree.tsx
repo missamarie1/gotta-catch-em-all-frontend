@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
 import { easyThree, getFourOptionsQThree } from "../services/PossibleAnswers";
@@ -7,9 +8,10 @@ import "./EasyThree.css";
 const EasyThree = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<number[]>([]);
+  const { currentPokemonID } = useContext(GameContext);
 
   useEffect(() => {
-    getRandomEasy().then((res) => {
+    getRandomEasy(currentPokemonID).then((res) => {
       console.log(res);
       setPokemon(res);
       setAnswers(getFourOptionsQThree(easyThree, res.id));

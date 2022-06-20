@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
 import { easyTwo, getFourOptions } from "../services/PossibleAnswers";
@@ -7,6 +8,7 @@ import "./EasyTwo.css";
 const EasyTwo = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
+  const { currentPokemonID } = useContext(GameContext);
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -14,7 +16,7 @@ const EasyTwo = () => {
   }
 
   useEffect(() => {
-    getRandomEasy().then((res) => {
+    getRandomEasy(currentPokemonID).then((res) => {
       console.log(res.types[0]);
       setPokemon(res);
       setAnswers(getFourOptions(easyTwo, res.types[0].type.name));

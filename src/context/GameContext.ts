@@ -3,6 +3,8 @@ import { createContext } from "react";
 export interface GameContextModel {
   currentScore: number;
   updateScore: () => void;
+  currentPokemonID: number;
+  setCurrentPokemonID: (n: number) => void;
   //   caught: PokemonEasy[];
   //   addFavorite: (gif: Gif) => void;
   //   removeFavorite: (id: string) => void;
@@ -12,6 +14,8 @@ export interface GameContextModel {
 const defaultValues: GameContextModel = {
   currentScore: 0,
   updateScore: () => {},
+  currentPokemonID: 0,
+  setCurrentPokemonID: () => {},
   //   caught: [],
   //   addFavorite: () => {},
   //   removeFavorite: () => {},
