@@ -10,8 +10,14 @@ const EasyOne = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
-  const { currentScore, updateScore, setCurrentPokemonID } =
-    useContext(GameContext);
+  const {
+    currentScore,
+    updateScore,
+    setCurrentPokemonID,
+    questionsAnswered,
+    setQuestionedAnswered,
+    currentPokemonID,
+  } = useContext(GameContext);
   const navigate = useNavigate();
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -20,23 +26,21 @@ const EasyOne = () => {
   }
 
   useEffect(() => {
-    let randomEasy = easy[Math.floor(Math.random() * easy.length)];
-    setCurrentPokemonID(randomEasy);
-    getRandomEasy(randomEasy).then((res) => {
-      console.log(res);
-      setPokemon(res);
-      setAnswers(getFourOptions(easyQOne, res.name));
-    });
-  }, []);
+    if (currentPokemonID) {
+      getRandomEasy(currentPokemonID).then((res) => {
+        console.log(res);
+        setPokemon(res);
+        setAnswers(getFourOptions(easyQOne, res.name));
+      });
+    }
+  }, [currentPokemonID]);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     if (selected === pokemon?.name) {
       updateScore();
     }
-    //navigate to easy 2
-    //also use context to stay with each pokemon throughout questions
-    navigate("/");
+    setQuestionedAnswered(1);
   };
 
   return (

@@ -5,6 +5,10 @@ export interface GameContextModel {
   updateScore: () => void;
   currentPokemonID: number;
   setCurrentPokemonID: (n: number) => void;
+  challengeLevel: string;
+  setChallengeLevel: (l: string) => void;
+  questionsAnswered: number;
+  setQuestionedAnswered: (n: number)=>void
   //   caught: PokemonEasy[];
   //   addFavorite: (gif: Gif) => void;
   //   removeFavorite: (id: string) => void;
@@ -16,6 +20,10 @@ const defaultValues: GameContextModel = {
   updateScore: () => {},
   currentPokemonID: 0,
   setCurrentPokemonID: () => {},
+  challengeLevel: "",
+  setChallengeLevel: () => {},
+  questionsAnswered: 0,
+  setQuestionedAnswered: ()=>{}
   //   caught: [],
   //   addFavorite: () => {},
   //   removeFavorite: () => {},
