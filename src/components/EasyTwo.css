@@ -1,3 +1,19 @@
 .EasyTwo {
   color: white;
 }
+
+.EasyTwo .hp {
+  height: 20px;
+}
+
+.EasyTwo .full {
+  background-color: green;
+}
+
+.EasyTwo .two-thirds {
+  background-color: yellow;
+}
+
+.EasyTwo .one-thirds {
+  background-color: red;
+}

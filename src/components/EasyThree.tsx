@@ -11,6 +11,9 @@ const EasyThree = () => {
   const [selected3, setSelected3] = useState(0);
   const { currentPokemonID, currentScore, updateScore, setQuestionsAnswered } =
     useContext(GameContext);
+  const getPercent = (currentScore: number): string => {
+    return `${((currentScore / 3) * 100).toFixed(0)}%`;
+  };
 
   useEffect(() => {
     if (currentPokemonID) {
@@ -35,12 +38,32 @@ const EasyThree = () => {
 
   return (
     <div className="EasyThree">
-      <p>{currentScore}</p>
+      {currentScore === 3 ? (
+        <div
+          className="full hp"
+          style={{ width: getPercent(currentScore) }}
+        ></div>
+      ) : currentScore === 2 ? (
+        <div
+          className="two-thirds hp"
+          style={{ width: getPercent(currentScore) }}
+        ></div>
+      ) : currentScore === 1 ? (
+        <div
+          className="one-thirds hp"
+          style={{ width: getPercent(currentScore) }}
+        ></div>
+      ) : (
+        <div
+          className="zero hp"
+          style={{ width: getPercent(currentScore) }}
+        ></div>
+      )}
+      <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
 
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
           <h2>What's it's Pokédex number?</h2>
-          <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
           <input
             type="radio"
             name="number"

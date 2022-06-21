@@ -18,12 +18,11 @@ const EasyOne = () => {
     setQuestionsAnswered,
     currentPokemonID,
   } = useContext(GameContext);
-
+  const navigate = useNavigate();
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
 
-  const navigate = useNavigate();
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
@@ -52,10 +51,17 @@ const EasyOne = () => {
 
   return (
     <div className="EasyOne">
-      <div
-        className="full hp"
-        style={{ width: getPercent(currentScore) }}
-      ></div>
+      {currentScore === 3 ? (
+        <div
+          className="full hp"
+          style={{ width: getPercent(currentScore) }}
+        ></div>
+      ) : (
+        <div
+          className="two-thirds hp"
+          style={{ width: getPercent(currentScore) }}
+        ></div>
+      )}
       <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
 
       {pokemon && answers?.length > 0 && (

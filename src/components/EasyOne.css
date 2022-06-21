@@ -4,8 +4,13 @@
 
 .EasyOne .hp {
   height: 20px;
+  border: 1px solid white;
 }
 
 .EasyOne .full {
   background-color: green;
+}
+
+.EasyOne .two-thirds {
+  background-color: yellow;
 }
