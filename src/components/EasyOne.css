@@ -1,3 +1,11 @@
 .EasyOne {
   color: white;
 }
+
+.EasyOne .hp {
+  height: 20px;
+}
+
+.EasyOne .full {
+  background-color: green;
+}
