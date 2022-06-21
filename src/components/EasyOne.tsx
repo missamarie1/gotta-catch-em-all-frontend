@@ -42,7 +42,7 @@ const EasyOne = () => {
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
 
-    if (selected !== pokemon?.name) {
+    if (selected === pokemon?.name) {
       updateScore();
     }
     setQuestionsAnswered(1);

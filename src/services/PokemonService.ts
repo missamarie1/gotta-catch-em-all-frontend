@@ -11,5 +11,7 @@ export const easy = [
 ];
 
 export const getRandomEasy = (id: number): Promise<PokemonEasy> => {
-  return axios.get(`${pokemonBaseUrl}pokemon/${id}`).then((res) => res.data);
+  return axios.get(`${pokemonBaseUrl}/pokemon/${id}`).then((res) => res.data);
 };
+
+// export const checkForUser = ()
