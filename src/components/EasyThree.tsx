@@ -28,7 +28,7 @@ const EasyThree = () => {
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
 
-    if (selected3 !== pokemon?.id) {
+    if (selected3 === pokemon?.id) {
       updateScore();
     }
     setQuestionsAnswered(3);

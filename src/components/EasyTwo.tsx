@@ -34,7 +34,7 @@ const EasyTwo = () => {
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
 
-    if (selected2 !== pokemon?.types[0].type.name) {
+    if (selected2 === pokemon?.types[0].type.name) {
       updateScore();
     }
     setQuestionsAnswered(2);
