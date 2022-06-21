@@ -9,7 +9,7 @@ const EasyTwo = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected2, setSelected2] = useState("");
-  const { currentPokemonID, setQuestionedAnswered, updateScore, currentScore } =
+  const { currentPokemonID, setQuestionsAnswered, updateScore, currentScore } =
     useContext(GameContext);
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -29,10 +29,13 @@ const EasyTwo = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    if (selected2 === pokemon?.types[0].type.name) {
+
+    if (selected2 !== pokemon?.types[0].type.name) {
       updateScore();
     }
-    setQuestionedAnswered(2);
+    setQuestionsAnswered(2);
+    console.log(selected2);
+    console.log(pokemon?.types[0].type.name);
   };
 
   return (
@@ -44,34 +47,34 @@ const EasyTwo = () => {
           <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
           <input
             type="radio"
-            name="who"
+            name="type"
             id={answers[0]}
             onChange={(e) => setSelected2(e.target.value)}
-            value={selected2}
+            value={answers[0]}
           />
           <label htmlFor={answers[0]}>{toTitleCase(answers[0])}</label>
           <input
             type="radio"
-            name="who"
+            name="type"
             id={answers[1]}
             onChange={(e) => setSelected2(e.target.value)}
-            value={selected2}
+            value={answers[1]}
           />
           <label htmlFor={answers[1]}>{toTitleCase(answers[1])}</label>
           <input
             type="radio"
-            name="who"
+            name="type"
             id={answers[2]}
             onChange={(e) => setSelected2(e.target.value)}
-            value={selected2}
+            value={answers[2]}
           />
           <label htmlFor={answers[2]}>{toTitleCase(answers[2])}</label>
           <input
             type="radio"
-            name="who"
+            name="type"
             id={answers[3]}
             onChange={(e) => setSelected2(e.target.value)}
-            value={selected2}
+            value={answers[3]}
           />
           <label htmlFor={answers[3]}>{toTitleCase(answers[3])}</label>
           <button>Submit</button>

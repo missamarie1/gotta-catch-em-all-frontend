@@ -8,7 +8,7 @@ export interface GameContextModel {
   challengeLevel: string;
   setChallengeLevel: (l: string) => void;
   questionsAnswered: number;
-  setQuestionedAnswered: (n: number)=>void
+  setQuestionsAnswered: (n: number) => void;
   //   caught: PokemonEasy[];
   //   addFavorite: (gif: Gif) => void;
   //   removeFavorite: (id: string) => void;
@@ -23,7 +23,7 @@ const defaultValues: GameContextModel = {
   challengeLevel: "",
   setChallengeLevel: () => {},
   questionsAnswered: 0,
-  setQuestionedAnswered: ()=>{}
+  setQuestionsAnswered: () => {},
   //   caught: [],
   //   addFavorite: () => {},
   //   removeFavorite: () => {},

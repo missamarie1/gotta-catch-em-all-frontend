@@ -2,7 +2,7 @@ import { FormEvent, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
-import { easy, getRandomEasy } from "../services/PokemonService";
+import { getRandomEasy } from "../services/PokemonService";
 import { easyQOne, getFourOptions } from "../services/PossibleAnswers";
 import "./EasyOne.css";
 
@@ -15,9 +15,14 @@ const EasyOne = () => {
     updateScore,
     setCurrentPokemonID,
     questionsAnswered,
-    setQuestionedAnswered,
+    setQuestionsAnswered,
     currentPokemonID,
   } = useContext(GameContext);
+
+  const getPercent = (currentScore: number): string => {
+    return `${((currentScore / 3) * 100).toFixed(0)}%`;
+  };
+
   const navigate = useNavigate();
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -37,19 +42,25 @@ const EasyOne = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    if (selected === pokemon?.name) {
+
+    if (selected !== pokemon?.name) {
       updateScore();
     }
-    setQuestionedAnswered(1);
+    setQuestionsAnswered(1);
+    console.log(getPercent(currentScore));
   };
 
   return (
     <div className="EasyOne">
-      <p>{currentScore}</p>
+      <div
+        className="full hp"
+        style={{ width: getPercent(currentScore) }}
+      ></div>
+      <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
           <h2>Who's that Pokémon?</h2>
-          <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
           <input
             type="radio"
             name="who"

@@ -14,7 +14,7 @@ const GameRoute = () => {
   };
   return (
     <div className="GameRoute">
-      {challengeLevel === "Hi" && (
+      {challengeLevel === "" && (
         <form onSubmit={submitHandler}>
           <select onChange={(e) => setLevel(e.target.value)} value={level}>
             <option value="easy">Easy</option>
