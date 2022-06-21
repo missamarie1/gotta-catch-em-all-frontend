@@ -5,6 +5,7 @@ import "./Easy.css";
 import EasyOne from "./EasyOne";
 import EasyThree from "./EasyThree";
 import EasyTwo from "./EasyTwo";
+import Score from "./Score";
 
 const Easy = () => {
   const { questionsAnswered, setCurrentPokemonID, currentPokemonID } =
@@ -25,7 +26,7 @@ const Easy = () => {
       ) : questionsAnswered === 2 ? (
         <EasyThree />
       ) : (
-        <p>TODO</p>
+        <Score />
       )}
     </div>
   );

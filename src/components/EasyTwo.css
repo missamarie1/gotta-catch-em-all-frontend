@@ -4,6 +4,7 @@
 
 .EasyTwo .hp {
   height: 20px;
+  border: 1px solid white;
 }
 
 .EasyTwo .full {
