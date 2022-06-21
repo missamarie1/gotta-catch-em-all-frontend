@@ -101,6 +101,18 @@ export const easyThree = [
   145, 145, 146, 147, 148, 149, 150, 151,
 ];
 
+export const twoThirds = [true, true, false];
+export const oneThirds = [true, false, false];
+export function getRandomItem(arr: boolean[]) {
+  // get random index value
+  const randomIndex = Math.floor(Math.random() * arr.length);
+
+  // get random item
+  const item = arr[randomIndex];
+
+  return item;
+}
+
 function shuffle(array: string[]) {
   var m = array.length,
     t,
