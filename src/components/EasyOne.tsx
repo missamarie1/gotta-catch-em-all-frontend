@@ -51,17 +51,20 @@ const EasyOne = () => {
 
   return (
     <div className="EasyOne">
-      {currentScore === 3 ? (
-        <div
-          className="full hp"
-          style={{ width: getPercent(currentScore) }}
-        ></div>
-      ) : (
-        <div
-          className="two-thirds hp"
-          style={{ width: getPercent(currentScore) }}
-        ></div>
-      )}
+      <div
+        className={`${
+          currentScore === 3
+            ? "full"
+            : currentScore === 2
+            ? "two-thirds"
+            : currentScore === 1
+            ? "one-thirds"
+            : "zero"
+        } hp`}
+        style={{ width: getPercent(currentScore) }}
+      >
+        HP: {getPercent(currentScore)}
+      </div>
       <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
 
       {pokemon && answers?.length > 0 && (

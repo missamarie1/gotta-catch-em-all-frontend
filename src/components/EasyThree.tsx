@@ -38,27 +38,20 @@ const EasyThree = () => {
 
   return (
     <div className="EasyThree">
-      {currentScore === 3 ? (
-        <div
-          className="full hp"
-          style={{ width: getPercent(currentScore) }}
-        ></div>
-      ) : currentScore === 2 ? (
-        <div
-          className="two-thirds hp"
-          style={{ width: getPercent(currentScore) }}
-        ></div>
-      ) : currentScore === 1 ? (
-        <div
-          className="one-thirds hp"
-          style={{ width: getPercent(currentScore) }}
-        ></div>
-      ) : (
-        <div
-          className="zero hp"
-          style={{ width: getPercent(currentScore) }}
-        ></div>
-      )}
+      <div
+        className={`${
+          currentScore === 3
+            ? "full"
+            : currentScore === 2
+            ? "two-thirds"
+            : currentScore === 1
+            ? "one-thirds"
+            : "zero"
+        } hp`}
+        style={{ width: getPercent(currentScore) }}
+      >
+        HP: {getPercent(currentScore)}
+      </div>
       <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
 
       {pokemon && answers?.length > 0 && (
