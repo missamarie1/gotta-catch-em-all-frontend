@@ -6,7 +6,7 @@ import "./Signup.css";
 
 const Signup = () => {
   const [userName, setUserName] = useState("");
-  const { user } = useContext(AuthContext);
+  const { user, account, setAccount } = useContext(AuthContext);
 
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
@@ -16,7 +16,7 @@ const Signup = () => {
       caught: [],
     };
     makeNewAccount(newAccount).then((res) => {
-      console.log(res);
+      setAccount(res);
     });
   };
 
