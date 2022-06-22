@@ -31,7 +31,7 @@ const Signup = () => {
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
-        <button>Signup</button>
+        <button className="signup button">Signup</button>
       </form>
     </div>
   );

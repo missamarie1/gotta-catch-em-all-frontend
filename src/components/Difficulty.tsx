@@ -21,7 +21,7 @@ const Difficulty = () => {
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
-          <button>Select</button>
+          <button className="select button">Select</button>
         </form>
       )}
       {challengeLevel === "easy" && <Easy />}

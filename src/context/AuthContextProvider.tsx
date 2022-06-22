@@ -52,7 +52,14 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, account, setAccount, isCaught, easyPokemonToBeCaught }}
+      value={{
+        user,
+        account,
+        setAccount,
+        isCaught,
+        easyPokemonToBeCaught,
+        setAvailiblePokemonPool,
+      }}
     >
       {children}
     </AuthContext.Provider>
