@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
+import GameContextProvider from "../context/GameContextProvider";
 import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
 import {
@@ -11,9 +12,8 @@ import "./Score.css";
 
 const Score = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
-  const [caught, setCaught] = useState(true);
   const { currentPokemonID, currentScore } = useContext(GameContext);
-
+  const [caught, setCaught] = useState(true);
   function getRandomItem(array: boolean[]) {
     const randomIndex = Math.floor(Math.random() * array.length);
     const item = array[randomIndex];

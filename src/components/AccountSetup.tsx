@@ -15,10 +15,10 @@ const AccountSetup = () => {
         <button onClick={signInWithGoogle}>Login</button>
       ) : (
         <div>
+          <button onClick={signOut}>Sign Out</button>
           <Link to="/home">
             <button>Enter</button>
           </Link>
-          <button onClick={signOut}>Sign Out</button>
         </div>
       )}
 
