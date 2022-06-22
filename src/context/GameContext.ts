@@ -9,10 +9,6 @@ export interface GameContextModel {
   setChallengeLevel: (l: string) => void;
   questionsAnswered: number;
   setQuestionsAnswered: (n: number) => void;
-  //   caught: PokemonEasy[];
-  //   addFavorite: (gif: Gif) => void;
-  //   removeFavorite: (id: string) => void;
-  //   isCaught: (id: string) => boolean;
 }
 
 const defaultValues: GameContextModel = {
@@ -24,10 +20,6 @@ const defaultValues: GameContextModel = {
   setChallengeLevel: () => {},
   questionsAnswered: 0,
   setQuestionsAnswered: () => {},
-  //   caught: [],
-  //   addFavorite: () => {},
-  //   removeFavorite: () => {},
-  //   isCaught: () => false,
 };
 
 const GameContext = createContext(defaultValues);

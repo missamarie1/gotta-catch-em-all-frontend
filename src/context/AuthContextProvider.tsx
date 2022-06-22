@@ -8,7 +8,15 @@ import { checkForAccount } from "../services/AccountService";
 function AuthContextProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [account, setAccount] = useState<Account | null>(null);
-
+  const isCaught = (id: number) => {
+    if (account) {
+      return account.caught.some((item) => {
+        return item.id === id;
+      });
+    } else {
+      return false;
+    }
+  };
   useEffect(() => {
     // useEffect to only register once at start
     return auth.onAuthStateChanged((newUser) => {
@@ -25,7 +33,7 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, account, setAccount }}>
+    <AuthContext.Provider value={{ user, account, setAccount, isCaught }}>
       {children}
     </AuthContext.Provider>
   );
