@@ -6,6 +6,7 @@ import Collector from "./components/Collector";
 import EasyOne from "./components/EasyOne";
 import Home from "./components/Home";
 import AccountSetup from "./components/AccountSetup";
+import Difficulty from "./components/Difficulty";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AccountSetup />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/difficulty" element={<Difficulty />} />
           <Route path="/profile" element={<Collector />} />
           <Route path="/leaderboard" element={<TopCollectors />} />
         </Routes>
