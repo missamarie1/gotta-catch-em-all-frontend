@@ -1,7 +1,10 @@
 import { useContext, useEffect, useState } from "react";
+import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import GameContextProvider from "../context/GameContextProvider";
+import { Pokemon } from "../models/Account";
 import { PokemonEasy } from "../models/Pokemon";
+import { capturedPokemon, checkForAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
 import {
   getRandomItem,
@@ -13,6 +16,7 @@ import "./Score.css";
 const Score = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const { currentPokemonID, currentScore } = useContext(GameContext);
+  const { account, setAccount, user } = useContext(AuthContext);
   const [caught, setCaught] = useState(true);
   function getRandomItem(array: boolean[]) {
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -28,10 +32,10 @@ const Score = () => {
         console.log(res);
         setPokemon(res);
         if (currentScore === 1) {
-          setCaught(result1);
+          setCaught(result2);
           // console.log(result2);
         } else if (currentScore === 2) {
-          setCaught(result2);
+          setCaught(result1);
           // console.log(result1);
         } else if (currentScore === 3) {
           setCaught(false);
@@ -39,6 +43,25 @@ const Score = () => {
       });
     }
   }, [currentPokemonID, caught]);
+
+  useEffect(() => {
+    if (caught && pokemon) {
+      const newPokemon: Pokemon = {
+        name: pokemon?.name,
+        id: pokemon?.id,
+        image: pokemon?.sprites.front_default,
+      };
+      capturedPokemon(account?._id!, newPokemon).then(() => {
+        checkForAccount(user?.uid!).then((res) => {
+          console.log(res);
+          if (res.length !== 0) {
+            console.log(res[0]);
+            setAccount(res[0]);
+          }
+        });
+      });
+    }
+  }, [caught, pokemon]);
 
   return (
     <div className="Score">
