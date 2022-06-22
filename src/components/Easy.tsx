@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import { easy } from "../services/PokemonService";
 import "./Easy.css";
@@ -10,10 +11,14 @@ import Score from "./Score";
 const Easy = () => {
   const { questionsAnswered, setCurrentPokemonID, currentPokemonID } =
     useContext(GameContext);
+  const { easyPokemonToBeCaught } = useContext(AuthContext);
 
   useEffect(() => {
     if (!currentPokemonID) {
-      let randomEasy = easy[Math.floor(Math.random() * easy.length)];
+      let randomEasy =
+        easyPokemonToBeCaught[
+          Math.floor(Math.random() * easyPokemonToBeCaught.length)
+        ];
       setCurrentPokemonID(randomEasy);
     }
   }, [currentPokemonID]);
