@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import GameContextProvider from "../context/GameContextProvider";
@@ -16,7 +17,8 @@ import "./Score.css";
 const Score = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const { currentPokemonID, currentScore } = useContext(GameContext);
-  const { account, setAccount, user } = useContext(AuthContext);
+  const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
+    useContext(AuthContext);
   const [caught, setCaught] = useState(true);
   function getRandomItem(array: boolean[]) {
     const randomIndex = Math.floor(Math.random() * array.length);
@@ -45,21 +47,25 @@ const Score = () => {
   }, [currentPokemonID, caught]);
 
   useEffect(() => {
-    if (caught && pokemon) {
+    if (caught && pokemon && account) {
+      setAvailiblePokemonPool(account);
       const newPokemon: Pokemon = {
         name: pokemon?.name,
         id: pokemon?.id,
         image: pokemon?.sprites.front_default,
       };
-      capturedPokemon(account?._id!, newPokemon).then(() => {
-        checkForAccount(user?.uid!).then((res) => {
-          console.log(res);
-          if (res.length !== 0) {
-            console.log(res[0]);
-            setAccount(res[0]);
-          }
+
+      if (!isCaught(currentPokemonID)) {
+        capturedPokemon(account?._id!, newPokemon).then(() => {
+          checkForAccount(user?.uid!).then((res) => {
+            console.log(res);
+            if (res.length !== 0) {
+              console.log(res[0]);
+              setAccount(res[0]);
+            }
+          });
         });
-      });
+      }
     }
   }, [caught, pokemon]);
 
@@ -72,6 +78,17 @@ const Score = () => {
       ) : (
         <h2>Wild {pokemon?.name} Fled</h2>
       )}
+      <Link to="/profile">
+        <button>View Profile</button>
+      </Link>
+      <Link to="/leaderboard">
+        {" "}
+        <button>View LeaderBoard</button>
+      </Link>
+      <Link to="/difficulty">
+        {" "}
+        <button>Play Again</button>
+      </Link>
     </div>
   );
 };

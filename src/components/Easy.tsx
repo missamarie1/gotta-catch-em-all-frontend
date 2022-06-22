@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
-import { easy } from "../services/PokemonService";
 import "./Easy.css";
 import EasyOne from "./EasyOne";
 import EasyThree from "./EasyThree";
@@ -19,6 +18,8 @@ const Easy = () => {
         easyPokemonToBeCaught[
           Math.floor(Math.random() * easyPokemonToBeCaught.length)
         ];
+      console.log(randomEasy, "test");
+
       setCurrentPokemonID(randomEasy);
     }
   }, [currentPokemonID]);

@@ -12,12 +12,16 @@ const AccountSetup = () => {
   return (
     <div className="AccountSetup">
       {!user ? (
-        <button onClick={signInWithGoogle}>Login</button>
+        <button className="login button" onClick={signInWithGoogle}>
+          Login
+        </button>
       ) : (
         <div>
-          <button onClick={signOut}>Sign Out</button>
+          <button className="signout button" onClick={signOut}>
+            Sign Out
+          </button>
           <Link to="/home">
-            <button>Enter</button>
+            <button className=" enter button">Enter</button>
           </Link>
         </div>
       )}

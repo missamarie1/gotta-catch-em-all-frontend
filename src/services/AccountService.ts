@@ -21,3 +21,7 @@ export const capturedPokemon = (
     .put(`${accountBaseUrl}/account/${id}`, newPokemon)
     .then((res) => res.data);
 };
+
+export const getAllAccounts = (): Promise<Account[]> => {
+  return axios.get(`${accountBaseUrl}/account`).then((res) => res.data);
+};

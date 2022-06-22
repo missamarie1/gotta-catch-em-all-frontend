@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import GameContext from "./GameContext";
 
 const GameContextProvider = ({ children }: { children: ReactNode }) => {
@@ -12,6 +12,9 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  useEffect(() => {
+    console.log(currentPokemonID);
+  }, [currentPokemonID]);
   return (
     <GameContext.Provider
       value={{

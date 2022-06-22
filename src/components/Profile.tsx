@@ -7,11 +7,11 @@ const Profile = () => {
 
   return (
     <div className="Profile">
-      <h2>{account!.userName}</h2>
+      <h2>{account?.userName}</h2>
       //avatar img
       <ul>
-        {account!.caught.map((pokemon) => (
-          <li>
+        {account?.caught.map((pokemon, index) => (
+          <li key={pokemon.id + index}>
             <p>{pokemon.name}</p>
             <img src={pokemon.image} alt={pokemon.name} />
           </li>
