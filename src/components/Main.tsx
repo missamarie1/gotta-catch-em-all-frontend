@@ -13,6 +13,8 @@ const Main = () => {
         <button className="login" onClick={signInWithGoogle}>
           Login
         </button>
+      ) : user && !account ? (
+        <Signup />
       ) : (
         <div className="Main">
           <Link to="/difficulty">
@@ -29,8 +31,6 @@ const Main = () => {
           </button>
         </div>
       )}
-
-      {user && !account && <Signup />}
     </div>
   );
 };

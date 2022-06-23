@@ -12,7 +12,7 @@ import player from "../assets/player.webp";
 
 const Summary = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
-  const { currentPokemonID, currentScore } = useContext(GameContext);
+  const { currentPokemonID, currentScore, setGameInProgress } = useContext(GameContext);
   const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
     useContext(AuthContext);
   const [caught, setCaught] = useState(true);
@@ -44,6 +44,7 @@ const Summary = () => {
 
   useEffect(() => {
     if (caught && pokemon && account) {
+      setGameInProgress(false)
       setAvailiblePokemonPool(account);
       const newPokemon: Pokemon = {
         name: pokemon?.name,

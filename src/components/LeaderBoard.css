@@ -1,0 +1,9 @@
+.LeaderBoard li {
+  /* display: flex; */
+  justify-content: space-between;
+}
+
+.LeaderBoard li p {
+  display: inline-block;
+  margin-right: 50px;
+}

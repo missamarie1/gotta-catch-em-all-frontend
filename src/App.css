@@ -4,6 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Press Start 2P", cursive;
+  
 }
 
 .App .hp-container {
@@ -42,14 +44,14 @@
   text-align: center;
 }
 
-/* .App input {
-  width: 400px;
+.App .username-input {
+  width: 360px;
   margin: 5px;
   padding: 15px;
   font-size: larger;
   font-weight: bolder;
   border-radius: 15px;
-} */
+}
 
 .App select {
   width: 400px;

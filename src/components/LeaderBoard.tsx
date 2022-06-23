@@ -25,9 +25,12 @@ const LeaderBoard = () => {
 
   return (
     <div className="LeaderBoard">
+      <h2>LeaderBoard</h2>
       <ol>
-        {leaderboard?.map((item) => (
+        {leaderboard?.map((item, index) => (
           <li>
+            <p>{index + 1}.</p>
+            <p>{item.avatar}</p>
             <p>{item.userName}</p>
             <p>{item.caught.length}</p>
           </li>
