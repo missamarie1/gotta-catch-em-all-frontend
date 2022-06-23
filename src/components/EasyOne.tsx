@@ -74,40 +74,48 @@ const EasyOne = () => {
       </div>
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
+          <h2>Who's that Pokémon?</h2>
           <div className="question-container">
-            <h2>Who's that Pokémon?</h2>
-            <input
-              type="radio"
-              name="who"
-              id={answers[0]}
-              onChange={(e) => setSelected(e.target.value)}
-              value={answers[0]}
-            />
-            <label htmlFor={answers[0]}>{toTitleCase(answers[0])}</label>
-            <input
-              type="radio"
-              name="who"
-              id={answers[1]}
-              onChange={(e) => setSelected(e.target.value)}
-              value={answers[1]}
-            />
-            <label htmlFor={answers[1]}>{toTitleCase(answers[1])}</label>
-            <input
-              type="radio"
-              name="who"
-              id={answers[2]}
-              onChange={(e) => setSelected(e.target.value)}
-              value={answers[2]}
-            />
-            <label htmlFor={answers[2]}>{toTitleCase(answers[2])}</label>
-            <input
-              type="radio"
-              name="who"
-              id={answers[3]}
-              onChange={(e) => setSelected(e.target.value)}
-              value={answers[3]}
-            />
-            <label htmlFor={answers[3]}>{toTitleCase(answers[3])}</label>
+            <div className="answer">
+              <input
+                type="radio"
+                name="who"
+                id={answers[0]}
+                onChange={(e) => setSelected(e.target.value)}
+                value={answers[0]}
+              />
+              <label htmlFor={answers[0]}>{toTitleCase(answers[0])}</label>
+            </div>
+            <div className="answer">
+              <input
+                type="radio"
+                name="who"
+                id={answers[1]}
+                onChange={(e) => setSelected(e.target.value)}
+                value={answers[1]}
+              />
+              <label htmlFor={answers[1]}>{toTitleCase(answers[1])}</label>
+            </div>
+            <div className="answer">
+              <input
+                type="radio"
+                name="who"
+                id={answers[2]}
+                onChange={(e) => setSelected(e.target.value)}
+                value={answers[2]}
+              />
+              <label htmlFor={answers[2]}>{toTitleCase(answers[2])}</label>
+            </div>
+            <div className="answer">
+              <input
+                type="radio"
+                name="who"
+                id={answers[3]}
+                onChange={(e) => setSelected(e.target.value)}
+                value={answers[3]}
+              />
+              <label htmlFor={answers[3]}>{toTitleCase(answers[3])}</label>
+            </div>
           </div>
           <button>Submit</button>
         </form>

@@ -39,6 +39,11 @@
   width: 175px;
 }
 
+.App .question-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .App form {
   height: 200px;
   display: flex;
