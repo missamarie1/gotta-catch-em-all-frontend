@@ -7,10 +7,10 @@
 }
 
 .Header img {
-  width: 1000px;
+  width: 100vw;
 }
 
 .Header h1 {
   color: #feca1b;
-  font-size: 48px;
+  /* font-size: 48px; */
 }

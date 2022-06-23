@@ -38,6 +38,9 @@
   height: 100px;
   width: 175px;
 }
+.App .effect {
+  color: #3761a8;
+}
 
 .App .question-container {
   display: flex;
@@ -45,7 +48,7 @@
 }
 
 .App form {
-  height: 200px;
+  /* height: 200px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
