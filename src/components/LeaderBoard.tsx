@@ -35,7 +35,7 @@ const LeaderBoard = () => {
         {leaderboard?.map((item, index) => (
           <li>
             <p>{index + 1}.</p>
-            <p>{item.avatar}</p>
+            <img src={item.avatar} alt="" />
             <p>{item.userName}</p>
             <p>{item.caught.length}</p>
           </li>
