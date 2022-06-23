@@ -35,7 +35,7 @@ const Signup = () => {
           onChange={(e) => setUserName(e.target.value)}
           className="username-input"
         />
-        <label htmlFor="avatar">Select Avatar:</label>
+        <p>Select Avatar:</p>
         <Avatar setAvatar={setAvatar} avatar={avatar} />
         <button className="signup button">Signup</button>
       </form>

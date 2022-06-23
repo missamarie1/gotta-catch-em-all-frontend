@@ -1,13 +1,24 @@
-.Profile li {
-  list-style: none;
+.Profile {
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Profile ul {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
-.Profile {
+.Profile li {
+  list-style: none;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }

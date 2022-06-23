@@ -26,16 +26,21 @@ const LeaderBoard = () => {
   return (
     <div className="LeaderBoard">
       <h2>LeaderBoard</h2>
-      <ol>
+      <div className="titles">
+        <p>Rank</p>
+        <p>Name</p>
+        <p>Collected</p>
+      </div>
+      <ul>
         {leaderboard?.map((item, index) => (
           <li>
             <p>{index + 1}.</p>
-            <p>{item.avatar}</p>
+            <img src={item.avatar} alt="" />
             <p>{item.userName}</p>
             <p>{item.caught.length}</p>
           </li>
         ))}
-      </ol>
+      </ul>
       <Link to="/">
         <button>Return Home</button>
       </Link>

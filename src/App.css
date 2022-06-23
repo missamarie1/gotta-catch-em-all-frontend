@@ -1,11 +1,15 @@
 .App {
+  height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Press Start 2P", cursive;
-  
+}
+
+.App h2 {
+  margin-bottom: 25px;
 }
 
 .App .hp-container {
@@ -33,6 +37,11 @@
 .App .image-container {
   height: 100px;
   width: 175px;
+}
+
+.App .question-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .App form {
@@ -64,7 +73,7 @@
 
 .App button {
   width: 400px;
-  margin: 5px;
+  margin: 10px;
   padding: 20px;
   background-color: #feca1b;
   color: #3761a8;

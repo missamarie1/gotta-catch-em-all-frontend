@@ -1,6 +1,14 @@
 .EasyOne {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.EasyOne .answer {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }

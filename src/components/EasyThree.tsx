@@ -62,40 +62,48 @@ const EasyThree = () => {
 
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
+          <h2>What's it's Pokédex number?</h2>
           <div className="question-container">
-            <h2>What's it's Pokédex number?</h2>
-            <input
-              type="radio"
-              name="number"
-              id={answers[0].toString()}
-              onChange={(e) => setSelected3(+e.target.value)}
-              value={answers[0]}
-            />
-            <label htmlFor={answers[0].toString()}>{answers[0]}</label>
-            <input
-              type="radio"
-              name="number"
-              id={answers[1].toString()}
-              onChange={(e) => setSelected3(+e.target.value)}
-              value={answers[1]}
-            />
-            <label htmlFor={answers[1].toString()}>{answers[1]}</label>
-            <input
-              type="radio"
-              name="number"
-              id={answers[2].toString()}
-              onChange={(e) => setSelected3(+e.target.value)}
-              value={answers[2]}
-            />
-            <label htmlFor={answers[2].toString()}>{answers[2]}</label>
-            <input
-              type="radio"
-              name="number"
-              id={answers[3].toString()}
-              onChange={(e) => setSelected3(+e.target.value)}
-              value={answers[3]}
-            />
-            <label htmlFor={answers[3].toString()}>{answers[3]}</label>
+            <div className="answer">
+              <input
+                type="radio"
+                name="number"
+                id={answers[0].toString()}
+                onChange={(e) => setSelected3(+e.target.value)}
+                value={answers[0]}
+              />
+              <label htmlFor={answers[0].toString()}>{answers[0]}</label>
+            </div>
+            <div className="answer">
+              <input
+                type="radio"
+                name="number"
+                id={answers[1].toString()}
+                onChange={(e) => setSelected3(+e.target.value)}
+                value={answers[1]}
+              />
+              <label htmlFor={answers[1].toString()}>{answers[1]}</label>
+            </div>
+            <div className="answer">
+              <input
+                type="radio"
+                name="number"
+                id={answers[2].toString()}
+                onChange={(e) => setSelected3(+e.target.value)}
+                value={answers[2]}
+              />
+              <label htmlFor={answers[2].toString()}>{answers[2]}</label>
+            </div>
+            <div className="answer">
+              <input
+                type="radio"
+                name="number"
+                id={answers[3].toString()}
+                onChange={(e) => setSelected3(+e.target.value)}
+                value={answers[3]}
+              />
+              <label htmlFor={answers[3].toString()}>{answers[3]}</label>
+            </div>
           </div>
           <button>Submit</button>
         </form>
