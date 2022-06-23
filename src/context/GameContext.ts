@@ -9,6 +9,8 @@ export interface GameContextModel {
   setChallengeLevel: (l: string) => void;
   questionsAnswered: number;
   setQuestionsAnswered: (n: number) => void;
+  gameInProgress: boolean;
+  setGameInProgress: (b: boolean) => void;
 }
 
 const defaultValues: GameContextModel = {
@@ -20,6 +22,8 @@ const defaultValues: GameContextModel = {
   setChallengeLevel: () => {},
   questionsAnswered: 0,
   setQuestionsAnswered: () => {},
+  gameInProgress: false,
+  setGameInProgress: () => {},
 };
 
 const GameContext = createContext(defaultValues);

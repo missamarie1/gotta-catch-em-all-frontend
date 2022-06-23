@@ -6,6 +6,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [currentPokemonID, setCurrentPokemonID] = useState(0);
   const [challengeLevel, setChallengeLevel] = useState("");
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
+  const [gameInProgress, setGameInProgress] = useState(false);
   const updateScore = () => {
     setCurrentScore((prev) => {
       return prev - 1;
@@ -26,6 +27,8 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         setChallengeLevel,
         questionsAnswered,
         setQuestionsAnswered,
+        gameInProgress,
+        setGameInProgress,
       }}
     >
       {children}
