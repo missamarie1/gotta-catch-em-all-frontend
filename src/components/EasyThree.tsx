@@ -2,7 +2,7 @@ import { FormEvent, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
-import { easyThree, getFourOptionsQThree } from "../services/PossibleAnswers";
+import { easyQthree, getFourOptionsQThree } from "../services/PossibleAnswers";
 import "./EasyThree.css";
 import player from "../assets/player.webp";
 
@@ -21,7 +21,7 @@ const EasyThree = () => {
       getRandomEasy(currentPokemonID).then((res) => {
         console.log(res);
         setPokemon(res);
-        setAnswers(getFourOptionsQThree(easyThree, res.id));
+        setAnswers(getFourOptionsQThree(easyQthree, res.id));
       });
     }
   }, [currentPokemonID]);
@@ -39,58 +39,64 @@ const EasyThree = () => {
 
   return (
     <div className="EasyThree">
-      <div
-        className={`${
-          currentScore === 3
-            ? "full"
-            : currentScore === 2
-            ? "two-thirds"
-            : currentScore === 1
-            ? "one-thirds"
-            : "zero"
-        } hp`}
-        style={{ width: getPercent(currentScore) }}
-      >
-        HP: {getPercent(currentScore)}
+      <div className="hp-container">
+        <div
+          className={`${
+            currentScore === 3
+              ? "full"
+              : currentScore === 2
+              ? "two-thirds"
+              : currentScore === 1
+              ? "one-thirds"
+              : "zero"
+          } hp`}
+          style={{ width: getPercent(currentScore) }}
+        >
+          HP: {getPercent(currentScore)}
+        </div>
       </div>
-      <img src={player} alt="player" />
-      <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+      <div className="image-container">
+        <img src={player} alt="player" />
+        <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+      </div>
 
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
-          <h2>What's it's Pokédex number?</h2>
-          <input
-            type="radio"
-            name="number"
-            id={answers[0].toString()}
-            onChange={(e) => setSelected3(+e.target.value)}
-            value={answers[0]}
-          />
-          <label htmlFor={answers[0].toString()}>{answers[0]}</label>
-          <input
-            type="radio"
-            name="number"
-            id={answers[1].toString()}
-            onChange={(e) => setSelected3(+e.target.value)}
-            value={answers[1]}
-          />
-          <label htmlFor={answers[1].toString()}>{answers[1]}</label>
-          <input
-            type="radio"
-            name="number"
-            id={answers[2].toString()}
-            onChange={(e) => setSelected3(+e.target.value)}
-            value={answers[2]}
-          />
-          <label htmlFor={answers[2].toString()}>{answers[2]}</label>
-          <input
-            type="radio"
-            name="number"
-            id={answers[3].toString()}
-            onChange={(e) => setSelected3(+e.target.value)}
-            value={answers[3]}
-          />
-          <label htmlFor={answers[3].toString()}>{answers[3]}</label>
+          <div className="question-container">
+            <h2>What's it's Pokédex number?</h2>
+            <input
+              type="radio"
+              name="number"
+              id={answers[0].toString()}
+              onChange={(e) => setSelected3(+e.target.value)}
+              value={answers[0]}
+            />
+            <label htmlFor={answers[0].toString()}>{answers[0]}</label>
+            <input
+              type="radio"
+              name="number"
+              id={answers[1].toString()}
+              onChange={(e) => setSelected3(+e.target.value)}
+              value={answers[1]}
+            />
+            <label htmlFor={answers[1].toString()}>{answers[1]}</label>
+            <input
+              type="radio"
+              name="number"
+              id={answers[2].toString()}
+              onChange={(e) => setSelected3(+e.target.value)}
+              value={answers[2]}
+            />
+            <label htmlFor={answers[2].toString()}>{answers[2]}</label>
+            <input
+              type="radio"
+              name="number"
+              id={answers[3].toString()}
+              onChange={(e) => setSelected3(+e.target.value)}
+              value={answers[3]}
+            />
+            <label htmlFor={answers[3].toString()}>{answers[3]}</label>
+          </div>
           <button>Submit</button>
         </form>
       )}

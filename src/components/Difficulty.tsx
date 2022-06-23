@@ -1,5 +1,4 @@
 import { FormEvent, useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import GameContext from "../context/GameContext";
 import Easy from "./Easy";
 import "./Difficulty.css";

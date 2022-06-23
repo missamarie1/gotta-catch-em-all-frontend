@@ -1,16 +1,6 @@
-.EasyThree .hp {
-  height: 20px;
-  border: 1px solid white;
-}
-
-.EasyThree .full {
-  background-color: green;
-}
-
-.EasyThree .two-thirds {
-  background-color: yellow;
-}
-
-.EasyThree .one-thirds {
-  background-color: red;
+.EasyThree {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

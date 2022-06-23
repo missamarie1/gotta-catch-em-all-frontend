@@ -1,12 +1,6 @@
-.EasyOne .hp {
-  height: 20px;
-  border: 1px solid white;
-}
-
-.EasyOne .full {
-  background-color: green;
-}
-
-.EasyOne .two-thirds {
-  background-color: yellow;
+.EasyOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

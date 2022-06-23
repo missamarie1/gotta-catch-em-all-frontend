@@ -1,11 +1,75 @@
 .App {
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App .hp-container {
+  width: 200px;
+}
+
+.App .hp {
+  height: 20px;
+  border: 1px solid white;
+}
+
+.App .full {
+  background-color: green;
+}
+
+.App .two-thirds {
+  background-color: yellow;
+}
+
+.App .one-thirds {
+  background-color: red;
+}
+
+.App .image-container {
+  height: 100px;
+  width: 175px;
+}
+
+.App form {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+/* .App input {
+  width: 400px;
+  margin: 5px;
+  padding: 15px;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 15px;
+} */
+
+.App select {
+  width: 400px;
+  margin: 5px;
+  padding: 15px;
+  font-size: larger;
+  font-weight: bolder;
+  border-radius: 15px;
 }
 
 .App button {
-  width: 200px;
+  width: 400px;
+  margin: 5px;
   padding: 20px;
   background-color: #feca1b;
   color: #3761a8;
+  font-size: larger;
+  font-weight: bolder;
   border-radius: 15px;
+}
+
+.App button:hover {
+  cursor: pointer;
 }

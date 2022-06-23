@@ -14,7 +14,7 @@ const Main = () => {
           Login
         </button>
       ) : (
-        <div>
+        <div className="Main">
           <Link to="/difficulty">
             <button className="play">Play</button>
           </Link>

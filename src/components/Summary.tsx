@@ -68,8 +68,10 @@ const Summary = () => {
   return (
     <div className="Summary">
       <p>{}</p>
-      <img src={player} alt="player" />
-      <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+      <div className="image-container">
+        <img src={player} alt="player" />
+        <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+      </div>
       {caught ? (
         <h2>Gotcha! {pokemon?.name} was caught!</h2>
       ) : (

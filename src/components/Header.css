@@ -5,6 +5,11 @@
   align-items: center;
 }
 
-/* .Header img {
-  width: ;
-} */
+.Header img {
+  width: 1000px;
+}
+
+.Header h1 {
+  color: #feca1b;
+  font-size: 64px;
+}
