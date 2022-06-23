@@ -5,6 +5,7 @@ import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
 import { easyQOne, getFourOptions } from "../services/PossibleAnswers";
 import "./EasyOne.css";
+import player from "../assets/player.webp";
 
 const EasyOne = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
@@ -65,8 +66,8 @@ const EasyOne = () => {
       >
         HP: {getPercent(currentScore)}
       </div>
+      <img src={player} alt="player" />
       <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
-
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
           <h2>Who's that Pokémon?</h2>
