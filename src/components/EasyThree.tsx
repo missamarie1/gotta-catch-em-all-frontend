@@ -15,6 +15,8 @@ const EasyThree = () => {
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
+  const [effect, setEffect] = useState(false);
+  let myTimeout: any;
 
   useEffect(() => {
     if (currentPokemonID) {
@@ -24,17 +26,22 @@ const EasyThree = () => {
         setAnswers(getFourOptionsQThree(easyQthree, res.id));
       });
     }
+    return () => {
+      clearTimeout(myTimeout);
+      setEffect(false);
+    };
   }, [currentPokemonID]);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+    setEffect(true);
+    myTimeout = setTimeout(() => {
+      setQuestionsAnswered(3);
+    }, 1000);
 
     if (selected3 === pokemon?.id) {
       updateScore();
     }
-    setQuestionsAnswered(3);
-    console.log(selected3);
-    console.log(pokemon?.id);
   };
 
   return (
@@ -59,6 +66,13 @@ const EasyThree = () => {
         <img src={player} alt="player" />
         <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
       </div>
+      {effect && (
+        <p className="effect">
+          {selected3 === pokemon?.id
+            ? "Your attack was super effective!"
+            : "Your attack had no effect!"}
+        </p>
+      )}
 
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>

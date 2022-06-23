@@ -1,3 +1,18 @@
+.Avatar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px;
+}
+
+.Avatar li {
+  list-style: none;
+  width: 20%;
+}
+.Avatar img {
+  width: 75px;
+}
 .Avatar .selected {
   border: 1px solid gold;
+  box-sizing: border-box;
 }

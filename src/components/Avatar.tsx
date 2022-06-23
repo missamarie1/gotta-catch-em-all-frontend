@@ -15,7 +15,7 @@ import gambler from "../assets/avatars/gambler.webp";
 import gentleman from "../assets/avatars/gentleman.webp";
 import hiker from "../assets/avatars/hiker.webp";
 import jrTrainerBoy from "../assets/avatars/jr-trainer-boy.webp";
-import jrTrainerGirl from "../assets/avatars/jr-trainer-boy.webp";
+import jrTrainerGirl from "../assets/avatars/jr-trainer-girl.webp";
 import juggler from "../assets/avatars/juggler.webp";
 import lass from "../assets/avatars/lass.webp";
 import playerAvatar from "../assets/avatars/player-avatar.webp";

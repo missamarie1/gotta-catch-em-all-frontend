@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import { Pokemon } from "../models/Account";
@@ -12,7 +12,14 @@ import player from "../assets/player.webp";
 
 const Summary = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
-  const { currentPokemonID, currentScore, setGameInProgress } = useContext(GameContext);
+  const {
+    currentPokemonID,
+    currentScore,
+    setGameInProgress,
+    gameInProgress,
+    setQuestionsAnswered,
+    setCurrentScore,
+  } = useContext(GameContext);
   const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
     useContext(AuthContext);
   const [caught, setCaught] = useState(true);
@@ -43,8 +50,8 @@ const Summary = () => {
   }, [currentPokemonID, caught]);
 
   useEffect(() => {
-    if (caught && pokemon && account) {
-      setGameInProgress(false)
+    if (caught && pokemon && account && gameInProgress) {
+      setGameInProgress(false);
       setAvailiblePokemonPool(account);
       const newPokemon: Pokemon = {
         name: pokemon?.name,
@@ -78,9 +85,10 @@ const Summary = () => {
       ) : (
         <h2>Wild {pokemon?.name} Fled</h2>
       )}
-      <Link to="/">
-        <button>Return Home</button>
-      </Link>
+
+      <button>
+        <Link to="/">Return Home</Link>
+      </button>
     </div>
   );
 };

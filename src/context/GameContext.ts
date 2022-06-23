@@ -2,6 +2,7 @@ import { createContext } from "react";
 
 export interface GameContextModel {
   currentScore: number;
+  setCurrentScore: (n: number) => void;
   updateScore: () => void;
   currentPokemonID: number;
   setCurrentPokemonID: (n: number) => void;
@@ -15,6 +16,7 @@ export interface GameContextModel {
 
 const defaultValues: GameContextModel = {
   currentScore: 0,
+  setCurrentScore: () => {},
   updateScore: () => {},
   currentPokemonID: 0,
   setCurrentPokemonID: () => {},

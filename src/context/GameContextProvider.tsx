@@ -20,6 +20,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
     <GameContext.Provider
       value={{
         currentScore,
+        setCurrentScore,
         updateScore,
         currentPokemonID,
         setCurrentPokemonID,

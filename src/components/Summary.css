@@ -4,3 +4,7 @@
   justify-content: center;
   align-items: center;
 }
+.Summary h2 {
+  margin-top: 5px;
+  text-align: center;
+}

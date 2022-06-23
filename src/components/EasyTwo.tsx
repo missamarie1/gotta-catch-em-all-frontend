@@ -15,6 +15,8 @@ const EasyTwo = () => {
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
+  const [effect, setEffect] = useState(false);
+  let myTimeout: any;
 
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -30,17 +32,22 @@ const EasyTwo = () => {
         setAnswers(getFourOptions(easyQTwo, res.types[0].type.name));
       });
     }
+    return () => {
+      clearTimeout(myTimeout);
+      setEffect(false);
+    };
   }, [currentPokemonID]);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+    setEffect(true);
+    myTimeout = setTimeout(() => {
+      setQuestionsAnswered(2);
+    }, 1000);
 
     if (selected2 === pokemon?.types[0].type.name) {
       updateScore();
     }
-    setQuestionsAnswered(2);
-    console.log(selected2);
-    console.log(pokemon?.types[0].type.name);
   };
 
   return (
@@ -65,6 +72,13 @@ const EasyTwo = () => {
         <img src={player} alt="player" />
         <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
       </div>
+      {effect && (
+        <p className="effect">
+          {selected2 === pokemon?.types[0].type.name
+            ? "Your attack was super effective!"
+            : "Your attack had no effect!"}
+        </p>
+      )}
 
       {pokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler}>
