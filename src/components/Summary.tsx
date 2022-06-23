@@ -2,19 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
-import GameContextProvider from "../context/GameContextProvider";
 import { Pokemon } from "../models/Account";
 import { PokemonEasy } from "../models/Pokemon";
 import { capturedPokemon, checkForAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
-import {
-  getRandomItem,
-  oneThirds,
-  twoThirds,
-} from "../services/PossibleAnswers";
-import "./Score.css";
+import { oneThirds, twoThirds } from "../services/PossibleAnswers";
+import "./Summary.css";
 
-const Score = () => {
+const Summary = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const { currentPokemonID, currentScore } = useContext(GameContext);
   const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
@@ -70,7 +65,7 @@ const Score = () => {
   }, [caught, pokemon]);
 
   return (
-    <div className="Score">
+    <div className="Summary">
       <p>{}</p>
       <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
       {caught ? (
@@ -78,19 +73,11 @@ const Score = () => {
       ) : (
         <h2>Wild {pokemon?.name} Fled</h2>
       )}
-      <Link to="/profile">
-        <button>View Profile</button>
-      </Link>
-      <Link to="/leaderboard">
-        {" "}
-        <button>View LeaderBoard</button>
-      </Link>
-      <Link to="/difficulty">
-        {" "}
-        <button>Play Again</button>
+      <Link to="/">
+        <button>Return Home</button>
       </Link>
     </div>
   );
 };
 
-export default Score;
+export default Summary;

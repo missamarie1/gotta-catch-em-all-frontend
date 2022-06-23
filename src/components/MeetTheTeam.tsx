@@ -66,6 +66,9 @@ const MeetTheTeam = () => {
         <Link to={"https://www.linkedin.com/in/lnmclaughlin/"}>LinkedIn</Link>
         <Link to={"https://github.com/lnmclaughlin"}>Github</Link>
       </div>
+      <Link to="/">
+        <button>Return Home</button>
+      </Link>
     </div>
   );
 };

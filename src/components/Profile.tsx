@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import "./Profile.css";
 
@@ -17,6 +18,9 @@ const Profile = () => {
           </li>
         ))}
       </ul>
+      <Link to="/">
+        <button>Return Home</button>
+      </Link>
     </div>
   );
 };

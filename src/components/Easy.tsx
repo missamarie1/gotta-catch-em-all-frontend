@@ -5,7 +5,7 @@ import "./Easy.css";
 import EasyOne from "./EasyOne";
 import EasyThree from "./EasyThree";
 import EasyTwo from "./EasyTwo";
-import Score from "./Score";
+import Summary from "./Summary";
 
 const Easy = () => {
   const { questionsAnswered, setCurrentPokemonID, currentPokemonID } =
@@ -32,7 +32,7 @@ const Easy = () => {
       ) : questionsAnswered === 2 ? (
         <EasyThree />
       ) : (
-        <Score />
+        <Summary />
       )}
     </div>
   );
