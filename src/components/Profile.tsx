@@ -10,11 +10,12 @@ const Profile = () => {
     <div className="Profile">
       <h2>{account?.userName}</h2>
       <img src={account?.avatar} />
+      <p>Pokemon Collection:</p>
       <ul>
         {account?.caught.map((pokemon, index) => (
           <li key={pokemon.id + index}>
-            <p>{pokemon.name}</p>
             <img src={pokemon.image} alt={pokemon.name} />
+            <p>{pokemon.name}</p>
           </li>
         ))}
       </ul>

@@ -26,7 +26,12 @@ const LeaderBoard = () => {
   return (
     <div className="LeaderBoard">
       <h2>LeaderBoard</h2>
-      <ol>
+      <div className="titles">
+        <p>Rank</p>
+        <p>Name</p>
+        <p>Collected</p>
+      </div>
+      <ul>
         {leaderboard?.map((item, index) => (
           <li>
             <p>{index + 1}.</p>
@@ -35,7 +40,7 @@ const LeaderBoard = () => {
             <p>{item.caught.length}</p>
           </li>
         ))}
-      </ol>
+      </ul>
       <Link to="/">
         <button>Return Home</button>
       </Link>
