@@ -1,5 +1,4 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
@@ -11,15 +10,8 @@ const EasyOne = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
-  const {
-    currentScore,
-    updateScore,
-    setCurrentPokemonID,
-    questionsAnswered,
-    setQuestionsAnswered,
-    currentPokemonID,
-  } = useContext(GameContext);
-  const navigate = useNavigate();
+  const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
+    useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
@@ -71,7 +63,7 @@ const EasyOne = () => {
           } hp`}
           style={{ width: getPercent(currentScore) }}
         >
-          HP: {getPercent(currentScore)}
+          <p className="hp-text">HP: {getPercent(currentScore)}</p>
         </div>
       </div>
       {effect && (

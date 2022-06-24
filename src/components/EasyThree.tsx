@@ -10,7 +10,7 @@ const EasyThree = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<number[]>([]);
   const [selected3, setSelected3] = useState(0);
-  const { currentPokemonID, currentScore, updateScore, setQuestionsAnswered } =
+  const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
     useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
@@ -58,7 +58,7 @@ const EasyThree = () => {
           } hp`}
           style={{ width: getPercent(currentScore) }}
         >
-          HP: {getPercent(currentScore)}
+          <p className="hp-text">HP: {getPercent(currentScore)}</p>
         </div>
       </div>
       {effect && (
