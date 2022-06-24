@@ -34,6 +34,7 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
     });
     setEasyPokemonToBeCaught(newArray);
   };
+
   useEffect(() => {
     // useEffect to only register once at start
     return auth.onAuthStateChanged((newUser) => {

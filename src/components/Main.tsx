@@ -1,18 +1,14 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import GameContext from "../context/GameContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Main.css";
 import Signup from "./Signup";
-import React from "react";
 
 const Main = () => {
   const { user, account } = useContext(AuthContext);
-  const { setQuestionsAnswered, setCurrentScore } = useContext(GameContext);
-
   const refreshPage = () => {
-    window.location.reload();
+    window.location.assign("/difficulty");
   };
 
   return (
@@ -25,22 +21,17 @@ const Main = () => {
         <Signup />
       ) : (
         <div className="Main">
-          <button
-            className="play"
-            onClick={refreshPage}
-            // onClick={() => {
-            //   setQuestionsAnswered(0);
-            //   setCurrentScore(3);
-            // }}
-          >
-            <Link to="/difficulty">Play</Link>
-          </button>
-          <button className="profile">
-            <Link to="/profile">Profile</Link>
-          </button>
-          <button className="leaderboard">
-            <Link to="/leaderboard">LeaderBoard</Link>
-          </button>
+          <Link to="/difficulty">
+            <button className="play" onClick={refreshPage}>
+              Play
+            </button>
+          </Link>
+          <Link to="/profile">
+            <button className="profile">Profile</button>
+          </Link>
+          <Link to="/leaderboard">
+            <button className="leaderboard">LeaderBoard</button>
+          </Link>
           <button className="signout" onClick={signOut}>
             Sign Out
           </button>

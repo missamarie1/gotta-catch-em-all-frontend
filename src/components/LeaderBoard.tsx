@@ -45,9 +45,9 @@ const LeaderBoard = () => {
           </li>
         ))}
       </ul>
-      <button>
-        <Link to="/">Return Home</Link>
-      </button>
+      <Link to="/">
+        <button>Return Home</button>
+      </Link>
     </div>
   );
 };

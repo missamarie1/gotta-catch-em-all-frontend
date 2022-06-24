@@ -8,11 +8,15 @@
 .Avatar li {
   list-style: none;
   width: 20%;
+  display: flex;
+  justify-content: center;
 }
+
 .Avatar img {
   width: 75px;
 }
+
 .Avatar .selected {
-  border: 1px solid gold;
+  border: 3px solid gold;
   box-sizing: border-box;
 }

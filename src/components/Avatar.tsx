@@ -34,6 +34,7 @@ interface Props {
   setAvatar: (a: string) => void;
   avatar: string;
 }
+
 const Avatar = ({ setAvatar, avatar }: Props) => {
   const avatars = [
     beauty,
@@ -68,15 +69,15 @@ const Avatar = ({ setAvatar, avatar }: Props) => {
     youngster,
   ];
 
-  console.log(avatar);
   return (
     <ul className="Avatar">
       {avatars.map((image) => (
-        <li
-          className={image === avatar ? "selected" : ""}
-          onClick={() => setAvatar(image)}
-        >
-          <img src={image} alt={image} />
+        <li onClick={() => setAvatar(image)}>
+          <img
+            className={image === avatar ? "selected" : ""}
+            src={image}
+            alt={image}
+          />
         </li>
       ))}
     </ul>
