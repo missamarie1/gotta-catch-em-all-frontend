@@ -35,7 +35,6 @@ const EasyOne = () => {
   useEffect(() => {
     if (currentPokemonID) {
       getRandomEasy(currentPokemonID).then((res) => {
-        console.log(res);
         setPokemon(res);
         setAnswers(getFourOptions(easyQOne, res.name));
       });

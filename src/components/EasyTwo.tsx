@@ -27,7 +27,6 @@ const EasyTwo = () => {
   useEffect(() => {
     if (currentPokemonID) {
       getRandomEasy(currentPokemonID).then((res) => {
-        console.log(res.types[0]);
         setPokemon(res);
         setAnswers(getFourOptions(easyQTwo, res.types[0].type.name));
       });

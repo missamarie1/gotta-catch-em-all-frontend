@@ -7,7 +7,6 @@ const Difficulty = () => {
   const [level, setLevel] = useState("easy");
   const { setChallengeLevel, challengeLevel, setGameInProgress } =
     useContext(GameContext);
-  console.log(challengeLevel);
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     setChallengeLevel(level);

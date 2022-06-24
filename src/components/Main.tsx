@@ -5,10 +5,16 @@ import GameContext from "../context/GameContext";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Main.css";
 import Signup from "./Signup";
+import React from "react";
 
 const Main = () => {
   const { user, account } = useContext(AuthContext);
   const { setQuestionsAnswered, setCurrentScore } = useContext(GameContext);
+
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="Main">
       {!user ? (
@@ -21,10 +27,11 @@ const Main = () => {
         <div className="Main">
           <button
             className="play"
-            onClick={() => {
-              setQuestionsAnswered(0);
-              setCurrentScore(3);
-            }}
+            onClick={refreshPage}
+            // onClick={() => {
+            //   setQuestionsAnswered(0);
+            //   setCurrentScore(3);
+            // }}
           >
             <Link to="/difficulty">Play</Link>
           </button>

@@ -40,7 +40,6 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
       setUser(newUser);
       if (newUser) {
         checkForAccount(newUser.uid).then((res) => {
-          console.log(res);
           if (res.length !== 0) {
             setAccount(res[0]);
             setAvailiblePokemonPool(res[0]);

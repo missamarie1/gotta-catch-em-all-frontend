@@ -28,7 +28,6 @@ const Summary = () => {
   useEffect(() => {
     if (currentPokemonID) {
       getRandomEasy(currentPokemonID).then((res) => {
-        console.log(res);
         setPokemon(res);
         if (currentScore === 1) {
           setCaught(result2);
