@@ -100,7 +100,6 @@ export const easyQthree = [
   130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144,
   145, 145, 146, 147, 148, 149, 150, 151,
 ];
-
 export const twoThirds = [true, true, false];
 export const oneThirds = [true, false, false];
 export function getRandomItem(arr: boolean[]) {
