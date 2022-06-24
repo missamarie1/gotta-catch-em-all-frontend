@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import { deleteAccount } from "../services/AccountService";
 import "./Profile.css";
 
 const Profile = () => {
   const { account } = useContext(AuthContext);
+  const deleteHandler = (id: string): void => {
+    deleteAccount(id);
+    window.location.assign("/");
+  };
 
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -25,9 +30,16 @@ const Profile = () => {
           </li>
         ))}
       </ul>
-      <button>
-        <Link to="/">Return Home</Link>
+      <button
+        onClick={() => {
+          deleteHandler(account?._id!);
+        }}
+      >
+        Delete Account
       </button>
+      <Link to="/">
+        <button>Return Home</button>
+      </Link>
     </div>
   );
 };

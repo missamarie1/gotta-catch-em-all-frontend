@@ -79,7 +79,6 @@ const Summary = () => {
       ) : (
         <h2>Wild {pokemon?.name} has Fled!</h2>
       )}
-
       <button>
         <Link to="/">Return Home</Link>
       </button>

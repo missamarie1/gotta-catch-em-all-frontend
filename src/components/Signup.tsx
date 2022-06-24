@@ -22,10 +22,10 @@ const Signup = () => {
       setAccount(res);
     });
   };
-  console.log(avatar);
+
   return (
     <div className="Signup">
-      <form onSubmit={submitHandler}>
+      <form className="signup-form" onSubmit={submitHandler}>
         <label htmlFor="username">Create Username:</label>
         <input
           type="text"
