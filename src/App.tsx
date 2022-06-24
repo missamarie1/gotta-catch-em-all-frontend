@@ -6,6 +6,7 @@ import Difficulty from "./components/Difficulty";
 import Profile from "./components/Profile";
 import MeetTheTeam from "./components/MeetTheTeam";
 import Main from "./components/Main";
+import Details from "./components/Details";
 
 function App() {
   return (
