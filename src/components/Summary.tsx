@@ -28,7 +28,6 @@ const Summary = () => {
   useEffect(() => {
     if (currentPokemonID) {
       getRandomEasy(currentPokemonID).then((res) => {
-        console.log(res);
         setPokemon(res);
         if (currentScore === 1) {
           setCaught(result2);
@@ -67,15 +66,18 @@ const Summary = () => {
 
   return (
     <div className="Summary">
-      <p>{}</p>
       <div className="image-container">
-        <img src={player} alt="player" />
-        <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
+        <img src={player} alt="player" id="player" />
+        <img
+          src={pokemon?.sprites.front_default}
+          alt={pokemon?.name}
+          id="pokemon"
+        />
       </div>
       {caught ? (
         <h2>Gotcha! {pokemon?.name} was caught!</h2>
       ) : (
-        <h2>Wild {pokemon?.name} Fled</h2>
+        <h2>Wild {pokemon?.name} has Fled!</h2>
       )}
 
       <button>

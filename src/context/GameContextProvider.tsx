@@ -13,9 +13,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  useEffect(() => {
-    console.log(currentPokemonID);
-  }, [currentPokemonID]);
+  useEffect(() => {}, [currentPokemonID]);
   return (
     <GameContext.Provider
       value={{

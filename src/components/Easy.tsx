@@ -18,7 +18,6 @@ const Easy = () => {
         easyPokemonToBeCaught[
           Math.floor(Math.random() * easyPokemonToBeCaught.length)
         ];
-      console.log(randomEasy, "test");
 
       setCurrentPokemonID(randomEasy);
     }

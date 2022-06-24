@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <header className="Header">
       <img src={logo} alt="pokemon" />
-      <h1>Gotta Catch Em All</h1>
+      <div className="gotta-catch-em-all">
+        <h1>GOTTA CATCH EM ALL</h1>
+      </div>
     </header>
   );
 };

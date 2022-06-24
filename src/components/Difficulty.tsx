@@ -7,7 +7,6 @@ const Difficulty = () => {
   const [level, setLevel] = useState("easy");
   const { setChallengeLevel, challengeLevel, setGameInProgress } =
     useContext(GameContext);
-  console.log(challengeLevel);
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
     setChallengeLevel(level);
@@ -16,7 +15,8 @@ const Difficulty = () => {
   return (
     <div className="Difficulty">
       {challengeLevel === "" && (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className="difficulty-form">
+          <h2>Select Difficulty:</h2>
           <select onChange={(e) => setLevel(e.target.value)} value={level}>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>

@@ -3,23 +3,26 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-family: "Press Start 2P", cursive;
 }
 
 .App h2 {
-  margin-bottom: 25px;
+  margin: 25px 0;
 }
 
 .App .hp-container {
   width: 200px;
+  margin: 10px;
+  border: 1px solid white;
 }
 
 .App .hp {
-  height: 20px;
-  border: 1px solid white;
-  text-align: center;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App .full {
@@ -34,44 +37,74 @@
   background-color: red;
 }
 
-.App .image-container {
-  height: 100px;
-  width: 175px;
-}
 .App .effect {
   color: #3761a8;
+  font-size: 20px;
 }
 
-.App .question-container {
+.App .image-container {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  display: flex;
+  position: relative;
+}
+
+.App #player {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.App #pokemon {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.App .difficulty-form {
   display: flex;
   flex-direction: column;
 }
 
-.App form {
-  /* height: 200px; */
+.App .question-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  text-align: center;
+}
+
+.App .answer-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.App .answer {
+  display: flex;
 }
 
 .App .username-input {
-  width: 360px;
+  width: 400px;
   margin: 5px;
   padding: 15px;
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 24px;
   border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
 }
 
 .App select {
   width: 400px;
   margin: 5px;
   padding: 15px;
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 24px;
   border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
 }
 
 .App button {
@@ -80,11 +113,17 @@
   padding: 20px;
   background-color: #feca1b;
   color: #3761a8;
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 24px;
   border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
 }
 
 .App button:hover {
   cursor: pointer;
+}
+
+.App a,
+a:visited {
+  text-decoration: none;
+  color: #3761a8;
 }

@@ -3,14 +3,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
 }
 
-.Header img {
-  width: 50vw;
+.Header .gotta-catch-em-all {
+  text-align: center;
 }
 
 .Header h1 {
   color: #feca1b;
-  /* font-size: 48px; */
 }

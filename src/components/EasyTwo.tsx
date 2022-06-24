@@ -27,7 +27,6 @@ const EasyTwo = () => {
   useEffect(() => {
     if (currentPokemonID) {
       getRandomEasy(currentPokemonID).then((res) => {
-        console.log(res.types[0]);
         setPokemon(res);
         setAnswers(getFourOptions(easyQTwo, res.types[0].type.name));
       });
@@ -68,10 +67,6 @@ const EasyTwo = () => {
           HP: {getPercent(currentScore)}
         </div>
       </div>
-      <div className="image-container">
-        <img src={player} alt="player" />
-        <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
-      </div>
       {effect && (
         <p className="effect">
           {selected2 === pokemon?.types[0].type.name
@@ -79,11 +74,18 @@ const EasyTwo = () => {
             : "Your attack had no effect!"}
         </p>
       )}
-
+      <div className="image-container">
+        <img src={player} alt="player" id="player" />
+        <img
+          src={pokemon?.sprites.front_default}
+          alt={pokemon?.name}
+          id="pokemon"
+        />
+      </div>
       {pokemon && answers?.length > 0 && (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className="question-form">
           <h2>What's it's type?</h2>
-          <div className="question-container">
+          <div className="answer-container">
             <div className="answer">
               <input
                 type="radio"
