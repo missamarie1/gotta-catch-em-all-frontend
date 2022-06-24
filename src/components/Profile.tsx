@@ -8,14 +8,13 @@ import "./Profile.css";
 
 const Profile = () => {
   const { account } = useContext(AuthContext);
-
   const [showDetails, setShowDetails] = useState(false);
-  const [thisPokemon, setThisPokemon] = useState<PokemonEasy>();
+  const [pokemonDetails, setPokemonDetails] = useState<PokemonEasy>();
 
   const renderDetails = (id: number): void => {
     setShowDetails(true);
     getRandomEasy(id).then((res) => {
-      setThisPokemon(res);
+      setPokemonDetails(res);
     });
   };
 
@@ -33,15 +32,16 @@ const Profile = () => {
   return (
     <div className="Profile">
       {showDetails && (
-        <div className="pokemon-background">
-          <div className="pokemon-card">
-            {/* <img
-              src={thisPokemon.sprites.front_default}
-              alt={thisPokemon.name}
-            /> */}
-            <p>{thisPokemon?.name}</p>
-            <p>{thisPokemon?.types[0].type.name}</p>
-            <p>{thisPokemon?.id}</p>
+        <div className="details-container">
+          <div className="pokemon-details">
+            <h2>Pokedex:</h2>
+            <img
+              src={pokemonDetails?.sprites.front_default}
+              alt={pokemonDetails?.name}
+            />
+            <p>Name: {pokemonDetails?.name}</p>
+            <p>Type: {pokemonDetails?.types[0].type.name}</p>
+            <p>Number: {pokemonDetails?.id}</p>
             <button onClick={() => setShowDetails(false)}>Close</button>
           </div>
         </div>

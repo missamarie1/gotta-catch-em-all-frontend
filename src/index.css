@@ -4,7 +4,136 @@
 }
 
 body {
+  height: 100%;
+  margin: 25px;
   background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   font-family: "Press Start 2P", cursive;
-  margin: 20px;
+}
+
+h2 {
+  margin: 25px 0;
+}
+
+.hp-container {
+  width: 200px;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+.hp {
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full {
+  background-color: green;
+}
+
+.two-thirds {
+  background-color: gold;
+}
+
+.one-thirds {
+  background-color: red;
+}
+
+.effect {
+  color: #3761a8;
+  font-size: 20px;
+}
+
+.image-container {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  display: flex;
+  position: relative;
+}
+
+#player {
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#pokemon {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.difficulty-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.answer-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.answer {
+  margin: 5px;
+  display: flex;
+}
+
+.username-input {
+  width: 400px;
+  margin: 5px;
+  padding: 15px;
+  font-size: 24px;
+  border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+}
+
+select {
+  width: 400px;
+  margin: 5px;
+  padding: 15px;
+  font-size: 24px;
+  border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+}
+
+button {
+  width: 400px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #feca1b;
+  color: #3761a8;
+  font-size: 24px;
+  border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #3761a8;
 }
