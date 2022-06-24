@@ -74,10 +74,6 @@ const EasyOne = () => {
           HP: {getPercent(currentScore)}
         </div>
       </div>
-      <div className="image-container">
-        <img src={player} alt="player" />
-        <img src={pokemon?.sprites.front_default} alt={pokemon?.name} />
-      </div>
       {effect && (
         <p className="effect">
           {selected === pokemon?.name
@@ -85,10 +81,18 @@ const EasyOne = () => {
             : "Your attack had no effect!"}
         </p>
       )}
+      <div className="image-container">
+        <img src={player} alt="player" id="player" />
+        <img
+          src={pokemon?.sprites.front_default}
+          alt={pokemon?.name}
+          id="pokemon"
+        />
+      </div>
       {pokemon && answers?.length > 0 && (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className="question-form">
           <h2>Who's that Pokémon?</h2>
-          <div className="question-container">
+          <div className="answer-container">
             <div className="answer">
               <input
                 type="radio"

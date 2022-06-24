@@ -25,19 +25,23 @@ const LeaderBoard = () => {
 
   return (
     <div className="LeaderBoard">
-      <h2>LeaderBoard</h2>
+      <h2>LeaderBoard:</h2>
       <div className="titles">
         <p>Rank</p>
-        <p>Name</p>
-        <p>Collected</p>
+        <p>Player</p>
+        <p>Score</p>
       </div>
       <ul>
         {leaderboard?.map((item, index) => (
           <li>
             <p>{index + 1}.</p>
             <img src={item.avatar} alt="" />
-            <p>{item.userName}</p>
-            <p>{item.caught.length}</p>
+            <div className="leaderboard-player">
+              <p>{item.userName}</p>
+            </div>
+            <div className="leaderboard-score">
+              <p>{item.caught.length}</p>
+            </div>
           </li>
         ))}
       </ul>

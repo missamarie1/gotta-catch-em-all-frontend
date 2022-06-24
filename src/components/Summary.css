@@ -1,10 +1,6 @@
 .Summary {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-}
-.Summary h2 {
-  margin-top: 5px;
-  text-align: center;
 }
