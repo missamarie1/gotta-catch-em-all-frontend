@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import { Pokemon } from "../models/Account";
@@ -12,14 +12,8 @@ import player from "../assets/player.webp";
 
 const Summary = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
-  const {
-    currentPokemonID,
-    currentScore,
-    setGameInProgress,
-    gameInProgress,
-    setQuestionsAnswered,
-    setCurrentScore,
-  } = useContext(GameContext);
+  const { currentPokemonID, currentScore, setGameInProgress, gameInProgress } =
+    useContext(GameContext);
   const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
     useContext(AuthContext);
   const [caught, setCaught] = useState(true);
@@ -38,10 +32,8 @@ const Summary = () => {
         setPokemon(res);
         if (currentScore === 1) {
           setCaught(result2);
-          // console.log(result2);
         } else if (currentScore === 2) {
           setCaught(result1);
-          // console.log(result1);
         } else if (currentScore === 3) {
           setCaught(false);
         }

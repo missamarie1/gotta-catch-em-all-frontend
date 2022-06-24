@@ -19,23 +19,21 @@ const Main = () => {
         <Signup />
       ) : (
         <div className="Main">
-          <Link to="/difficulty">
-            <button
-              className="play"
-              onClick={() => {
-                setQuestionsAnswered(0);
-                setCurrentScore(3);
-              }}
-            >
-              Play
-            </button>
-          </Link>
-          <Link to="/profile">
-            <button className="profile">Profile</button>
-          </Link>
-          <Link to="/leaderboard">
-            <button className="leaderboard">LeaderBoard</button>
-          </Link>
+          <button
+            className="play"
+            onClick={() => {
+              setQuestionsAnswered(0);
+              setCurrentScore(3);
+            }}
+          >
+            <Link to="/difficulty">Play</Link>
+          </button>
+          <button className="profile">
+            <Link to="/profile">Profile</Link>
+          </button>
+          <button className="leaderboard">
+            <Link to="/leaderboard">LeaderBoard</Link>
+          </button>
           <button className="signout" onClick={signOut}>
             Sign Out
           </button>

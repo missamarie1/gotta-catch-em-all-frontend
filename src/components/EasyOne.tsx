@@ -51,7 +51,7 @@ const EasyOne = () => {
     setEffect(true);
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(1);
-    }, 1000);
+    }, 1500);
     if (selected === pokemon?.name) {
       updateScore();
     }
