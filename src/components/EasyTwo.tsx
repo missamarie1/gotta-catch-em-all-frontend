@@ -2,7 +2,8 @@ import { FormEvent, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
 import { PokemonEasy } from "../models/Pokemon";
 import { getRandomEasy } from "../services/PokemonService";
-import { easyQTwo, getFourOptions } from "../services/PossibleAnswers";
+import { getFourOptions } from "../services/Answers";
+import { easyQTwo } from "../services/EasyAnswers";
 import "./EasyTwo.css";
 import player from "../assets/player.webp";
 

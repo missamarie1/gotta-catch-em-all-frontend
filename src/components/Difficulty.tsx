@@ -2,6 +2,8 @@ import { FormEvent, useContext, useState } from "react";
 import GameContext from "../context/GameContext";
 import Easy from "./Easy";
 import "./Difficulty.css";
+import Hard from "./Hard";
+import Med from "./Med";
 
 const Difficulty = () => {
   const [level, setLevel] = useState("easy");
@@ -26,6 +28,8 @@ const Difficulty = () => {
         </form>
       )}
       {challengeLevel === "easy" && <Easy />}
+      {challengeLevel === "med" && <Med />}
+      {challengeLevel === "hard" && <Hard />}
     </div>
   );
 };

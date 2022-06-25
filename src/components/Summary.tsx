@@ -6,7 +6,7 @@ import { Pokemon } from "../models/Account";
 import { PokemonEasy } from "../models/Pokemon";
 import { capturedPokemon, checkForAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
-import { oneThirds, twoThirds } from "../services/PossibleAnswers";
+import { oneThirds, twoThirds } from "../services/Answers";
 import "./Summary.css";
 import player from "../assets/player.webp";
 

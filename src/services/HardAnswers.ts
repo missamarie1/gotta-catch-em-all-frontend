@@ -21,6 +21,7 @@ export const hardQOne = [
   "unknown",
   "shadow",
 ];
+
 const hardPokemon = [
   {
     name: "venusaur",
