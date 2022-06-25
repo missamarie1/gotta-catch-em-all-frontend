@@ -43,7 +43,7 @@ const EasyTwo = () => {
     setEffect(true);
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(2);
-    }, 1500);
+    }, 1250);
 
     if (selected2 === pokemon?.types[0].type.name) {
       updateScore();

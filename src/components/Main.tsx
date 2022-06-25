@@ -20,7 +20,7 @@ const Main = () => {
       ) : user && !account ? (
         <Signup />
       ) : (
-        <div className="Main">
+        <div className="main-menu">
           <Link to="/difficulty">
             <button className="play" onClick={refreshPage}>
               Play

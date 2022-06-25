@@ -32,16 +32,6 @@ const Profile = () => {
 
   return (
     <div className="Profile">
-      {showPokedex && (
-        <div className="pokedex">
-          <h2>Pokedex:</h2>
-          <img src={pokedex?.sprites.front_default} alt={pokedex?.name} />
-          <p>Name: {pokedex?.name}</p>
-          <p>Type: {pokedex?.types[0].type.name}</p>
-          <p>Number: {pokedex?.id}</p>
-          <button onClick={() => setShowPokedex(false)}>Close</button>
-        </div>
-      )}
       <h2>{account?.userName}</h2>
       <img src={account?.avatar} id="profile-avatar" />
       <p>Pokemon Collection:</p>
@@ -56,6 +46,16 @@ const Profile = () => {
           </li>
         ))}
       </ul>
+      {showPokedex && (
+        <div className="pokedex">
+          <h2>Pokedex:</h2>
+          <img src={pokedex?.sprites.front_default} alt={pokedex?.name} />
+          <p>Name: {pokedex?.name}</p>
+          <p>Type: {pokedex?.types[0].type.name}</p>
+          <p>Number: {pokedex?.id}</p>
+          <button onClick={() => setShowPokedex(false)}>Close</button>
+        </div>
+      )}
       <button onClick={() => setShowDelete(true)}>Delete Account</button>
       {showDelete && (
         <div className="delete">
