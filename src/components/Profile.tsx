@@ -8,13 +8,14 @@ import "./Profile.css";
 
 const Profile = () => {
   const { account } = useContext(AuthContext);
-  const [showDetails, setShowDetails] = useState(false);
-  const [pokemonDetails, setPokemonDetails] = useState<PokemonEasy>();
+  const [showPokedex, setShowPokedex] = useState(false);
+  const [pokedex, setPokedex] = useState<PokemonEasy>();
+  const [showDelete, setShowDelete] = useState(false);
 
-  const renderDetails = (id: number): void => {
-    setShowDetails(true);
+  const renderPokedex = (id: number): void => {
+    setShowPokedex(true);
     getRandomEasy(id).then((res) => {
-      setPokemonDetails(res);
+      setPokedex(res);
     });
   };
 
@@ -31,19 +32,14 @@ const Profile = () => {
 
   return (
     <div className="Profile">
-      {showDetails && (
-        <div className="details-container">
-          <div className="pokemon-details">
-            <h2>Pokedex:</h2>
-            <img
-              src={pokemonDetails?.sprites.front_default}
-              alt={pokemonDetails?.name}
-            />
-            <p>Name: {pokemonDetails?.name}</p>
-            <p>Type: {pokemonDetails?.types[0].type.name}</p>
-            <p>Number: {pokemonDetails?.id}</p>
-            <button onClick={() => setShowDetails(false)}>Close</button>
-          </div>
+      {showPokedex && (
+        <div className="pokedex">
+          <h2>Pokedex:</h2>
+          <img src={pokedex?.sprites.front_default} alt={pokedex?.name} />
+          <p>Name: {pokedex?.name}</p>
+          <p>Type: {pokedex?.types[0].type.name}</p>
+          <p>Number: {pokedex?.id}</p>
+          <button onClick={() => setShowPokedex(false)}>Close</button>
         </div>
       )}
       <h2>{account?.userName}</h2>
@@ -52,7 +48,7 @@ const Profile = () => {
       <ul>
         {account?.caught.map((pokemon, index) => (
           <li
-            onClick={() => renderDetails(pokemon.id)}
+            onClick={() => renderPokedex(pokemon.id)}
             key={pokemon.id + index}
           >
             <img src={pokemon.image} alt={pokemon.name} />
@@ -60,13 +56,23 @@ const Profile = () => {
           </li>
         ))}
       </ul>
-      <button
-        onClick={() => {
-          deleteHandler(account?._id!);
-        }}
-      >
-        Delete Account
-      </button>
+      <button onClick={() => setShowDelete(true)}>Delete Account</button>
+      {showDelete && (
+        <div className="delete">
+          <p>
+            Are you sure you would like to delete your account? All of your
+            Pokemon will be released back into the wild!
+          </p>
+          <button
+            onClick={() => {
+              deleteHandler(account?._id!);
+            }}
+          >
+            Yes
+          </button>
+          <button onClick={() => setShowDelete(false)}>No</button>
+        </div>
+      )}
       <Link to="/">
         <button>Return Home</button>
       </Link>

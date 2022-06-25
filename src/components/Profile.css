@@ -3,25 +3,18 @@
   flex-direction: column;
   align-items: center;
 }
-.Profile .details-container {
-  height: 100%;
+
+.Profile .pokedex {
   width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: crimson;
-  z-index: 1;
-}
-
-.Profile .pokemon-details {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: crimson;
+  z-index: 1;
 }
 
 .Profile #profile-avatar {
@@ -42,4 +35,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.Profile .delete {
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: #3761a8;
+  color: #feca1b;
+  z-index: 1;
 }
