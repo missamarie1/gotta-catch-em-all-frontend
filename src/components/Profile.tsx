@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import { PokemonEasy } from "../models/Pokemon";
+import { PokemonEasy } from "../models/PokemonEasy";
 import { deleteAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
 import "./Profile.css";

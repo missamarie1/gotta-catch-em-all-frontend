@@ -21,7 +21,7 @@ const Difficulty = () => {
           <h2>Select Difficulty:</h2>
           <select onChange={(e) => setLevel(e.target.value)} value={level}>
             <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
+            <option value="med">Medium</option>
             <option value="hard">Hard</option>
           </select>
           <button className="select button">Select</button>

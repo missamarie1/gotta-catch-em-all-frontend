@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import { Pokemon } from "../models/Account";
-import { PokemonEasy } from "../models/Pokemon";
+import { PokemonEasy } from "../models/PokemonEasy";
 import { capturedPokemon, checkForAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
 import { oneThirds, twoThirds } from "../services/Answers";

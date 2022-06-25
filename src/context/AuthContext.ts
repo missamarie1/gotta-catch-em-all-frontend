@@ -8,6 +8,8 @@ export interface AuthContextModel {
   setAccount: (a: Account) => void;
   isCaught: (id: number) => boolean;
   easyPokemonToBeCaught: number[];
+  medPokemonToBeCaught: number[];
+  hardPokemonToBeCaught: number[];
   setAvailiblePokemonPool: (acc: Account) => void;
 }
 
@@ -17,6 +19,8 @@ const defaultValue: AuthContextModel = {
   setAccount: () => {},
   isCaught: () => false,
   easyPokemonToBeCaught: [],
+  medPokemonToBeCaught: [],
+  hardPokemonToBeCaught: [],
   setAvailiblePokemonPool: () => {},
 };
 

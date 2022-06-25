@@ -4,12 +4,18 @@ import { auth } from "../firebaseConfig";
 import AuthContext from "./AuthContext";
 import { Account } from "../models/Account";
 import { checkForAccount } from "../services/AccountService";
-import { easy } from "../services/PokemonService";
+import { easy, med, hard } from "../services/PokemonService";
 
 function AuthContextProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [account, setAccount] = useState<Account | null>(null);
   const [easyPokemonToBeCaught, setEasyPokemonToBeCaught] = useState<number[]>(
+    []
+  );
+  const [medPokemonToBeCaught, setMedPokemonToBeCaught] = useState<number[]>(
+    []
+  );
+  const [hardPokemonToBeCaught, setHardPokemonToBeCaught] = useState<number[]>(
     []
   );
   const isCaught = (id: number) => {
@@ -58,6 +64,8 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
         setAccount,
         isCaught,
         easyPokemonToBeCaught,
+        medPokemonToBeCaught,
+        hardPokemonToBeCaught,
         setAvailiblePokemonPool,
       }}
     >
