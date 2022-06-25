@@ -32,6 +32,9 @@ const Main = () => {
           <Link to="/leaderboard">
             <button className="leaderboard">LeaderBoard</button>
           </Link>
+          <Link to="/meet-the-team">
+            <button className="meet-the-team">Meet the Team</button>
+          </Link>
           <button className="signout" onClick={signOut}>
             Sign Out
           </button>

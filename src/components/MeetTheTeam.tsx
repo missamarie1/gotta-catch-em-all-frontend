@@ -5,8 +5,7 @@ const MeetTheTeam = () => {
   return (
     <div className="MeetTheTeam">
       <h2>Meet The Team</h2>
-      <div className="creator moe">
-        <img src="" alt="" />
+      <div className="dev moe">
         <p>
           Highly motivated Javascript programmer known for an ability to adapt
           to any situation and very communicative. Gained experience and
@@ -15,11 +14,12 @@ const MeetTheTeam = () => {
           for success. Detail-oriented, reliable, and committed to providing the
           highest degree of service excellence.
         </p>
-        <Link to={"https://www.linkedin.com/in/maurice-mason/"}>LinkedIn</Link>
-        <Link to={"https://github.com/Momason97"}>Github</Link>
+        <div>
+          <a href="https://www.linkedin.com/in/maurice-mason/">LinkedIn</a>
+          <a href="https://github.com/Momason97">Github</a>
+        </div>
       </div>
-      <div className="creator duy">
-        <img src="" alt="" />
+      <div className="dev duy">
         <p>
           Before becoming a software engineer, I managed small businesses in the
           cosmetics industry for over 7 years. During that time, I had a
@@ -33,11 +33,10 @@ const MeetTheTeam = () => {
           successfully transition into a role as a web developer with a focus on
           simple, intuitive and effective software design.
         </p>
-        <Link to={"https://www.linkedin.com/in/dvpham89/"}>LinkedIn</Link>
-        <Link to={"https://github.com/dvpham89"}>Github</Link>
+        <a href="https://www.linkedin.com/in/dvpham89/">LinkedIn</a>
+        <a href="https://github.com/dvpham89">Github</a>
       </div>
-      <div className="creator marissa">
-        <img src="" alt="" />
+      <div className="dev marissa">
         <p>
           Currently studying the Full Stack JavaScript bootcamp at Grand Circus.
           I am transitioning from the cosmetology and food industries to tech,
@@ -48,13 +47,10 @@ const MeetTheTeam = () => {
           work I enjoy traveling and being out in nature whether it be walking,
           bonfires, and dirt bikes!
         </p>
-        <Link to={"https://www.linkedin.com/in/marissa-jacklyn/"}>
-          LinkedIn
-        </Link>
-        <Link to={"https://github.com/missamarie1"}>Github</Link>
+        <a href="https://www.linkedin.com/in/marissa-jacklyn/">LinkedIn</a>
+        <a href="https://github.com/missamarie1">Github</a>
       </div>
-      <div>
-        <img>Laurie</img>
+      <div className="dev laurie">
         <p>
           Adaptable, goal-oriented developer known for a patient and caring
           communication approach. Gained valuable experiences in non-profit and
@@ -63,8 +59,8 @@ const MeetTheTeam = () => {
           Detail-oriented, reliable, and committed to providing the highest
           degree of service excellence.
         </p>
-        <Link to={"https://www.linkedin.com/in/lnmclaughlin/"}>LinkedIn</Link>
-        <Link to={"https://github.com/lnmclaughlin"}>Github</Link>
+        <a href="https://www.linkedin.com/in/lnmclaughlin/">LinkedIn</a>
+        <a href="https://github.com/lnmclaughlin">Github</a>
       </div>
       <button>
         <Link to="/">Return Home</Link>

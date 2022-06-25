@@ -112,7 +112,8 @@ select {
   text-align: center;
 }
 
-button {
+button,
+button:hover {
   width: 400px;
   margin: 10px;
   padding: 20px;
@@ -121,14 +122,12 @@ button {
   font-size: 24px;
   border-radius: 15px;
   font-family: "Press Start 2P", cursive;
-}
-
-button:hover {
   cursor: pointer;
 }
 
 a,
 a:visited {
+  padding: 5px;
   text-decoration: none;
   color: #3761a8;
 }
