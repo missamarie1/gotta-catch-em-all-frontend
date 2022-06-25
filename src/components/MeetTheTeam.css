@@ -1,8 +1,16 @@
 .MeetTheTeam {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.dev {
+  width: 750px;
+  margin: 25px;
+}
+
+.dev img {
+  width: 200px;
+  margin: 10px;
 }

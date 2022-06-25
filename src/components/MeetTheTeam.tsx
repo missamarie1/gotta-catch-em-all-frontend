@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import "./MeetTheTeam.css";
+import Maurice from "../assets/team/Maurice.png";
+import Duy from "../assets/team/Duy.jpg";
+import Marissa from "../assets/team/Marissa.jpg";
+import Laurie from "../assets/team/Laurie.jpg";
 
 const MeetTheTeam = () => {
   return (
     <div className="MeetTheTeam">
       <h2>Meet The Team</h2>
       <div className="dev moe">
+        <h3>Moe</h3>
+        <img src={Maurice} alt="Moe" />
         <p>
           Highly motivated Javascript programmer known for an ability to adapt
           to any situation and very communicative. Gained experience and
@@ -14,12 +20,12 @@ const MeetTheTeam = () => {
           for success. Detail-oriented, reliable, and committed to providing the
           highest degree of service excellence.
         </p>
-        <div>
-          <a href="https://www.linkedin.com/in/maurice-mason/">LinkedIn</a>
-          <a href="https://github.com/Momason97">Github</a>
-        </div>
+        <a href="https://www.linkedin.com/in/maurice-mason/">LinkedIn</a>
+        <a href="https://github.com/Momason97">Github</a>
       </div>
       <div className="dev duy">
+        <h3>Duy</h3>
+        <img src={Duy} alt="Duy" />
         <p>
           Before becoming a software engineer, I managed small businesses in the
           cosmetics industry for over 7 years. During that time, I had a
@@ -37,6 +43,8 @@ const MeetTheTeam = () => {
         <a href="https://github.com/dvpham89">Github</a>
       </div>
       <div className="dev marissa">
+        <h3>Marissa</h3>
+        <img src={Marissa} alt="Marissa" />
         <p>
           Currently studying the Full Stack JavaScript bootcamp at Grand Circus.
           I am transitioning from the cosmetology and food industries to tech,
@@ -51,6 +59,8 @@ const MeetTheTeam = () => {
         <a href="https://github.com/missamarie1">Github</a>
       </div>
       <div className="dev laurie">
+        <h3>Laurie</h3>
+        <img src={Laurie} alt="Laurie" />
         <p>
           Adaptable, goal-oriented developer known for a patient and caring
           communication approach. Gained valuable experiences in non-profit and
