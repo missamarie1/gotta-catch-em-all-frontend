@@ -14,6 +14,7 @@ function App() {
     src: [
       "https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ncplxpiydy/03%20Title%20Screen.mp3",
     ],
+    volume: 0.1,
   });
 
   return (
