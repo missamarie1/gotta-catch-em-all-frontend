@@ -13,3 +13,17 @@
   color: #feca1b;
   margin: 25px;
 }
+
+.Header .fa-volume-high {
+  position: fixed;
+  top: 25px;
+  right: 23px;
+  font-size: 24px;
+}
+
+.Header .fa-volume-xmark {
+  position: fixed;
+  top: 50px;
+  right: 25px;
+  font-size: 24px;
+}

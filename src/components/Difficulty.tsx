@@ -4,6 +4,7 @@ import Easy from "./Easy";
 import "./Difficulty.css";
 import Hard from "./Hard";
 import Med from "./Med";
+import { Link } from "react-router-dom";
 
 const Difficulty = () => {
   const [level, setLevel] = useState("easy");
@@ -32,6 +33,9 @@ const Difficulty = () => {
       {challengeLevel === "easy" && <Easy />}
       {challengeLevel === "med" && <Med />}
       {challengeLevel === "hard" && <Hard />}
+      <button>
+        <Link to="/">Return Home</Link>
+      </button>
     </div>
   );
 };
