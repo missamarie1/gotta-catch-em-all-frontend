@@ -1,13 +1,9 @@
 import axios from "axios";
-import { Account, Pokemon } from "../models/Account";
+import { Account, CaughtPokemon } from "../models/Account";
 
 const accountBaseUrl = process.env.REACT_APP_API_URL || "";
 
 export const checkForAccount = (uid: string): Promise<Account[]> => {
-  return axios.get(`${accountBaseUrl}/account/${uid}`).then((res) => res.data);
-};
-
-export const getAccount = (uid: string): Promise<Account> => {
   return axios.get(`${accountBaseUrl}/account/${uid}`).then((res) => res.data);
 };
 
@@ -27,7 +23,7 @@ export const deleteAccount = (id: string): Promise<void> => {
 
 export const capturedPokemon = (
   id: string,
-  newPokemon: Pokemon
+  newPokemon: CaughtPokemon
 ): Promise<void> => {
   return axios
     .put(`${accountBaseUrl}/account/${id}`, newPokemon)

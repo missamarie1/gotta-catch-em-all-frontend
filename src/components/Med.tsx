@@ -8,20 +8,20 @@ import MedTwo from "./MedTwo";
 import Summary from "./Summary";
 
 const Med = () => {
-  const { questionsAnswered, setCurrentPokemonID, currentPokemonID } =
+  const { questionsAnswered, currentPokemon, getAndSetPokemon } =
     useContext(GameContext);
   const { medPokemonToBeCaught } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!currentPokemonID) {
+    if (!currentPokemon) {
       let randomMed =
         medPokemonToBeCaught[
           Math.floor(Math.random() * medPokemonToBeCaught.length)
         ];
 
-      setCurrentPokemonID(randomMed);
+      getAndSetPokemon("med", randomMed);
     }
-  }, [currentPokemonID]);
+  }, [currentPokemon]);
 
   return (
     <div className="Med">

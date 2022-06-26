@@ -1,4 +1,4 @@
-export interface Pokemon {
+export interface CaughtPokemon {
   id: number;
   name: string;
   image: string;
@@ -9,5 +9,5 @@ export interface Account {
   uid: string;
   userName: string;
   avatar?: string;
-  caught: Pokemon[];
+  caught: CaughtPokemon[];
 }

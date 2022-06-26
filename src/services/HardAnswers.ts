@@ -1,3 +1,5 @@
+import { Pokemon } from "../models/Pokemon";
+
 //double damage against
 export const hardQOne = [
   "normal",
@@ -22,7 +24,7 @@ export const hardQOne = [
   "shadow",
 ];
 
-const hardPokemon = [
+export const hardPokemon: Pokemon[] = [
   {
     id: 3,
     name: "venusaur",

@@ -1,17 +1,14 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
-import { PokemonEasy } from "../models/PokemonEasy";
-import { getRandomEasy } from "../services/PokemonService";
 import { getFourOptions } from "../services/Answers";
 import { easyQOne } from "../services/EasyAnswers";
 import "./EasyOne.css";
 import player from "../assets/player.webp";
 
 const EasyOne = () => {
-  const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
-  const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
+  const { currentPokemon, currentScore, setQuestionsAnswered, updateScore } =
     useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
@@ -27,17 +24,14 @@ const EasyOne = () => {
   }
 
   useEffect(() => {
-    if (currentPokemonID) {
-      getRandomEasy(currentPokemonID).then((res) => {
-        setPokemon(res);
-        setAnswers(getFourOptions(easyQOne, res.name));
-      });
+    if (currentPokemon) {
+      setAnswers(getFourOptions(easyQOne, currentPokemon.name));
     }
     return () => {
       clearTimeout(myTimeout);
       setEffect(false);
     };
-  }, [currentPokemonID]);
+  }, [currentPokemon]);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +39,7 @@ const EasyOne = () => {
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(1);
     }, 1250);
-    if (selected === pokemon?.name) {
+    if (selected === currentPokemon?.name) {
       updateScore();
     }
   };
@@ -70,7 +64,7 @@ const EasyOne = () => {
       </div>
       {effect && (
         <p className="effect">
-          {selected === pokemon?.name
+          {selected === currentPokemon?.name
             ? "Your attack was super effective!"
             : "Your attack had no effect!"}
         </p>
@@ -78,12 +72,12 @@ const EasyOne = () => {
       <div className="image-container">
         <img src={player} alt="player" id="player" />
         <img
-          src={pokemon?.sprites.front_default}
-          alt={pokemon?.name}
+          src={currentPokemon?.sprites?.front_default}
+          alt={currentPokemon?.name}
           id="pokemon"
         />
       </div>
-      {pokemon && answers?.length > 0 && (
+      {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
           <h2>Who's that Pokémon?</h2>
           <div className="answer-container">

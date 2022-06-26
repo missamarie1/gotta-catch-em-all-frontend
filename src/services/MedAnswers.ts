@@ -1,3 +1,5 @@
+import { Pokemon } from "../models/Pokemon";
+
 //abilities
 export const medQOne = [
   "overgrow",
@@ -131,7 +133,7 @@ export const medQThree = [
   "no evolution",
 ];
 
-export const medPokemon = [
+export const medPokemon: Pokemon[] = [
   {
     id: 2,
     name: "ivysaur",

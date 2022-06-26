@@ -1,6 +1,5 @@
 import axios from "axios";
-import { PokemonEasy } from "../models/PokemonEasy";
-import { PokemonMed } from "../models/PokemonMed";
+import { Pokemon } from "../models/Pokemon";
 
 const pokemonBaseUrl = process.env.REACT_APP_POKEMON_BASE_URL || "";
 
@@ -22,14 +21,6 @@ export const hard = [
   134, 135, 136, 142, 143, 144, 145, 146, 149, 150, 151,
 ];
 
-export const getRandomEasy = (id: number): Promise<PokemonEasy> => {
-  return axios.get(`${pokemonBaseUrl}/pokemon/${id}`).then((res) => res.data);
-};
-
-export const getRandomMed = (id: number): Promise<PokemonMed> => {
-  return axios.get(`${pokemonBaseUrl}/pokemon/${id}`).then((res) => res.data);
-};
-
-export const getRandomHard = (id: number): Promise<PokemonMed> => {
+export const getRandomEasy = (id: number): Promise<Pokemon> => {
   return axios.get(`${pokemonBaseUrl}/pokemon/${id}`).then((res) => res.data);
 };

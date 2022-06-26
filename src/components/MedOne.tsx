@@ -1,18 +1,15 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
-import { PokemonMed } from "../models/PokemonMed";
-import { getRandomMed } from "../services/PokemonService";
 import { getFourOptions } from "../services/Answers";
 import { medQOne } from "../services/MedAnswers";
 import "./MedOne.css";
 import player from "../assets/player.webp";
 
 const MedOne = () => {
-  const [pokemon, setPokemon] = useState<PokemonMed>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
   const [effect, setEffect] = useState(false);
-  const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
+  const { currentPokemon, currentScore, setQuestionsAnswered, updateScore } =
     useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
@@ -27,17 +24,14 @@ const MedOne = () => {
   }
 
   useEffect(() => {
-    if (currentPokemonID) {
-      getRandomMed(currentPokemonID).then((res) => {
-        setPokemon(res);
-        setAnswers(getFourOptions(medQOne, res.name));
-      });
+    if (currentPokemon) {
+      setAnswers(getFourOptions(medQOne, currentPokemon.name));
     }
     return () => {
       clearTimeout(myTimeout);
       setEffect(false);
     };
-  }, [currentPokemonID]);
+  }, [currentPokemon]);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +39,7 @@ const MedOne = () => {
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(1);
     }, 1500);
-    if (selected === pokemon?.name) {
+    if (selected === currentPokemon?.name) {
       updateScore();
     }
   };
@@ -70,7 +64,7 @@ const MedOne = () => {
       </div>
       {effect && (
         <p className="effect">
-          {selected === pokemon?.name
+          {selected === currentPokemon?.name
             ? "Your attack was super effective!"
             : "Your attack had no effect!"}
         </p>
@@ -83,7 +77,7 @@ const MedOne = () => {
           id="pokemon"
         /> */}
       </div>
-      {pokemon && answers?.length > 0 && (
+      {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
           <h2>Who's that Pokémon?</h2>
           <div className="answer-container">

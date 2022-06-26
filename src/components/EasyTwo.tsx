@@ -1,18 +1,15 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
-import { PokemonEasy } from "../models/PokemonEasy";
-import { getRandomEasy } from "../services/PokemonService";
 import { getFourOptions } from "../services/Answers";
 import { easyQTwo } from "../services/EasyAnswers";
 import "./EasyTwo.css";
 import player from "../assets/player.webp";
 
 const EasyTwo = () => {
-  const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected2, setSelected2] = useState("");
   const [effect, setEffect] = useState(false);
-  const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
+  const { currentPokemon, currentScore, setQuestionsAnswered, updateScore } =
     useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
@@ -27,17 +24,14 @@ const EasyTwo = () => {
   }
 
   useEffect(() => {
-    if (currentPokemonID) {
-      getRandomEasy(currentPokemonID).then((res) => {
-        setPokemon(res);
-        setAnswers(getFourOptions(easyQTwo, res.types[0].type.name));
-      });
+    if (currentPokemon && currentPokemon.types) {
+      setAnswers(getFourOptions(easyQTwo, currentPokemon.types[0].type.name));
     }
     return () => {
       clearTimeout(myTimeout);
       setEffect(false);
     };
-  }, [currentPokemonID]);
+  }, [currentPokemon]);
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
@@ -46,7 +40,10 @@ const EasyTwo = () => {
       setQuestionsAnswered(2);
     }, 1250);
 
-    if (selected2 === pokemon?.types[0].type.name) {
+    if (
+      currentPokemon?.types &&
+      selected2 === currentPokemon?.types[0].type.name
+    ) {
       updateScore();
     }
   };
@@ -71,7 +68,8 @@ const EasyTwo = () => {
       </div>
       {effect && (
         <p className="effect">
-          {selected2 === pokemon?.types[0].type.name
+          {currentPokemon?.types &&
+          selected2 === currentPokemon?.types[0].type.name
             ? "Your attack was super effective!"
             : "Your attack had no effect!"}
         </p>
@@ -79,12 +77,12 @@ const EasyTwo = () => {
       <div className="image-container">
         <img src={player} alt="player" id="player" />
         <img
-          src={pokemon?.sprites.front_default}
-          alt={pokemon?.name}
-          id="pokemon"
+          src={currentPokemon?.sprites?.front_default}
+          alt={currentPokemon?.name}
+          id="currentPokemon"
         />
       </div>
-      {pokemon && answers?.length > 0 && (
+      {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
           <h2>What's it's type?</h2>
           <div className="answer-container">

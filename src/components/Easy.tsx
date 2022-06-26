@@ -8,19 +8,19 @@ import EasyTwo from "./EasyTwo";
 import Summary from "./Summary";
 
 const Easy = () => {
-  const { questionsAnswered, setCurrentPokemonID, currentPokemonID } =
+  const { questionsAnswered, currentPokemon, getAndSetPokemon } =
     useContext(GameContext);
   const { easyPokemonToBeCaught } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!currentPokemonID) {
+    if (!currentPokemon) {
       let randomEasy =
         easyPokemonToBeCaught[
           Math.floor(Math.random() * easyPokemonToBeCaught.length)
         ];
-      setCurrentPokemonID(randomEasy);
+      getAndSetPokemon("easy", randomEasy);
     }
-  }, [currentPokemonID]);
+  }, [currentPokemon]);
 
   return (
     <div className="Easy">

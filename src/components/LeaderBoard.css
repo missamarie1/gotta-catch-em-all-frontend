@@ -12,20 +12,20 @@
   margin-bottom: 25px;
 }
 
-.LeaderBoard ul {
+.LeaderBoard .leaderboard-ul {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
 }
 
-.LeaderBoard li {
+.LeaderBoard .leaderboard-li {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.LeaderBoard li img {
+.LeaderBoard .leaderboard-li-img {
   height: 48px;
   margin: 5px;
 }
@@ -42,11 +42,38 @@
   width: 100%;
   height: 100%;
   position: fixed;
+  overflow-y: scroll;
   top: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   background-color: #3761a8;
   z-index: 1;
+}
+
+.LeaderBoard .rival-avatar {
+  height: 100px;
+  margin-bottom: 25px;
+}
+
+.LeaderBoard .rival-profile-ul {
+  width: 960px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.LeaderBoard .rival-profile-li {
+  list-style: none;
+  font-size: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.LeaderBoard .rival-profile-img {
+  height: 96px;
 }

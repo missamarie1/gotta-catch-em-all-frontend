@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Account } from "../models/Account";
-import { getAccount, getAllAccounts } from "../services/AccountService";
+import { checkForAccount, getAllAccounts } from "../services/AccountService";
 import "./LeaderBoard.css";
 
 const LeaderBoard = () => {
@@ -17,8 +17,9 @@ const LeaderBoard = () => {
 
   const renderRivalProfile = (uid: string): void => {
     setShowRivalProfile(true);
-    getAccount(uid).then((res) => {
-      setRivalProfile(res);
+    checkForAccount(uid).then((res) => {
+      setRivalProfile(res[0]);
+      console.log(res);
     });
   };
 
@@ -41,11 +42,11 @@ const LeaderBoard = () => {
         <p>Player</p>
         <p>Score</p>
       </div>
-      <ul>
+      <ul className="leaderboard-ul">
         {leaderboard?.map((user, index) => (
-          <li>
+          <li className="leaderboard-li">
             <p>{index + 1}.</p>
-            <img src={user.avatar} alt="" />
+            <img className="leaderboard-li-img" src={user.avatar} alt="" />
             <div className="leaderboard-player">
               <p onClick={() => renderRivalProfile(user.uid)}>
                 {user.userName}
@@ -60,8 +61,24 @@ const LeaderBoard = () => {
       {showRivalProfile && (
         <div className="rival-profile">
           <h2>{rivalProfile?.userName}</h2>
-          <img src={rivalProfile?.avatar} alt={rivalProfile?.avatar} />
-          <p>Pokemon Caught: {rivalProfile?.caught.length}</p>
+          <img
+            className="rival-avatar"
+            src={rivalProfile?.avatar}
+            alt={rivalProfile?.avatar}
+          />
+          <p>Pokemon Collection:</p>
+          <ul className="rival-profile-ul">
+            {rivalProfile?.caught.map((pokemon, index) => (
+              <li className="rival-profile-li" key={pokemon.id + index}>
+                <img
+                  className="rival-profile-img"
+                  src={pokemon.image}
+                  alt={pokemon.name}
+                />
+                <p>{toTitleCase(pokemon.name)}</p>
+              </li>
+            ))}
+          </ul>
           <button onClick={() => setShowRivalProfile(false)}>Close</button>
         </div>
       )}

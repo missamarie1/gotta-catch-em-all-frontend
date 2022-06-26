@@ -2,20 +2,17 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
-import { Pokemon } from "../models/Account";
-import { PokemonEasy } from "../models/PokemonEasy";
+import { CaughtPokemon } from "../models/Account";
 import { capturedPokemon, checkForAccount } from "../services/AccountService";
-import { getRandomEasy } from "../services/PokemonService";
 import { oneThirds, twoThirds } from "../services/Answers";
 import "./Summary.css";
 import player from "../assets/player.webp";
 
 const Summary = () => {
-  const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [caught, setCaught] = useState(true);
   const result1 = getRandomItem(oneThirds);
   const result2 = getRandomItem(twoThirds);
-  const { currentPokemonID, currentScore, setGameInProgress, gameInProgress } =
+  const { currentPokemon, currentScore, setGameInProgress, gameInProgress } =
     useContext(GameContext);
   const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
     useContext(AuthContext);
@@ -27,30 +24,27 @@ const Summary = () => {
   }
 
   useEffect(() => {
-    if (currentPokemonID) {
-      getRandomEasy(currentPokemonID).then((res) => {
-        setPokemon(res);
-        if (currentScore === 1) {
-          setCaught(result2);
-        } else if (currentScore === 2) {
-          setCaught(result1);
-        } else if (currentScore === 3) {
-          setCaught(false);
-        }
-      });
+    if (currentPokemon) {
+      if (currentScore === 1) {
+        setCaught(result2);
+      } else if (currentScore === 2) {
+        setCaught(result1);
+      } else if (currentScore === 3) {
+        setCaught(false);
+      }
     }
-  }, [currentPokemonID, caught]);
+  }, [currentPokemon, caught]);
 
   useEffect(() => {
-    if (caught && pokemon && account && gameInProgress) {
+    if (caught && currentPokemon && account && gameInProgress) {
       setGameInProgress(false);
       setAvailiblePokemonPool(account);
-      const newPokemon: Pokemon = {
-        name: pokemon?.name,
-        id: pokemon?.id,
-        image: pokemon?.sprites.front_default,
+      const newPokemon: CaughtPokemon = {
+        name: currentPokemon?.name,
+        id: currentPokemon?.id,
+        image: currentPokemon?.sprites?.front_default!,
       };
-      if (!isCaught(currentPokemonID)) {
+      if (!isCaught(currentPokemon.id)) {
         capturedPokemon(account?._id!, newPokemon).then(() => {
           checkForAccount(user?.uid!).then((res) => {
             console.log(res);
@@ -62,22 +56,22 @@ const Summary = () => {
         });
       }
     }
-  }, [caught, pokemon]);
+  }, [caught, currentPokemon]);
 
   return (
     <div className="Summary">
       <div className="image-container">
         <img src={player} alt="player" id="player" />
         <img
-          src={pokemon?.sprites.front_default}
-          alt={pokemon?.name}
+          src={currentPokemon?.sprites?.front_default}
+          alt={currentPokemon?.name}
           id="pokemon"
         />
       </div>
       {caught ? (
-        <h2>Gotcha! {pokemon?.name} was caught!</h2>
+        <h2>Gotcha! {currentPokemon?.name} was caught!</h2>
       ) : (
-        <h2>Wild {pokemon?.name} has Fled!</h2>
+        <h2>Wild {currentPokemon?.name} has Fled!</h2>
       )}
       <button>
         <Link to="/">Return Home</Link>

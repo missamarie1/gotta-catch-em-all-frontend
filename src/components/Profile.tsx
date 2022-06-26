@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import { PokemonEasy } from "../models/PokemonEasy";
+import { Pokemon } from "../models/Pokemon";
 import { deleteAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
 import "./Profile.css";
@@ -9,7 +9,7 @@ import "./Profile.css";
 const Profile = () => {
   const { account } = useContext(AuthContext);
   const [showPokedex, setShowPokedex] = useState(false);
-  const [pokedex, setPokedex] = useState<PokemonEasy>();
+  const [pokedex, setPokedex] = useState<Pokemon>();
   const [showDelete, setShowDelete] = useState(false);
 
   function toTitleCase(str: string) {
@@ -49,9 +49,9 @@ const Profile = () => {
       {showPokedex && (
         <div className="pokedex">
           <h2>Pokedex:</h2>
-          <img src={pokedex?.sprites.front_default} alt={pokedex?.name} />
+          <img src={pokedex?.sprites?.front_default} alt={pokedex?.name} />
           <p>Name: {pokedex?.name}</p>
-          <p>Type: {pokedex?.types[0].type.name}</p>
+          <p>Type: {pokedex?.types && pokedex?.types[0].type.name}</p>
           <p>Number: {pokedex?.id}</p>
           <button onClick={() => setShowPokedex(false)}>Close</button>
         </div>
