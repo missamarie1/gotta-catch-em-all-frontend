@@ -79,7 +79,7 @@ const EasyTwo = () => {
         <img
           src={currentPokemon?.sprites?.front_default}
           alt={currentPokemon?.name}
-          id="currentPokemon"
+          id="pokemon"
         />
       </div>
       {currentPokemon && answers?.length > 0 && (
