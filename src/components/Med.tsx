@@ -22,6 +22,7 @@ const Med = () => {
       setCurrentPokemonID(randomMed);
     }
   }, [currentPokemonID]);
+
   return (
     <div className="Med">
       {!questionsAnswered ? (
