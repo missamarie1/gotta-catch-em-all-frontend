@@ -4,6 +4,10 @@ import Maurice from "../assets/team/Maurice.png";
 import Duy from "../assets/team/Duy.jpg";
 import Marissa from "../assets/team/Marissa.jpg";
 import Laurie from "../assets/team/Laurie.jpg";
+import Blastoise from "../assets/team/blastoise.gif";
+import Charizard from "../assets/team/charizard.gif";
+import Pikachu from "../assets/team/pikachu.gif";
+import Venusaur from "../assets/team/venusaur.gif";
 
 const MeetTheTeam = () => {
   return (

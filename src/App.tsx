@@ -6,21 +6,10 @@ import Difficulty from "./components/Difficulty";
 import Profile from "./components/Profile";
 import MeetTheTeam from "./components/MeetTheTeam";
 import Main from "./components/Main";
-import { Howl } from "howler";
 
 function App() {
-  // music
-  const music = new Howl({
-    src: [
-      "https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ncplxpiydy/03%20Title%20Screen.mp3",
-    ],
-    volume: 0.1,
-  });
-
   return (
     <div className="App">
-      <i className="fa-solid fa-volume-high" onClick={() => music.play()}></i>
-      <i className="fa-solid fa-volume-xmark" onClick={() => music.stop()}></i>
       <Router>
         <Header />
         <Routes>
