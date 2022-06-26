@@ -12,6 +12,12 @@ const Profile = () => {
   const [pokedex, setPokedex] = useState<PokemonEasy>();
   const [showDelete, setShowDelete] = useState(false);
 
+  function toTitleCase(str: string) {
+    return str.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
   const renderPokedex = (id: number): void => {
     setShowPokedex(true);
     getRandomEasy(id).then((res) => {
@@ -23,12 +29,6 @@ const Profile = () => {
     deleteAccount(id);
     window.location.assign("/");
   };
-
-  function toTitleCase(str: string) {
-    return str.replace(/\w\S*/g, function (txt) {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-  }
 
   return (
     <div className="Profile">

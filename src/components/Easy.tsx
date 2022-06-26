@@ -18,10 +18,10 @@ const Easy = () => {
         easyPokemonToBeCaught[
           Math.floor(Math.random() * easyPokemonToBeCaught.length)
         ];
-
       setCurrentPokemonID(randomEasy);
     }
   }, [currentPokemonID]);
+
   return (
     <div className="Easy">
       {!questionsAnswered ? (

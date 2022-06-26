@@ -11,12 +11,13 @@ const MedOne = () => {
   const [pokemon, setPokemon] = useState<PokemonMed>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
+  const [effect, setEffect] = useState(false);
   const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
     useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
-  const [effect, setEffect] = useState(false);
+
   let myTimeout: any;
 
   function toTitleCase(str: string) {

@@ -11,12 +11,13 @@ const EasyTwo = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
   const [answers, setAnswers] = useState<string[]>([]);
   const [selected2, setSelected2] = useState("");
+  const [effect, setEffect] = useState(false);
   const { currentPokemonID, currentScore, setQuestionsAnswered, updateScore } =
     useContext(GameContext);
   const getPercent = (currentScore: number): string => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
-  const [effect, setEffect] = useState(false);
+
   let myTimeout: any;
 
   function toTitleCase(str: string) {

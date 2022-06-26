@@ -12,18 +12,19 @@ import player from "../assets/player.webp";
 
 const Summary = () => {
   const [pokemon, setPokemon] = useState<PokemonEasy>();
+  const [caught, setCaught] = useState(true);
+  const result1 = getRandomItem(oneThirds);
+  const result2 = getRandomItem(twoThirds);
   const { currentPokemonID, currentScore, setGameInProgress, gameInProgress } =
     useContext(GameContext);
   const { account, setAccount, user, setAvailiblePokemonPool, isCaught } =
     useContext(AuthContext);
-  const [caught, setCaught] = useState(true);
+
   function getRandomItem(array: boolean[]) {
     const randomIndex = Math.floor(Math.random() * array.length);
     const item = array[randomIndex];
     return item;
   }
-  const result1 = getRandomItem(oneThirds);
-  const result2 = getRandomItem(twoThirds);
 
   useEffect(() => {
     if (currentPokemonID) {
@@ -49,7 +50,6 @@ const Summary = () => {
         id: pokemon?.id,
         image: pokemon?.sprites.front_default,
       };
-
       if (!isCaught(currentPokemonID)) {
         capturedPokemon(account?._id!, newPokemon).then(() => {
           checkForAccount(user?.uid!).then((res) => {

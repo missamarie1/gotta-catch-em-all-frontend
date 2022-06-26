@@ -17,6 +17,7 @@ const EasyOne = () => {
     return `${((currentScore / 3) * 100).toFixed(0)}%`;
   };
   const [effect, setEffect] = useState(false);
+
   let myTimeout: any;
 
   function toTitleCase(str: string) {
