@@ -33,9 +33,6 @@ const Difficulty = () => {
       {challengeLevel === "easy" && <Easy />}
       {challengeLevel === "med" && <Med />}
       {challengeLevel === "hard" && <Hard />}
-      <button>
-        <Link to="/">Return Home</Link>
-      </button>
     </div>
   );
 };

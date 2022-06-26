@@ -39,7 +39,6 @@ const EasyThree = () => {
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(3);
     }, 1250);
-
     if (selected3 === pokemon?.id) {
       updateScore();
     }
