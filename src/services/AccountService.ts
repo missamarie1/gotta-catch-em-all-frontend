@@ -11,6 +11,15 @@ export const getAllAccounts = (): Promise<Account[]> => {
   return axios.get(`${accountBaseUrl}/account`).then((res) => res.data);
 };
 
+export const capturedPokemon = (
+  id: string,
+  newPokemon: CaughtPokemon
+): Promise<void> => {
+  return axios
+    .put(`${accountBaseUrl}/account/${id}`, newPokemon)
+    .then((res) => res.data);
+};
+
 export const makeNewAccount = (newAccount: Account): Promise<Account> => {
   return axios
     .post(`${accountBaseUrl}/account`, newAccount)
@@ -19,13 +28,4 @@ export const makeNewAccount = (newAccount: Account): Promise<Account> => {
 
 export const deleteAccount = (id: string): Promise<void> => {
   return axios.delete(`${accountBaseUrl}/account/${id}`);
-};
-
-export const capturedPokemon = (
-  id: string,
-  newPokemon: CaughtPokemon
-): Promise<void> => {
-  return axios
-    .put(`${accountBaseUrl}/account/${id}`, newPokemon)
-    .then((res) => res.data);
 };
