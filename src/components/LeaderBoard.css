@@ -37,3 +37,16 @@
 .LeaderBoard .leaderboard-score {
   width: 75px;
 }
+
+.LeaderBoard .rival-profile {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3761a8;
+  z-index: 1;
+}
