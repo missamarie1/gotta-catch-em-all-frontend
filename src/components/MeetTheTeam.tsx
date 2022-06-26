@@ -24,8 +24,20 @@ const MeetTheTeam = () => {
           for success. Detail-oriented, reliable, and committed to providing the
           highest degree of service excellence.
         </p>
-        <a href="https://www.linkedin.com/in/maurice-mason/">LinkedIn</a>
-        <a href="https://github.com/Momason97">Github</a>
+        <a
+          href="https://www.linkedin.com/in/maurice-mason/"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/Momason97"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
       </div>
       <div className="dev duy">
         <h3>Duy</h3>
@@ -43,8 +55,20 @@ const MeetTheTeam = () => {
           successfully transition into a role as a web developer with a focus on
           simple, intuitive and effective software design.
         </p>
-        <a href="https://www.linkedin.com/in/dvpham89/">LinkedIn</a>
-        <a href="https://github.com/dvpham89">Github</a>
+        <a
+          href="https://www.linkedin.com/in/dvpham89/"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/dvpham89"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
       </div>
       <div className="dev marissa">
         <h3>Marissa</h3>
@@ -73,8 +97,20 @@ const MeetTheTeam = () => {
           Detail-oriented, reliable, and committed to providing the highest
           degree of service excellence.
         </p>
-        <a href="https://www.linkedin.com/in/lnmclaughlin/">LinkedIn</a>
-        <a href="https://github.com/lnmclaughlin">Github</a>
+        <a
+          href="https://www.linkedin.com/in/lnmclaughlin/"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/lnmclaughlin"
+          target="blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
       </div>
       <button>
         <Link to="/">Return Home</Link>
