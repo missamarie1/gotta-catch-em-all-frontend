@@ -13,6 +13,11 @@ export interface GameContextModel {
   setGameInProgress: (b: boolean) => void;
   currentPokemon: Pokemon | null;
   getAndSetPokemon: (s: string, n: number) => void;
+  caught: boolean;
+  setCaught: (b: boolean) => void;
+  setCurrentPokemon: (pokemon: Pokemon | null) => void;
+  // currentPokemonAPI: Pokemon | null;
+  // setCurrentPokemonAPI: (id: number) => void;
 }
 
 const defaultValues: GameContextModel = {
@@ -27,6 +32,11 @@ const defaultValues: GameContextModel = {
   setGameInProgress: () => {},
   currentPokemon: null,
   getAndSetPokemon: () => {},
+  caught: false,
+  setCaught: () => {},
+  setCurrentPokemon: () => {},
+  // currentPokemonAPI: null,
+  // setCurrentPokemonAPI: () => {},
 };
 
 const GameContext = createContext(defaultValues);
