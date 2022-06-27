@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@types/howler": "^2.2.7",
     "@types/react-howler": "^5.2.0"
   }
 }
