@@ -4,6 +4,9 @@
   justify-content: center;
   align-items: center;
 }
+.Header img {
+  width: 90vw;
+}
 
 .Header .gotta-catch-em-all {
   text-align: center;
