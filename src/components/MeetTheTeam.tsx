@@ -29,14 +29,14 @@ const MeetTheTeam = () => {
           target="blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          <i className="fa-brands fa-linkedin"></i>
         </a>
         <a
           href="https://github.com/Momason97"
           target="blank"
           rel="noopener noreferrer"
         >
-          Github
+          <i className="fa-brands fa-github"></i>
         </a>
       </div>
       <div className="dev duy">
@@ -60,14 +60,14 @@ const MeetTheTeam = () => {
           target="blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          <i className="fa-brands fa-linkedin"></i>
         </a>
         <a
           href="https://github.com/dvpham89"
           target="blank"
           rel="noopener noreferrer"
         >
-          Github
+          <i className="fa-brands fa-github"></i>
         </a>
       </div>
       <div className="dev marissa">
@@ -83,8 +83,12 @@ const MeetTheTeam = () => {
           work I enjoy traveling and being out in nature whether it be walking,
           bonfires, and dirt bikes!
         </p>
-        <a href="https://www.linkedin.com/in/marissa-jacklyn/">LinkedIn</a>
-        <a href="https://github.com/missamarie1">Github</a>
+        <a href="https://www.linkedin.com/in/marissa-jacklyn/">
+          <i className="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/missamarie1">
+          <i className="fa-brands fa-github"></i>
+        </a>
       </div>
       <div className="dev laurie">
         <h3>Laurie</h3>
@@ -102,14 +106,14 @@ const MeetTheTeam = () => {
           target="blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          <i className="fa-brands fa-linkedin"></i>
         </a>
         <a
           href="https://github.com/lnmclaughlin"
           target="blank"
           rel="noopener noreferrer"
         >
-          Github
+          <i className="fa-brands fa-github"></i>
         </a>
       </div>
       <button>

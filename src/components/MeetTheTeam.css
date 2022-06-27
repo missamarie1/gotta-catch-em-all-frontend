@@ -4,6 +4,9 @@
   align-items: center;
   text-align: center;
 }
+.MeetTheTeam h2 {
+  color: #3761a8;
+}
 
 .MeetTheTeam .dev {
   width: 750px;
@@ -13,4 +16,14 @@
 .MeetTheTeam .dev img {
   width: 200px;
   margin: 10px;
+}
+
+.MeetTheTeam p {
+  padding: 10px;
+  line-height: 1.75em;
+  color: #feca1b;
+}
+
+.MeetTheTeam .fa-brands {
+  font-size: 50px;
 }
