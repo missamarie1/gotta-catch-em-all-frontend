@@ -32,13 +32,29 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
     acc.caught.forEach((pokemon) => {
       caughtPokemonIDs.push(pokemon.id);
     });
-    const newArray: number[] = [];
+    const newEasyArray: number[] = [];
     easy.forEach((pokemon) => {
       if (!caughtPokemonIDs.includes(pokemon)) {
-        newArray.push(pokemon);
+        newEasyArray.push(pokemon);
       }
     });
-    setEasyPokemonToBeCaught(newArray);
+    setEasyPokemonToBeCaught(newEasyArray);
+
+    const newMedArray: number[] = [];
+    med.forEach((pokemon) => {
+      if (!caughtPokemonIDs.includes(pokemon)) {
+        newMedArray.push(pokemon);
+      }
+    });
+    setMedPokemonToBeCaught(newMedArray);
+
+    const newHardArray: number[] = [];
+    hard.forEach((pokemon) => {
+      if (!caughtPokemonIDs.includes(pokemon)) {
+        newHardArray.push(pokemon);
+      }
+    });
+    setHardPokemonToBeCaught(newHardArray);
   };
 
   useEffect(() => {

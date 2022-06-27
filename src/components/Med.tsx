@@ -18,6 +18,7 @@ const Med = () => {
         medPokemonToBeCaught[
           Math.floor(Math.random() * medPokemonToBeCaught.length)
         ];
+      console.log(randomMed);
 
       getAndSetPokemon("med", randomMed);
     }

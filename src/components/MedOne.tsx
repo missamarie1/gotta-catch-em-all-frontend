@@ -25,7 +25,9 @@ const MedOne = () => {
 
   useEffect(() => {
     if (currentPokemon) {
-      setAnswers(getFourOptions(medQOne, currentPokemon.name));
+      console.log(currentPokemon);
+
+      setAnswers(getFourOptions(medQOne, currentPokemon.abilities!));
     }
     return () => {
       clearTimeout(myTimeout);
@@ -39,7 +41,7 @@ const MedOne = () => {
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(1);
     }, 1500);
-    if (selected === currentPokemon?.name) {
+    if (selected === currentPokemon?.abilities) {
       updateScore();
     }
   };
@@ -64,22 +66,22 @@ const MedOne = () => {
       </div>
       {effect && (
         <p className="effect">
-          {selected === currentPokemon?.name
+          {selected === currentPokemon?.abilities
             ? "Your attack was super effective!"
             : "Your attack had no effect!"}
         </p>
       )}
       <div className="image-container">
         <img src={player} alt="player" id="player" />
-        {/* <img
-          src={pokemon?.sprites.front_default}
-          alt={pokemon?.name}
+        <img
+          src={currentPokemon?.sprites?.front_default}
+          alt={currentPokemon?.name}
           id="pokemon"
-        /> */}
+        />
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>Who's that Pokémon?</h2>
+          <h2>What ability does this Pokemon have?</h2>
           <div className="answer-container">
             <div className="answer">
               <input
