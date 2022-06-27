@@ -44,6 +44,9 @@
   background-color: crimson;
   z-index: 1;
 }
+.Profile .pokedex img {
+  width: 150px;
+}
 
 .Profile .delete {
   width: 50%;
