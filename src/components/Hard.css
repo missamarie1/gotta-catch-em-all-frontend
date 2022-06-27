@@ -1,0 +1,8 @@
+.Hard input {
+    display: none;
+  }
+  
+  .Hard input:checked + label {
+    padding: 5px;
+    border: 3px solid gold;
+  }

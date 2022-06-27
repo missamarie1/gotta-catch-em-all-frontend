@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import GameContext from "../context/GameContext";
 import { Pokemon } from "../models/Pokemon";
 import { deleteAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
@@ -8,6 +9,7 @@ import "./Profile.css";
 
 const Profile = () => {
   const { account } = useContext(AuthContext);
+  const { totalScore } = useContext(GameContext);
   const [showPokedex, setShowPokedex] = useState(false);
   const [pokedex, setPokedex] = useState<Pokemon>();
   const [showDelete, setShowDelete] = useState(false);
@@ -34,6 +36,7 @@ const Profile = () => {
     <div className="Profile">
       <h2>{account?.userName}</h2>
       <img src={account?.avatar} id="profile-avatar" />
+      <p>{account?.totalScore}</p>
       <p>Pokemon Collection:</p>
       <ul>
         {account?.caught.map((pokemon, index) => (

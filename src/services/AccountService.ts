@@ -13,10 +13,10 @@ export const getAllAccounts = (): Promise<Account[]> => {
 
 export const capturedPokemon = (
   id: string,
-  newPokemon: CaughtPokemon
+  updatedInfo: any
 ): Promise<void> => {
   return axios
-    .put(`${accountBaseUrl}/account/${id}`, newPokemon)
+    .put(`${accountBaseUrl}/account/pokemon/${id}`, updatedInfo)
     .then((res) => res.data);
 };
 
@@ -29,3 +29,4 @@ export const makeNewAccount = (newAccount: Account): Promise<Account> => {
 export const deleteAccount = (id: string): Promise<void> => {
   return axios.delete(`${accountBaseUrl}/account/${id}`);
 };
+

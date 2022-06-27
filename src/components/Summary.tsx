@@ -8,8 +8,16 @@ import "./Summary.css";
 import player from "../assets/player.webp";
 
 const Summary = () => {
-  const { currentPokemon, caught } = useContext(GameContext);
-  const { account, user, setAccount, isCaught } = useContext(AuthContext);
+  const {
+    currentPokemon,
+    caught,
+    challengeLevel,
+    updateEasyScore,
+    updateHardScore,
+    updateMedScore,
+  } = useContext(GameContext);
+  const { account, user, setAccount, isCaught, setAvailiblePokemonPool } =
+    useContext(AuthContext);
 
   useEffect(() => {
     if (caught) {
@@ -22,11 +30,24 @@ const Summary = () => {
         capturedPokemon(account?._id!, newPokemon).then((res) => {
           checkForAccount(user?.uid!).then((res) => {
             setAccount(res[0]);
+            setAvailiblePokemonPool(res[0]);
           });
         });
       }
     }
   }, [caught]);
+
+  useEffect(() => {
+    if (caught && challengeLevel === "easy") {
+      updateEasyScore();
+    }
+    if (caught && challengeLevel === "med") {
+      updateMedScore();
+    }
+    if (caught && challengeLevel === "hard") {
+      updateHardScore();
+    }
+  }, []);
   return (
     <div className="Summary">
       <div className="image-container">

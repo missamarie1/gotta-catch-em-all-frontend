@@ -17,6 +17,7 @@ const Signup = () => {
       avatar,
       userName,
       caught: [],
+      totalScore: 0,
     };
     makeNewAccount(newAccount).then((res) => {
       setAccount(res);

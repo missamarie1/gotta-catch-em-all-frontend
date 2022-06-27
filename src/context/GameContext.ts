@@ -16,6 +16,10 @@ export interface GameContextModel {
   caught: boolean;
   setCaught: (b: boolean) => void;
   setCurrentPokemon: (pokemon: Pokemon | null) => void;
+  updateEasyScore: ()=>void;
+  updateMedScore: ()=>void;
+  updateHardScore: ()=>void;
+  totalScore: number
   // currentPokemonAPI: Pokemon | null;
   // setCurrentPokemonAPI: (id: number) => void;
 }
@@ -35,6 +39,10 @@ const defaultValues: GameContextModel = {
   caught: false,
   setCaught: () => {},
   setCurrentPokemon: () => {},
+  updateEasyScore: ()=>{},
+  updateMedScore: ()=>{},
+  updateHardScore: ()=>{},
+  totalScore: 0
   // currentPokemonAPI: null,
   // setCurrentPokemonAPI: () => {},
 };

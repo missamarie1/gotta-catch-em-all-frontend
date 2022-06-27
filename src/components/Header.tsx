@@ -3,7 +3,6 @@ import logo from "../assets/logo.png";
 import { Howl } from "howler";
 
 const Header = () => {
-  // music;
   const music = new Howl({
     src: [
       "https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ncplxpiydy/03%20Title%20Screen.mp3",
