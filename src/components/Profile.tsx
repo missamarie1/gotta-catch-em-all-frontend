@@ -9,7 +9,6 @@ import "./Profile.css";
 
 const Profile = () => {
   const { account } = useContext(AuthContext);
-  const { totalScore } = useContext(GameContext);
   const [showPokedex, setShowPokedex] = useState(false);
   const [pokedex, setPokedex] = useState<Pokemon>();
   const [showDelete, setShowDelete] = useState(false);
@@ -36,8 +35,9 @@ const Profile = () => {
     <div className="Profile">
       <h2>{account?.userName}</h2>
       <img src={account?.avatar} id="profile-avatar" />
-      <p>{account?.totalScore}</p>
-      <p>Pokemon Collection:</p>
+      <p>Total Score: {account?.totalScore}</p>
+      <p>Pokémon Caught: {account?.caught.length}</p>
+      <h3>Pokemon Collection:</h3>
       <ul>
         {account?.caught.map((pokemon, index) => (
           <li

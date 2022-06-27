@@ -8,6 +8,7 @@ const LeaderBoard = () => {
   const [leaderboard, setLeaderboard] = useState<Account[]>();
   const [showRivalProfile, setShowRivalProfile] = useState(false);
   const [rivalProfile, setRivalProfile] = useState<Account>();
+  const [filter, setFilter] = useState("pokemon");
 
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -24,23 +25,49 @@ const LeaderBoard = () => {
   };
 
   useEffect(() => {
-    getAllAccounts().then((res) => {
-      const sortedArray = res
-        .sort((one, other) => {
-          return other.caught.length - one.caught.length;
-        })
-        .slice(0, 10);
-      setLeaderboard(sortedArray);
-    });
-  }, []);
+    if (filter === "pokemon") {
+      getAllAccounts().then((res) => {
+        const sortedArray = res
+          .sort((one, other) => {
+            return other.caught.length - one.caught.length;
+          })
+          .slice(0, 10);
+        setLeaderboard(sortedArray);
+      });
+    } else if (filter === "score") {
+      getAllAccounts().then((res) => {
+        const sortedArray = res
+          .sort((one, other) => {
+            if (one.totalScore > other.totalScore) {
+              return -1;
+            } else if (one.totalScore < other.totalScore) {
+              return 1;
+            } else {
+              return 0;
+            }
+          })
+          .slice(0, 10);
+        setLeaderboard(sortedArray);
+      });
+    }
+  }, [filter]);
 
   return (
     <div className="LeaderBoard">
       <h2>LeaderBoard:</h2>
+      {filter === "score" ? (
+        <button onClick={() => setFilter("pokemon")}>
+          Sort by total Pokémon
+        </button>
+      ) : (
+        <button onClick={() => setFilter("score")}>
+          Sort by highest score
+        </button>
+      )}
       <div className="titles">
         <p>Rank</p>
         <p>Player</p>
-        <p>Score</p>
+        {filter === "score" ? <p>Score</p> : <p>Caught</p>}
       </div>
       <ul className="leaderboard-ul">
         {leaderboard?.map((user, index) => (
@@ -52,9 +79,15 @@ const LeaderBoard = () => {
                 {user.userName}
               </p>
             </div>
-            <div className="leaderboard-score">
-              <p>{user.caught.length}</p>
-            </div>
+            {filter === "score" ? (
+              <div className="leaderboard-score">
+                <p>{user.totalScore}</p>
+              </div>
+            ) : (
+              <div className="leaderboard-caught">
+                <p>{user.caught.length}</p>
+              </div>
+            )}
           </li>
         ))}
       </ul>

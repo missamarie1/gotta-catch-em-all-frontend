@@ -11,7 +11,6 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
   const [gameInProgress, setGameInProgress] = useState(false);
   const [caught, setCaught] = useState(true);
-  const [totalScore, setTotalScore] = useState(0);
   const [currentPokemon, setCurrentPokemon] = useState<Pokemon | null>(null);
 
   const OneThirdsChance = [false, false, true];
@@ -19,21 +18,6 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const updateScore = () => {
     setCurrentScore((prev) => {
       return prev - 1;
-    });
-  };
-  const updateEasyScore = () => {
-    setTotalScore((prev) => {
-      return prev + 1;
-    });
-  };
-  const updateMedScore = () => {
-    setTotalScore((prev) => {
-      return prev + 2;
-    });
-  };
-  const updateHardScore = () => {
-    setTotalScore((prev) => {
-      return prev + 3;
     });
   };
 
@@ -97,12 +81,6 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         caught,
         setCaught,
         setCurrentPokemon,
-        updateEasyScore,
-        updateHardScore,
-        updateMedScore,
-        totalScore,
-        // currentPokemonAPI,
-        // setCurrentPokemonAPI
       }}
     >
       {children}

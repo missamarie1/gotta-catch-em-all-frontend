@@ -13,7 +13,9 @@ const Header = () => {
   return (
     <header className="Header">
       <i className="fa-solid fa-volume-high" onClick={() => music.play()}></i>
+
       <i className="fa-solid fa-volume-xmark" onClick={() => music.stop()}></i>
+
       <img src={logo} alt="pokemon" />
       <div className="gotta-catch-em-all">
         <h1>GOTTA CATCH EM ALL</h1>

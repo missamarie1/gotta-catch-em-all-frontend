@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
@@ -8,14 +8,7 @@ import "./Summary.css";
 import player from "../assets/player.webp";
 
 const Summary = () => {
-  const {
-    currentPokemon,
-    caught,
-    challengeLevel,
-    updateEasyScore,
-    updateHardScore,
-    updateMedScore,
-  } = useContext(GameContext);
+  const { currentPokemon, caught, challengeLevel } = useContext(GameContext);
   const { account, user, setAccount, isCaught, setAvailiblePokemonPool } =
     useContext(AuthContext);
 
@@ -26,8 +19,21 @@ const Summary = () => {
         name: currentPokemon?.name!,
         image: currentPokemon?.sprites?.front_default!,
       };
+      let totalScore = 0;
+      if (challengeLevel === "easy") {
+        totalScore++;
+      } else if (challengeLevel === "med") {
+        totalScore += 2;
+      } else if (challengeLevel === "hard") {
+        totalScore += 3;
+      }
+
+      const body: any = {
+        newPokemon,
+        totalScore,
+      };
       if (!isCaught(currentPokemon?.id!)) {
-        capturedPokemon(account?._id!, newPokemon).then((res) => {
+        capturedPokemon(account?._id!, body).then(() => {
           checkForAccount(user?.uid!).then((res) => {
             setAccount(res[0]);
             setAvailiblePokemonPool(res[0]);
@@ -37,17 +43,6 @@ const Summary = () => {
     }
   }, [caught]);
 
-  useEffect(() => {
-    if (caught && challengeLevel === "easy") {
-      updateEasyScore();
-    }
-    if (caught && challengeLevel === "med") {
-      updateMedScore();
-    }
-    if (caught && challengeLevel === "hard") {
-      updateHardScore();
-    }
-  }, []);
   return (
     <div className="Summary">
       <div className="image-container">

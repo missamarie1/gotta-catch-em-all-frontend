@@ -8,7 +8,13 @@
   height: 100px;
   margin-bottom: 25px;
 }
-
+.Profile p {
+  line-height: 1.75;
+}
+.Profile h3 {
+  margin: 20px;
+  color: #3761a8;
+}
 .Profile ul {
   /* width: 960px; */
   display: flex;
