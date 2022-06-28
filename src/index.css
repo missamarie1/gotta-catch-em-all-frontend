@@ -101,6 +101,7 @@ h3 {
 .answer {
   padding: 5px;
   display: flex;
+  box-sizing: border-box;
 }
 
 .answer label:hover {
