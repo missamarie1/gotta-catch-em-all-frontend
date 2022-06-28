@@ -10,6 +10,7 @@
 }
 
 .Signup #username {
+  display: inline;
   height: 25px;
   width: 245px;
   margin: 5px;

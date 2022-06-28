@@ -4,35 +4,65 @@
   align-items: center;
   text-align: center;
 }
+
 .MeetTheTeam h2 {
   color: #3761a8;
 }
 
+.MeetTheTeam .team {
+  width: 75vw;
+  font-size: 12px;
+}
+
+.MeetTheTeam .card img {
+  height: 200px;
+  padding: 5px;
+}
+
 .MeetTheTeam .dev {
-  width: 750px;
-  margin: 25px;
+  margin: 5px;
+  padding: 5px;
 }
 
 .MeetTheTeam .dev img {
-  width: 200px;
-  margin: 10px;
+  height: 200px;
+  padding: 5px;
 }
 
 .MeetTheTeam p {
-  padding: 10px;
-  line-height: 1.75em;
+  padding: 5px;
+  line-height: 1.5em;
   color: #feca1b;
 }
 
 .MeetTheTeam .fa-brands {
+  padding: 5px;
   font-size: 50px;
 }
 
+.MeetTheTeam .thanks {
+  font-size: 12px;
+}
+
 @media only screen and (min-width: 768px) {
+  .MeetTheTeam .team {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+
+  .MeetTheTeam .dev {
+    flex: 1;
+    border: 1px solid #3761a8;
+  }
+
   .MeetTheTeam .thanks {
     display: flex;
     justify-content: space-around;
+    font-size: 16px;
   }
+
   .MeetTheTeam .thanks .dev {
     width: 500px;
   }
