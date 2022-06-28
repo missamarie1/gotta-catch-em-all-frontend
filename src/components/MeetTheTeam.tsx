@@ -27,7 +27,7 @@ const MeetTheTeam = () => {
       <h2>Meet the Team</h2>
       <p>Click to Flip</p>
       <div className="team">
-        <div className="dev moe">
+        <div className={showCardMM ? "card" : "dev"}>
           <h3>Moe</h3>
           {showCardMM ? (
             <img
@@ -71,7 +71,7 @@ const MeetTheTeam = () => {
             </div>
           )}
         </div>
-        <div className="dev duy">
+        <div className={showCardDP ? "card" : "dev"}>
           <h3>Duy</h3>
           {showCardDP ? (
             <img
@@ -121,7 +121,7 @@ const MeetTheTeam = () => {
             </div>
           )}
         </div>
-        <div className="dev marissa">
+        <div className={showCardMJ ? "card" : "dev"}>
           <h3>Marissa</h3>
           {showCardMJ ? (
             <img
@@ -160,7 +160,7 @@ const MeetTheTeam = () => {
             </div>
           )}
         </div>
-        <div className="dev laurie">
+        <div className={showCardLM ? "card" : "dev"}>
           <h3>Laurie</h3>
           {showCardLM ? (
             <img
@@ -208,7 +208,7 @@ const MeetTheTeam = () => {
       <h2>Special Thanks</h2>
       {
         <div className="thanks">
-          <div className="dev andrea">
+          <div className={showCardAH ? "card" : "dev"}>
             <h3>Andrea</h3>
             {showCardAH ? (
               <img
@@ -233,7 +233,7 @@ const MeetTheTeam = () => {
               </div>
             )}
           </div>
-          <div className="dev jeff">
+          <div className={showCardJR ? "card" : "dev"}>
             <h3>Jeff</h3>
             {showCardJR ? (
               <img
