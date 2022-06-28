@@ -4,3 +4,11 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.HardOne .image-container {
+  width: 400px;
+}
+
+.HardOne #who {
+  width: 400px;
+}
