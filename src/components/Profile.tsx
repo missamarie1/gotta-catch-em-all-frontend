@@ -29,8 +29,7 @@ const Profile = () => {
   };
 
   const deleteHandler = (id: string): void => {
-    deleteAccount(id);
-    window.location.assign("/");
+    deleteAccount(id).then(() => window.location.assign("/"));
   };
 
   useEffect(() => {
