@@ -4,17 +4,16 @@
   justify-content: center;
   align-items: center;
 }
-.Header img {
-  width: 90vw;
+
+.Header .logo {
+  width: 250px;
 }
 
 .Header .gotta-catch-em-all {
-  text-align: center;
-}
-
-.Header h1 {
-  color: #feca1b;
   margin: 25px;
+  color: #feca1b;
+  font-size: 8px;
+  text-align: center;
 }
 
 .Header .fa-volume-high {
@@ -30,3 +29,13 @@
   right: 25px;
   font-size: 24px;
 }
+
+@media only screen and (min-width: 768px) {
+  .Header .logo {
+    width: 500px;
+  }
+
+  .Header .gotta-catch-em-all {
+    font-size: 16px;
+  }
+} ;

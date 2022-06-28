@@ -51,7 +51,6 @@ const Signup = () => {
           id="username"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          className="username-input"
         />
         <p>Select Avatar:</p>
         <Avatar setAvatar={setAvatar} avatar={avatar} />

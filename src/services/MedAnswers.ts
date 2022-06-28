@@ -80,7 +80,7 @@ export const medQTwo = [
   "doduo",
   "seel",
   "grimer",
-  "shelder",
+  "shellder",
   "gastly",
   "drowzee",
   "krabby",

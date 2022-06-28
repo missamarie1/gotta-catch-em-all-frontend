@@ -5,17 +5,16 @@
   align-items: center;
 }
 
-.HardOne .image-container {
-  width: 400px;
-}
-
-.HardOne #who {
-  width: 400px;
+.HardOne #question-mark {
+  color: #feca1b;
+  font-size: 48px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media only screen and (min-width: 768px) {
   .HardOne {
     flex-direction: row;
-    
   }
 }
