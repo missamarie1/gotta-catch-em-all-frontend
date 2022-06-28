@@ -73,7 +73,7 @@ const EasyThree = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What's it's Pokédex number?</h2>
+          <h2>What's {currentPokemon.name}'s' Pokédex number?</h2>
           <div className="answer-container">
             <div className="answer">
               <input

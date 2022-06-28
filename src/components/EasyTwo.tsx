@@ -84,7 +84,7 @@ const EasyTwo = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What's it's type?</h2>
+          <h2>What's {currentPokemon.name}'s type?</h2>
           <div className="answer-container">
             <div className="answer">
               <input

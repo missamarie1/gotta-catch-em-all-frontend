@@ -1,45 +1,6 @@
 import { Pokemon } from "../models/Pokemon";
 
-//double damage against
 export const hardQOne = [
-  "normal",
-  "fighting",
-  "flying",
-  "poison",
-  "ground",
-  "rock",
-  "bug",
-  "ghost",
-  "steel",
-  "fire",
-  "water",
-  "grass",
-  "electric",
-  "psychic",
-  "ice",
-  "dragon",
-  "dark",
-  "fairy",
-  "unknown",
-  "shadow",
-];
-
-export const hardQTwo = [
-  "ground",
-  "fairy",
-  "grass",
-  "fighting",
-  "psychic",
-  "normal",
-  "fire",
-  "flying",
-  "ice",
-  "ghost",
-  "water",
-  "no strengths",
-];
-
-export const hardQThree = [
   "venusaur",
   "charizard",
   "blastoise",
@@ -70,6 +31,43 @@ export const hardQThree = [
   "mewtwo",
   "mew",
   "dragonite",
+];
+
+export const hardQTwo = [
+  "ground",
+  "fairy",
+  "grass",
+  "fighting",
+  "psychic",
+  "normal",
+  "fire",
+  "flying",
+  "ice",
+  "ghost",
+  "water",
+];
+
+export const hardQThree = [
+  "normal",
+  "fighting",
+  "flying",
+  "poison",
+  "ground",
+  "rock",
+  "bug",
+  "ghost",
+  "steel",
+  "fire",
+  "water",
+  "grass",
+  "electric",
+  "psychic",
+  "ice",
+  "dragon",
+  "dark",
+  "fairy",
+  "shadow",
+  "no strengths",
 ];
 
 export const hardPokemon: Pokemon[] = [

@@ -1,9 +1,8 @@
 import { FormEvent, useContext, useEffect, useState } from "react";
 import GameContext from "../context/GameContext";
 import { getFourOptions } from "../services/Answers";
-import { hardQThree } from "../services/HardAnswers";
+import { hardQOne } from "../services/HardAnswers";
 import "./HardOne.css";
-import player from "../assets/player.webp";
 import whosThatPokemon from "../assets/pokemon-question-mark.jpg";
 
 const HardOne = () => {
@@ -28,7 +27,7 @@ const HardOne = () => {
     if (currentPokemon) {
       console.log(currentPokemon);
 
-      setAnswers(getFourOptions(hardQThree, currentPokemon.name!));
+      setAnswers(getFourOptions(hardQOne, currentPokemon.name!));
     }
     return () => {
       clearTimeout(myTimeout);

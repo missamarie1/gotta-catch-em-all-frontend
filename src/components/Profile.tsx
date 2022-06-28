@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import GameContext from "../context/GameContext";
+import { CaughtPokemon } from "../models/Account";
 import { Pokemon } from "../models/Pokemon";
 import { deleteAccount } from "../services/AccountService";
 import { getRandomEasy } from "../services/PokemonService";
@@ -12,6 +12,8 @@ const Profile = () => {
   const [showPokedex, setShowPokedex] = useState(false);
   const [pokedex, setPokedex] = useState<Pokemon>();
   const [showDelete, setShowDelete] = useState(false);
+  const [filter, setFilter] = useState("id");
+  const [showPokemon, setShowPokemon] = useState<CaughtPokemon[]>();
 
   function toTitleCase(str: string) {
     return str.replace(/\w\S*/g, function (txt) {
@@ -31,18 +33,63 @@ const Profile = () => {
     window.location.assign("/");
   };
 
+  useEffect(() => {
+    if (filter === "id") {
+      const sortedArray = account?.caught.sort((one, other) => {
+        if (one.id > other.id) {
+          return 1;
+        } else if (one.id < other.id) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      setShowPokemon([...sortedArray!]);
+      console.log(sortedArray);
+    } else if (filter === "abc") {
+      const sortedArray = account?.caught.sort((one, other) => {
+        if (one.name > other.name) {
+          return 1;
+        } else if (one.name < other.name) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      setShowPokemon([...sortedArray!]);
+      console.log(sortedArray);
+    }
+  }, [filter]);
+
   return (
     <div className="Profile">
       <h2>{account?.userName}</h2>
+      {filter === "id" ? (
+        <button
+          onClick={() => {
+            setFilter("abc");
+          }}
+        >
+          Sort by Name
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setFilter("id");
+          }}
+        >
+          Sort by Pokédex Number
+        </button>
+      )}
       <img src={account?.avatar} id="profile-avatar" />
       <p>Total Score: {account?.totalScore}</p>
       <p>Pokémon Caught: {account?.caught.length}</p>
-      <h3>Pokemon Collection:</h3>
+      <h3>Pokémon Collection:</h3>
       <ul>
-        {account?.caught.map((pokemon, index) => (
+        {showPokemon?.map((pokemon, index) => (
           <li
             onClick={() => renderPokedex(pokemon.id)}
-            key={pokemon.id + index}
+            key={`${pokemon.id}${Math.random()}${index}`}
           >
             <img src={pokemon.image} alt={pokemon.name} />
             <p>{toTitleCase(pokemon.name)}</p>
@@ -51,7 +98,7 @@ const Profile = () => {
       </ul>
       {showPokedex && (
         <div className="pokedex">
-          <h2>Pokedex:</h2>
+          <h2>Pokédex:</h2>
           <img src={pokedex?.sprites?.front_default} alt={pokedex?.name} />
           <p>Name: {pokedex?.name}</p>
           <p>Type: {pokedex?.types && pokedex?.types[0].type.name}</p>
@@ -64,7 +111,7 @@ const Profile = () => {
         <div className="delete">
           <p>
             Are you sure you would like to delete your account? All of your
-            Pokemon will be released back into the wild!
+            Pokémon will be released back into the wild!
           </p>
           <button
             onClick={() => {

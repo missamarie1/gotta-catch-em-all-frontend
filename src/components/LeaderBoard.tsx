@@ -71,7 +71,10 @@ const LeaderBoard = () => {
       </div>
       <ul className="leaderboard-ul">
         {leaderboard?.map((user, index) => (
-          <li className="leaderboard-li">
+          <li
+            className="leaderboard-li"
+            key={`${user._id}${Math.random()}${index}`}
+          >
             <p>{index + 1}.</p>
             <img className="leaderboard-li-img" src={user.avatar} alt="" />
             <div className="leaderboard-player">
@@ -102,7 +105,10 @@ const LeaderBoard = () => {
           <p>Pokemon Collection:</p>
           <ul className="rival-profile-ul">
             {rivalProfile?.caught.map((pokemon, index) => (
-              <li className="rival-profile-li" key={pokemon.id + index}>
+              <li
+                className="rival-profile-li"
+                key={`${pokemon.id}${Math.random()}${index}`}
+              >
                 <img
                   className="rival-profile-img"
                   src={pokemon.image}
