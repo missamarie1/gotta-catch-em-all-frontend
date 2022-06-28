@@ -22,7 +22,11 @@ const Difficulty = () => {
       {challengeLevel === "" && (
         <form onSubmit={submitHandler} className="difficulty-form">
           <h2>Select Difficulty:</h2>
-          <select onChange={(e) => setLevel(e.target.value)} value={level}>
+          <select
+            id="difficulty"
+            onChange={(e) => setLevel(e.target.value)}
+            value={level}
+          >
             <option value="easy">Easy</option>
             <option value="med">Medium</option>
             <option value="hard">Hard</option>

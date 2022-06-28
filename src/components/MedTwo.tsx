@@ -25,8 +25,6 @@ const MedTwo = () => {
 
   useEffect(() => {
     if (currentPokemon) {
-      console.log(currentPokemon);
-
       setAnswers(getFourOptions(medQTwo, currentPokemon.evolvesFrom!));
     }
     return () => {
@@ -37,18 +35,18 @@ const MedTwo = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
+    if (selected === currentPokemon?.evolvesFrom) {
+      updateScore();
+    }
     setEffect(true);
     myTimeout = setTimeout(() => {
       setQuestionsAnswered(2);
     }, 1500);
-    if (selected === currentPokemon?.evolvesFrom) {
-      updateScore();
-    }
   };
 
   return (
     <div className="MedTwo">
-      <div>
+      <div className="battle">
         <div className="hp-container">
           <div
             className={`${
@@ -65,14 +63,14 @@ const MedTwo = () => {
             <p className="hp-text">HP: {getPercent(currentScore)}</p>
           </div>
         </div>
-        {effect && (
-          <p className="effect">
-            {selected === currentPokemon?.evolvesFrom
-              ? "Your attack was super effective!"
-              : "Your attack had no effect!"}
-          </p>
-        )}
         <div className="image-container">
+          {effect && (
+            <p className="effect">
+              {selected === currentPokemon?.evolvesFrom
+                ? "Your attack was super effective!"
+                : "Your attack had no effect!"}
+            </p>
+          )}
           <img src={player} alt="player" id="player" />
           <img
             src={currentPokemon?.sprites?.front_default}
@@ -85,46 +83,49 @@ const MedTwo = () => {
         <form onSubmit={submitHandler} className="question-form">
           <h2>What does {currentPokemon.name} evolve from?</h2>
           <div className="answer-container">
-            <div className="answer">
-              <input
-                type="radio"
-                name="who"
-                id={answers[0]}
-                onChange={(e) => setSelected(e.target.value)}
-                value={answers[0]}
-              />
-              <label htmlFor={answers[0]}>{toTitleCase(answers[0])}</label>
-            </div>
-            <div className="answer">
-              <input
-                type="radio"
-                name="who"
-                id={answers[1]}
-                onChange={(e) => setSelected(e.target.value)}
-                value={answers[1]}
-              />
-              <label htmlFor={answers[1]}>{toTitleCase(answers[1])}</label>
-            </div>
-            <div className="answer">
-              <input
-                type="radio"
-                name="who"
-                id={answers[2]}
-                onChange={(e) => setSelected(e.target.value)}
-                value={answers[2]}
-              />
-              <label htmlFor={answers[2]}>{toTitleCase(answers[2])}</label>
-            </div>
-            <div className="answer">
-              <input
-                type="radio"
-                name="who"
-                id={answers[3]}
-                onChange={(e) => setSelected(e.target.value)}
-                value={answers[3]}
-              />
-              <label htmlFor={answers[3]}>{toTitleCase(answers[3])}</label>
-            </div>
+            <input
+              type="radio"
+              name="who"
+              id={answers[0]}
+              onChange={(e) => setSelected(e.target.value)}
+              value={answers[0]}
+            />
+            <label id="answer" htmlFor={answers[0]}>
+              {toTitleCase(answers[0])}
+            </label>
+
+            <input
+              type="radio"
+              name="who"
+              id={answers[1]}
+              onChange={(e) => setSelected(e.target.value)}
+              value={answers[1]}
+            />
+            <label id="answer" htmlFor={answers[1]}>
+              {toTitleCase(answers[1])}
+            </label>
+
+            <input
+              type="radio"
+              name="who"
+              id={answers[2]}
+              onChange={(e) => setSelected(e.target.value)}
+              value={answers[2]}
+            />
+            <label id="answer" htmlFor={answers[2]}>
+              {toTitleCase(answers[2])}
+            </label>
+
+            <input
+              type="radio"
+              name="who"
+              id={answers[3]}
+              onChange={(e) => setSelected(e.target.value)}
+              value={answers[3]}
+            />
+            <label id="answer" htmlFor={answers[3]}>
+              {toTitleCase(answers[3])}
+            </label>
           </div>
           <button>Submit</button>
         </form>

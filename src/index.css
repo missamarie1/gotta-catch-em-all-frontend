@@ -4,7 +4,6 @@
 }
 
 body {
-  height: 100%;
   margin: 25px;
   background-color: black;
   color: white;
@@ -15,13 +14,48 @@ body {
   font-family: "Press Start 2P", cursive;
 }
 
-h2 {
+h2,
+h3 {
   margin: 25px 0;
   align-items: center;
+  font-size: 12px;
 }
 
 h3 {
   margin: 25px 0;
+  align-items: center;
+  font-size: 10px;
+}
+
+button,
+button:hover {
+  height: 50px;
+  width: 250px;
+  margin: 5px;
+  padding: 15px;
+  background-color: #feca1b;
+  color: #3761a8;
+  font-size: 16px;
+  border-radius: 15px;
+  font-family: "Press Start 2P", cursive;
+  cursor: pointer;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #3761a8;
+}
+
+.sort,
+.sort:hover {
+  height: 25px;
+  width: 150px;
+  padding: 5px;
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hp-container {
@@ -50,18 +84,22 @@ h3 {
   background-color: red;
 }
 
-.effect {
-  color: #3761a8;
-  font-size: 20px;
-  text-align: center;
-}
-
 .image-container {
   height: 200px;
   width: 200px;
   margin: 10px;
   display: flex;
   position: relative;
+}
+
+.effect {
+  color: #3761a8;
+  font-size: 10px;
+  text-align: center;
+  position: absolute;
+  top: 100;
+  left: 25;
+  z-index: 1;
 }
 
 #player {
@@ -78,11 +116,6 @@ h3 {
   right: 0;
 }
 
-.difficulty-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .question-form {
   display: flex;
   flex-direction: column;
@@ -92,7 +125,6 @@ h3 {
 }
 
 .answer-container {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,50 +132,55 @@ h3 {
   flex-wrap: wrap;
 }
 
-.answer {
-  padding: 5px;
-  display: flex;
-  box-sizing: border-box;
-}
-
-.answer label:hover {
-  cursor: pointer;
-}
-
-select {
-  width: 400px;
-  margin: 5px;
+#answer {
   padding: 15px;
-  font-size: 24px;
-  border-radius: 15px;
-  font-family: "Press Start 2P", cursive;
-  text-align: center;
+  display: flex;
 }
 
-button,
-button:hover {
-  width: 400px;
-  margin: 10px;
-  padding: 20px;
-  background-color: #feca1b;
-  color: #3761a8;
-  font-size: 24px;
-  border-radius: 15px;
-  font-family: "Press Start 2P", cursive;
+#answer label:hover {
   cursor: pointer;
 }
 
-a,
-a:visited {
+input {
+  display: none;
+}
+
+input:checked + label {
   padding: 5px;
-  text-decoration: none;
-  color: #3761a8;
+  border: 3px solid #feca1b;
+  box-sizing: border-box;
 }
 
 @media only screen and (min-width: 768px) {
   .Easy,
   .Med,
   .Hard {
-    width: 90vw;
+    width: 75vw;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  button,
+  button:hover {
+    height: 55px;
+    width: 400px;
+    font-size: 20px;
+  }
+
+  .battle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .battle,
+  .question-form {
+    flex: 1;
   }
 }
