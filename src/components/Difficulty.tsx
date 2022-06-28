@@ -4,8 +4,6 @@ import Easy from "./Easy";
 import "./Difficulty.css";
 import Hard from "./Hard";
 import Med from "./Med";
-import { Link } from "react-router-dom";
-import AuthContext from "../context/AuthContext";
 
 const Difficulty = () => {
   const [level, setLevel] = useState("easy");
@@ -14,9 +12,9 @@ const Difficulty = () => {
 
   const submitHandler = (e: FormEvent) => {
     e.preventDefault();
-    setChallengeLevel(level);
-    setCaught(false);
     setCurrentPokemon(null);
+    setCaught(false);
+    setChallengeLevel(level);
   };
 
   return (

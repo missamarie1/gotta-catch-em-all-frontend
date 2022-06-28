@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Account, CaughtPokemon } from "../models/Account";
+import { Account } from "../models/Account";
 
 const accountBaseUrl = process.env.REACT_APP_API_URL || "";
 
@@ -29,4 +29,3 @@ export const makeNewAccount = (newAccount: Account): Promise<Account> => {
 export const deleteAccount = (id: string): Promise<void> => {
   return axios.delete(`${accountBaseUrl}/account/${id}`);
 };
-

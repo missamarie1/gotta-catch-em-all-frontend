@@ -71,10 +71,10 @@ const Avatar = ({ setAvatar, avatar }: Props) => {
 
   return (
     <ul className="Avatar">
-      {avatars.map((image) => (
+      {avatars.map((image, index) => (
         <li
           onClick={() => setAvatar(image)}
-          key={Math.floor(Math.random() * 1000)}
+          key={`${Math.floor(Math.random() * 1000)}${index}`}
         >
           <img
             className={image === avatar ? "selected" : ""}

@@ -8,7 +8,7 @@ import "./Signup.css";
 const Signup = () => {
   const [userName, setUserName] = useState("");
   const [avatar, setAvatar] = useState("");
-  const { user, account, setAccount } = useContext(AuthContext);
+  const { user, setAccount } = useContext(AuthContext);
 
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
@@ -35,6 +35,7 @@ const Signup = () => {
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           className="username-input"
+          required
         />
         <p>Select Avatar:</p>
         <Avatar setAvatar={setAvatar} avatar={avatar} />
