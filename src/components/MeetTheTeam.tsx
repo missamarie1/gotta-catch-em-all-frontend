@@ -4,10 +4,14 @@ import Maurice from "../assets/team/Maurice.png";
 import Duy from "../assets/team/Duy.jpg";
 import Marissa from "../assets/team/Marissa.jpg";
 import Laurie from "../assets/team/Laurie.jpg";
+import Andrea from "../assets/team/Andrea.jpg";
+import Jeff from "../assets/team/Jeff.jpg";
 import Blastoise from "../assets/team/blastoise.gif";
 import Charizard from "../assets/team/charizard.gif";
 import Pikachu from "../assets/team/pikachu.gif";
 import Venusaur from "../assets/team/venusaur.gif";
+import Eevee from "../assets/team/eevee.gif";
+import Mew from "../assets/team/mew.gif";
 import { useState } from "react";
 
 const MeetTheTeam = () => {
@@ -15,6 +19,8 @@ const MeetTheTeam = () => {
   const [showCardDP, setShowCardDP] = useState(true);
   const [showCardMJ, setShowCardMJ] = useState(true);
   const [showCardLM, setShowCardLM] = useState(true);
+  const [showCardAH, setShowCardAH] = useState(true);
+  const [showCardJR, setShowCardJR] = useState(true);
 
   return (
     <div className="MeetTheTeam">
@@ -37,7 +43,7 @@ const MeetTheTeam = () => {
               onClick={() => {
                 setShowCardMM(true);
               }}
-            />{" "}
+            />
             <p>
               Highly motivated Javascript programmer known for an ability to
               adapt to any situation and very communicative. Gained experience
@@ -194,6 +200,62 @@ const MeetTheTeam = () => {
           </div>
         )}
       </div>
+      <h2>Special Thanks</h2>
+      {
+        <div className="thanks">
+          <div className="dev andrea">
+            <h3>Andrea</h3>
+            {showCardAH ? (
+              <img
+                src={Eevee}
+                alt="Eevee"
+                onClick={() => {
+                  setShowCardAH(false);
+                }}
+              />
+            ) : (
+              <div>
+                <img
+                  src={Andrea}
+                  alt="Andrea"
+                  onClick={() => {
+                    setShowCardAH(true);
+                  }}
+                />
+                <p>
+                  Full Stack (MERN) Dev & Designer | Instructor at Grand Circus
+                </p>
+              </div>
+            )}
+          </div>
+          <div className="dev jeff">
+            <h3>Jeff</h3>
+            {showCardJR ? (
+              <img
+                src={Mew}
+                alt="Mew"
+                onClick={() => {
+                  setShowCardJR(false);
+                }}
+              />
+            ) : (
+              <div>
+                <img
+                  src={Jeff}
+                  alt="Jeff"
+                  onClick={() => {
+                    setShowCardJR(true);
+                  }}
+                />
+                <p>
+                  Full Stack Developer | MERN Stack | MongoDB | Express | React
+                  | Node | TA at Grand Circus
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      }
       <button>
         <Link to="/">Return Home</Link>
       </button>
