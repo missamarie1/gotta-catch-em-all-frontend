@@ -28,9 +28,12 @@
   font-size: 50px;
 }
 
-.MeetTheTeam .thanks {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+@media only screen and (min-width: 768px) {
+  .MeetTheTeam .thanks {
+    display: flex;
+    justify-content: space-around;
+  }
+  .MeetTheTeam .thanks .dev {
+    width: 500px;
+  }
 }

@@ -17,6 +17,7 @@ body {
 
 h2 {
   margin: 25px 0;
+  align-items: center;
 }
 
 h3 {
@@ -52,6 +53,7 @@ h3 {
 .effect {
   color: #3761a8;
   font-size: 20px;
+  text-align: center;
 }
 
 .image-container {
@@ -136,4 +138,12 @@ a:visited {
   padding: 5px;
   text-decoration: none;
   color: #3761a8;
+}
+
+@media only screen and (min-width: 768px) {
+  .Easy,
+  .Med,
+  .Hard {
+    width: 90vw;
+  }
 }

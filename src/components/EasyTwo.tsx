@@ -50,6 +50,7 @@ const EasyTwo = () => {
 
   return (
     <div className="EasyTwo">
+      <div>
       <div className="hp-container">
         <div
           className={`${
@@ -81,6 +82,7 @@ const EasyTwo = () => {
           alt={currentPokemon?.name}
           id="pokemon"
         />
+      </div>
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">

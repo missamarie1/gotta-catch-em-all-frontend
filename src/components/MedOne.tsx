@@ -48,6 +48,7 @@ const MedOne = () => {
 
   return (
     <div className="MedOne">
+      <div>
       <div className="hp-container">
         <div
           className={`${
@@ -78,6 +79,7 @@ const MedOne = () => {
           alt={currentPokemon?.name}
           id="pokemon"
         />
+      </div>
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">

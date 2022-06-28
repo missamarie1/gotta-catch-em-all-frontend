@@ -12,3 +12,10 @@
 .HardOne #who {
   width: 400px;
 }
+
+@media only screen and (min-width: 768px) {
+  .HardOne {
+    flex-direction: row;
+    
+  }
+}

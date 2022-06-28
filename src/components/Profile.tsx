@@ -81,7 +81,7 @@ const Profile = () => {
           Sort by Pokédex Number
         </button>
       )}
-      <img src={account?.avatar} id="profile-avatar" />
+      <img src={account?.avatar} id="profile-avatar" alt="profile-avatar" />
       <p>Total Score: {account?.totalScore}</p>
       <p>Pokémon Caught: {account?.caught.length}</p>
       <h3>Pokémon Collection:</h3>

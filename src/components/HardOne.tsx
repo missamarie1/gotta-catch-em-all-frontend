@@ -48,6 +48,7 @@ const HardOne = () => {
 
   return (
     <div className="HardOne">
+      <div>
       <div className="hp-container">
         <div
           className={`${
@@ -73,6 +74,7 @@ const HardOne = () => {
       )}
       <div className="image-container">
         <img src={whosThatPokemon} alt={whosThatPokemon} id="who" />
+      </div>
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">

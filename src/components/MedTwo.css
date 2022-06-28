@@ -1,6 +1,12 @@
-.HardTwo {
-    display: flex;
+.MedTwo {
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .MedTwo {
+    flex-direction: row;
+  }
 }

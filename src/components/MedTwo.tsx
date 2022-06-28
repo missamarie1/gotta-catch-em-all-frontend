@@ -48,36 +48,38 @@ const MedTwo = () => {
 
   return (
     <div className="MedTwo">
-      <div className="hp-container">
-        <div
-          className={`${
-            currentScore === 3
-              ? "full"
-              : currentScore === 2
-              ? "two-thirds"
-              : currentScore === 1
-              ? "one-thirds"
-              : "zero"
-          } hp`}
-          style={{ width: getPercent(currentScore) }}
-        >
-          <p className="hp-text">HP: {getPercent(currentScore)}</p>
+      <div>
+        <div className="hp-container">
+          <div
+            className={`${
+              currentScore === 3
+                ? "full"
+                : currentScore === 2
+                ? "two-thirds"
+                : currentScore === 1
+                ? "one-thirds"
+                : "zero"
+            } hp`}
+            style={{ width: getPercent(currentScore) }}
+          >
+            <p className="hp-text">HP: {getPercent(currentScore)}</p>
+          </div>
         </div>
-      </div>
-      {effect && (
-        <p className="effect">
-          {selected === currentPokemon?.evolvesFrom
-            ? "Your attack was super effective!"
-            : "Your attack had no effect!"}
-        </p>
-      )}
-      <div className="image-container">
-        <img src={player} alt="player" id="player" />
-        <img
-          src={currentPokemon?.sprites?.front_default}
-          alt={currentPokemon?.name}
-          id="pokemon"
-        />
+        {effect && (
+          <p className="effect">
+            {selected === currentPokemon?.evolvesFrom
+              ? "Your attack was super effective!"
+              : "Your attack had no effect!"}
+          </p>
+        )}
+        <div className="image-container">
+          <img src={player} alt="player" id="player" />
+          <img
+            src={currentPokemon?.sprites?.front_default}
+            alt={currentPokemon?.name}
+            id="pokemon"
+          />
+        </div>
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
