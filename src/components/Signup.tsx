@@ -1,7 +1,7 @@
 import { FormEvent, useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import { Account } from "../models/Account";
-import { makeNewAccount } from "../services/AccountService";
+import { getAllAccounts, makeNewAccount } from "../services/AccountService";
 import Avatar from "./Avatar";
 import "./Signup.css";
 
@@ -19,8 +19,25 @@ const Signup = () => {
       caught: [],
       totalScore: 0,
     };
-    makeNewAccount(newAccount).then((res) => {
-      setAccount(res);
+    getAllAccounts().then((res) => {
+      const foundDuplicate = res.find((account) => {
+        return account.userName.toLowerCase() === userName.toLowerCase();
+      });
+      if (foundDuplicate) {
+        alert("Username taken, please select another username");
+      } else {
+        if (avatar && userName) {
+          makeNewAccount(newAccount).then((res) => {
+            setAccount(res);
+          });
+        } else if (!avatar && userName) {
+          alert("Please select an avatar");
+        } else if (avatar && !userName) {
+          alert("Please enter a username");
+        } else {
+          alert("Please enter a username and select an avatar");
+        }
+      }
     });
   };
 
@@ -35,7 +52,6 @@ const Signup = () => {
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           className="username-input"
-          required
         />
         <p>Select Avatar:</p>
         <Avatar setAvatar={setAvatar} avatar={avatar} />
