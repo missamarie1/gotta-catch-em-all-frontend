@@ -24,6 +24,10 @@ button {
   align-items: center;
 }
 
+.LeaderBoard th {
+  padding: 10px;
+}
+
 .LeaderBoard tr {
   width: 75%;
   display: flex;
