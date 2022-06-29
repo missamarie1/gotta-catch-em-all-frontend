@@ -20,6 +20,8 @@
   border-radius: 15px;
   font-family: "Press Start 2P", cursive;
   text-align: center;
+  color: black;
+  text-align-last: center;
 }
 
 @media only screen and (min-width: 768px) {
