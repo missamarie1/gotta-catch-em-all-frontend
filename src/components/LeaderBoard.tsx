@@ -56,7 +56,7 @@ const LeaderBoard = () => {
     <div className="LeaderBoard">
       <h2>LeaderBoard:</h2>
       {filter === "score" ? (
-        <button className="sort" onClick={() => setFilter("pokemon")}>
+        <button className="sort caught" onClick={() => setFilter("pokemon")}>
           Sort by Pokémon Caught
         </button>
       ) : (

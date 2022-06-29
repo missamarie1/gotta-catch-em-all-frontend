@@ -9,8 +9,12 @@
 .LeaderBoard h2,
 button {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.LeaderBoard .caught {
+  height: 32px;
 }
 .LeaderBoard table {
   width: 100%;
@@ -21,6 +25,10 @@ button {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.LeaderBoard th {
+  padding: 12px 12px 12px 0;
 }
 
 .LeaderBoard tr {
@@ -34,16 +42,19 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 250px;
+  text-align: center;
 }
 
 .LeaderBoard .player-img {
   padding-right: 10px;
 }
 
-.LeaderBoard .player-name,
-.score-num,
+.LeaderBoard .score-num,
 .caught-num {
-  text-align: center;
+  width: 50px;
+  text-align: right;
+  margin-left: 15px;
 }
 
 .LeaderBoard .rival-profile {
