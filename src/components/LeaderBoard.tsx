@@ -81,7 +81,7 @@ const LeaderBoard = () => {
               <td>{index + 1}.</td>
               <td className="player">
                 <img className="player-img" src={user.avatar} alt="" />
-                <p>{user.userName}</p>
+                <p className="player-name">{user.userName}</p>
               </td>
 
               {filter === "score" ? (
