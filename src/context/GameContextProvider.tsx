@@ -28,7 +28,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
     false,
     false,
   ];
-  const SixNinthshance = [
+  const SixNinthsChance = [
     true,
     true,
     true,
@@ -71,18 +71,41 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     let randomNumber = Math.floor(Math.random() * 3);
-    if (questionsAnswered === 3) {
+    if (questionsAnswered === 3 && challengeLevel === "easy") {
       if (!currentScore) {
         setCaught(true);
-      } else if (currentScore === 2) {
+      } else if (currentScore === 2 && challengeLevel === "easy") {
         let result = OneThirdsChance[randomNumber];
         setCaught(result);
-      } else if (currentScore === 1) {
+      } else if (currentScore === 1 && challengeLevel === "easy") {
         let result = TwoThirdsChance[randomNumber];
         setCaught(result);
       }
     }
+    if (questionsAnswered === 3 && challengeLevel === "med") {
+      if (!currentScore) {
+        setCaught(true);
+      } else if (currentScore === 2 && challengeLevel === "med") {
+        let result = TwoSixthsChance[randomNumber];
+        setCaught(result);
+      } else if (currentScore === 1 && challengeLevel === "med") {
+        let result = FourSixthsChance[randomNumber];
+        setCaught(result);
+      }
+    }
+    if (questionsAnswered === 3 && challengeLevel === "hard") {
+      if (!currentScore) {
+        setCaught(true);
+      } else if (currentScore === 2 && challengeLevel === "hard") {
+        let result = ThreeNinthsChance[randomNumber];
+        setCaught(result);
+      } else if (currentScore === 1 && challengeLevel === "hard") {
+        let result = SixNinthsChance[randomNumber];
+        setCaught(result);
+      }
+    }
   }, [questionsAnswered]);
+
   return (
     <GameContext.Provider
       value={{
