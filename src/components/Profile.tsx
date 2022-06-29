@@ -60,7 +60,7 @@ const Profile = () => {
       setShowPokemon([...sortedArray!]);
       console.log(sortedArray);
     }
-  }, [account, filter]);
+  }, [filter, account]);
 
   return (
     <div className="Profile">
