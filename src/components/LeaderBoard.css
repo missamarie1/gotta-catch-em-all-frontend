@@ -13,9 +13,7 @@ button {
   justify-content: center;
   align-items: center;
 }
-.LeaderBoard .caught {
-  height: 60px;
-}
+
 .LeaderBoard table {
   width: 100%;
 }
@@ -28,7 +26,7 @@ button {
 }
 
 .LeaderBoard th {
-  padding: 10px 10px 10px 0;
+  padding: 12px 12px 12px 0;
 }
 
 .LeaderBoard tr {
@@ -49,10 +47,12 @@ button {
   padding-right: 10px;
 }
 
-.LeaderBoard .player-name,
-.score-num,
-.caught-num {
+.LeaderBoard .player-name {
   text-align: center;
+}
+.LeaderBoard .score-num,
+.caught-num {
+  text-align: right;
 }
 
 .LeaderBoard .rival-profile {
