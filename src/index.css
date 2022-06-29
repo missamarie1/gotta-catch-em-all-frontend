@@ -148,6 +148,7 @@ a:visited {
   padding: 15px;
   display: flex;
   cursor: pointer;
+  font-size: 10px;
 }
 
 input {
@@ -216,5 +217,9 @@ input:checked + label {
   .battle,
   .question-form {
     flex: 1;
+  }
+
+  #answer {
+    font-size: 16px;
   }
 }
