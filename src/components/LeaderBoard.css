@@ -11,6 +11,14 @@
   align-items: center;
   margin-bottom: 25px;
 }
+.LeaderBoard tbody {
+  width: 100%;
+}
+.LeaderBoard .headings {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
 
 .LeaderBoard .leaderboard-score p,
 .LeaderBoard .leaderboard-caught p {
@@ -37,7 +45,9 @@
 }
 
 .LeaderBoard .leaderboard-player {
-  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .LeaderBoard .leaderboard-score {

@@ -64,36 +64,37 @@ const LeaderBoard = () => {
           Sort by Highest Score
         </button>
       )}
-      <div className="titles">
-        <p>Rank</p>
-        <p>Player</p>
-        {filter === "score" ? <p>Score</p> : <p>Caught</p>}
-      </div>
-      <ul className="leaderboard-ul">
-        {leaderboard?.map((user, index) => (
-          <li
-            className="leaderboard-li"
-            key={`${user._id}${Math.random()}${index}`}
-          >
-            <p>{index + 1}.</p>
-            <img className="leaderboard-li-img" src={user.avatar} alt="" />
-            <div className="leaderboard-player">
-              <p onClick={() => renderRivalProfile(user.uid)}>
-                {user.userName}
-              </p>
-            </div>
-            {filter === "score" ? (
-              <div className="leaderboard-score">
-                <p>{user.totalScore}</p>
-              </div>
-            ) : (
-              <div className="leaderboard-caught">
-                <p>{user.caught.length}</p>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+      <table className="titles">
+        <tbody>
+          <tr className="headings">
+            <th>Rank</th>
+            <th>Player</th>
+            {filter === "score" ? <th>Score</th> : <th>Caught</th>}
+          </tr>
+          {leaderboard?.map((user, index) => (
+            <tr
+              className="leaderboard-li"
+              key={`${user._id}${Math.random()}${index}`}
+            >
+              <td>{index + 1}.</td>
+              <td className="leaderboard-player">
+                {" "}
+                <img className="leaderboard-li-img" src={user.avatar} alt="" />
+                <p onClick={() => renderRivalProfile(user.uid)}>
+                  {user.userName}
+                </p>
+              </td>
+
+              {filter === "score" ? (
+                <td className="leaderboard-score">{user.totalScore}</td>
+              ) : (
+                <td className="leaderboard-caught">{user.caught.length}</td>
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <ul className="leaderboard-ul"></ul>
       {showRivalProfile && (
         <div className="rival-profile">
           <h2>{rivalProfile?.userName}</h2>
