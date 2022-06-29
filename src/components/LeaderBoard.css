@@ -42,20 +42,19 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 15px;
+  width: 250px;
+  text-align: center;
 }
 
 .LeaderBoard .player-img {
   padding-right: 10px;
 }
 
-.LeaderBoard .player-name {
-  text-align: center;
-}
 .LeaderBoard .score-num,
 .caught-num {
   width: 50px;
   text-align: right;
+  margin-left: 15px;
 }
 
 .LeaderBoard .rival-profile {
