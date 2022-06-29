@@ -2,56 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 }
 
-.LeaderBoard .titles {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+.LeaderBoard th,
+td {
+  padding: 10px;
 }
-.LeaderBoard tbody {
-  width: 100%;
-}
-.LeaderBoard .headings {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-}
-
-.LeaderBoard .leaderboard-score p,
-.LeaderBoard .leaderboard-caught p {
-  width: 100%;
-  text-align: right;
-}
-
-.LeaderBoard .leaderboard-ul {
-  width: 75vw;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-}
-
-.LeaderBoard .leaderboard-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.LeaderBoard .leaderboard-li-img {
-  height: 48px;
-  margin: 5px;
-}
-
-.LeaderBoard .leaderboard-player {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.LeaderBoard .leaderboard-score {
-  width: 75px;
+.LeaderBoard .player-name,
+.score-num,
+.caught-num {
+  text-align: center;
 }
 
 .LeaderBoard .rival-profile {

@@ -64,37 +64,35 @@ const LeaderBoard = () => {
           Sort by Highest Score
         </button>
       )}
-      <table className="titles">
+      <table className="leaderboard">
         <tbody>
           <tr className="headings">
             <th>Rank</th>
+            <th> </th>
             <th>Player</th>
             {filter === "score" ? <th>Score</th> : <th>Caught</th>}
           </tr>
           {leaderboard?.map((user, index) => (
-            <tr
-              className="leaderboard-li"
-              key={`${user._id}${Math.random()}${index}`}
-            >
+            <tr className="players" key={`${user._id}${Math.random()}${index}`}>
               <td>{index + 1}.</td>
-              <td className="leaderboard-player">
-                {" "}
-                <img className="leaderboard-li-img" src={user.avatar} alt="" />
+              <td>
+                <img className="player-img" src={user.avatar} alt="" />
+              </td>
+              <td className="player-name">
                 <p onClick={() => renderRivalProfile(user.uid)}>
                   {user.userName}
                 </p>
               </td>
 
               {filter === "score" ? (
-                <td className="leaderboard-score">{user.totalScore}</td>
+                <td className="score-num">{user.totalScore}</td>
               ) : (
-                <td className="leaderboard-caught">{user.caught.length}</td>
+                <td className="caught-num">{user.caught.length}</td>
               )}
             </tr>
           ))}
         </tbody>
       </table>
-      <ul className="leaderboard-ul"></ul>
       {showRivalProfile && (
         <div className="rival-profile">
           <h2>{rivalProfile?.userName}</h2>
