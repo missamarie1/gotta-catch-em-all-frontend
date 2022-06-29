@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.Difficulty #difficulty {
+.Difficulty #difficulty-select {
   height: 45px;
   width: 245px;
   margin: 5px;
@@ -20,11 +20,10 @@
   font-family: "Press Start 2P", cursive;
   text-align: center;
   color: black;
-  text-align-last: center;
 }
 
 @media only screen and (min-width: 768px) {
-  .Difficulty #difficulty {
+  .Difficulty #difficulty-select {
     width: 395px;
     font-size: 20px;
   }

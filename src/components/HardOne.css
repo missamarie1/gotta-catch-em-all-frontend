@@ -9,8 +9,17 @@
   color: #feca1b;
   font-size: 48px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 25px;
+  right: 25px;
+}
+
+.HardOne h2 {
+  line-height: 1.5;
+}
+
+.HardOne h3 {
+  color: #feca1b;
+  line-height: 1.5;
 }
 
 @media only screen and (min-width: 768px) {

@@ -10,13 +10,14 @@
 }
 
 .MeetTheTeam .team {
-  width: 75vw;
-  font-size: 12px;
+  width: 90vw;
+  font-size: 10px;
 }
 
 .MeetTheTeam .card img {
   height: 200px;
-  padding: 5px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .MeetTheTeam .dev {
@@ -25,8 +26,9 @@
 }
 
 .MeetTheTeam .dev img {
-  height: 200px;
-  padding: 5px;
+  height: 100px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .MeetTheTeam p {
@@ -37,19 +39,23 @@
 
 .MeetTheTeam .fa-brands {
   padding: 5px;
-  font-size: 50px;
+  font-size: 32px;
 }
 
 .MeetTheTeam .thanks {
-  font-size: 12px;
+  width: 45vw;
+  font-size: 10px;
 }
 
 @media only screen and (min-width: 768px) {
   .MeetTheTeam .team {
-    width: 90vw;
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 12px;
+  }
+
+  .MeetTheTeam .card img {
+    height: 200px;
   }
 
   .MeetTheTeam .dev {
@@ -57,13 +63,13 @@
     border: 1px solid #3761a8;
   }
 
+  .MeetTheTeam .dev img {
+    height: 200px;
+  }
+
   .MeetTheTeam .thanks {
     display: flex;
     justify-content: space-around;
-    font-size: 16px;
-  }
-
-  .MeetTheTeam .thanks .dev {
-    width: 500px;
+    font-size: 12px;
   }
 }
