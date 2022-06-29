@@ -121,7 +121,7 @@ const EasyThree = () => {
               {answers[3]}
             </label>
           </div>
-          <button>Submit</button>
+          <button disabled={effect}>Submit</button>
         </form>
       )}
     </div>
