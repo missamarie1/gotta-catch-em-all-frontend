@@ -13,7 +13,9 @@ button {
   justify-content: center;
   align-items: center;
 }
-
+.LeaderBoard .caught {
+  height: 32px;
+}
 .LeaderBoard table {
   width: 100%;
 }
@@ -52,6 +54,7 @@ button {
 }
 .LeaderBoard .score-num,
 .caught-num {
+  width: 50px;
   text-align: right;
 }
 
