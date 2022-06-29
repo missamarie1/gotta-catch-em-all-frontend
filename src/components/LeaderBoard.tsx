@@ -66,19 +66,20 @@ const LeaderBoard = () => {
       )}
       <table className="leaderboard">
         <tbody>
-          <tr className="headings">
+          <tr className="headers">
             <th>Rank</th>
             <th>Player</th>
             {filter === "score" ? <th>Score</th> : <th>Caught</th>}
           </tr>
           {leaderboard?.map((user, index) => (
-            <tr className="players" key={`${user._id}${Math.random()}${index}`}>
+            <tr
+              key={`${user._id}${Math.random()}${index}`}
+              onClick={() => renderRivalProfile(user.uid)}
+            >
               <td>{index + 1}.</td>
-              <td className="player-name">
+              <td className="player">
                 <img className="player-img" src={user.avatar} alt="" />
-                <p onClick={() => renderRivalProfile(user.uid)}>
-                  {user.userName}
-                </p>
+                <p>{user.userName}</p>
               </td>
 
               {filter === "score" ? (
@@ -106,7 +107,7 @@ const LeaderBoard = () => {
                 key={`${pokemon.id}${Math.random()}${index}`}
               >
                 <img
-                  className="rival-profile-img"
+                  className="rival-profile-pokemon"
                   src={pokemon.image}
                   alt={pokemon.name}
                 />

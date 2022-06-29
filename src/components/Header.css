@@ -6,36 +6,20 @@
 }
 
 .Header .logo {
-  width: 250px;
+  width: 260px;
 }
 
-.Header .gotta-catch-em-all {
-  margin: 25px;
-  color: #feca1b;
-  font-size: 8px;
-  text-align: center;
-}
-
-.Header .fa-volume-high {
+.Header .fa-volume-high,
+.fa-volume-xmark {
+  padding: 5px;
   position: fixed;
   top: 25px;
   right: 23px;
   font-size: 24px;
 }
 
-.Header .fa-volume-xmark {
-  position: fixed;
-  top: 50px;
-  right: 25px;
-  font-size: 24px;
-}
-
 @media only screen and (min-width: 768px) {
   .Header .logo {
-    width: 500px;
-  }
-
-  .Header .gotta-catch-em-all {
-    font-size: 16px;
+    width: 420px;
   }
 } ;
