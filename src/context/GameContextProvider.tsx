@@ -15,6 +15,30 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
 
   const OneThirdsChance = [false, false, true];
   const TwoThirdsChance = [true, true, false];
+  const TwoSixthsChance = [true, true, false, false, false, false];
+  const FourSixthsChance = [true, true, false, false, false, false];
+  const ThreeNinthsChance = [
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+  const SixNinthshance = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false,
+  ];
   const updateScore = () => {
     setCurrentScore((prev) => {
       return prev - 1;
@@ -27,12 +51,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         setCurrentPokemon(res);
       });
     } else if (difficulty === "med") {
-      console.log("function was called");
-
       const foundPokemon = medPokemon.find((pokemon) => pokemon.id === id);
-      console.log(foundPokemon);
-      console.log(id);
-
       if (foundPokemon) {
         getRandomEasy(id).then((res) => {
           foundPokemon.sprites = res.sprites;

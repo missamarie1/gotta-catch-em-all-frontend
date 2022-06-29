@@ -20,7 +20,6 @@ const LeaderBoard = () => {
     setShowRivalProfile(true);
     checkForAccount(uid).then((res) => {
       setRivalProfile(res[0]);
-      console.log(res);
     });
   };
 

@@ -70,7 +70,6 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
           if (avatar && userName) {
             updateAccount(updatedAccount, account?._id!).then((res) => {
               setAccount(res);
-              console.log(res);
               window.location.reload();
             });
           } else if (!avatar && userName) {

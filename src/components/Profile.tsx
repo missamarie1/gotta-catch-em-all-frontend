@@ -46,7 +46,6 @@ const Profile = () => {
         }
       });
       setShowPokemon([...sortedArray!]);
-      console.log(sortedArray);
     } else if (filter === "abc" && account) {
       const sortedArray = account?.caught.sort((one, other) => {
         if (one.name > other.name) {
@@ -58,7 +57,6 @@ const Profile = () => {
         }
       });
       setShowPokemon([...sortedArray!]);
-      console.log(sortedArray);
     }
   }, [filter, account]);
 
