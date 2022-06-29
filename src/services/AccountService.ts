@@ -29,3 +29,7 @@ export const makeNewAccount = (newAccount: Account): Promise<Account> => {
 export const deleteAccount = (id: string): Promise<void> => {
   return axios.delete(`${accountBaseUrl}/account/${id}`);
 };
+
+export const updateAccount = (acc: Account, id: string): Promise<Account>=>{
+  return axios.put(`${accountBaseUrl}/account/update/${id}`, acc).then((res)=>res.data)
+}

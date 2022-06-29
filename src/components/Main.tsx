@@ -18,7 +18,7 @@ const Main = () => {
           Login
         </button>
       ) : user && !account ? (
-        <Signup />
+        <Signup usernameProp="" avatarProp="" editMode={false}/>
       ) : (
         <div className="main-menu">
           <Link to="/difficulty">
