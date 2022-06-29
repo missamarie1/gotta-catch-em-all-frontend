@@ -38,6 +38,10 @@
   text-align: center;
 }
 
+.LeaderBoard .player-profile:hover {
+  cursor: pointer;
+}
+
 .LeaderBoard .player-img {
   width: 45px;
   position: relative;

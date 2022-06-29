@@ -93,6 +93,7 @@ const Profile = () => {
           <ul>
             {showPokemon?.map((pokemon, index) => (
               <li
+                className="pokemon-caught"
                 onClick={() => renderPokedex(pokemon.id)}
                 key={`${pokemon.id}${Math.random()}${index}`}
               >

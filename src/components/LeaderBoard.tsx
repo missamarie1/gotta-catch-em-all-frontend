@@ -73,6 +73,7 @@ const LeaderBoard = () => {
           </tr>
           {leaderboard?.map((user, index) => (
             <tr
+              className="player-profile"
               key={`${user._id}${Math.random()}${index}`}
               onClick={() => renderRivalProfile(user.uid)}
             >
