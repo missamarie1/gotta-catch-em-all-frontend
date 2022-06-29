@@ -25,7 +25,7 @@ const MeetTheTeam = () => {
   return (
     <div className="MeetTheTeam">
       <h2>Meet the Team</h2>
-      <p>Click to Flip</p>
+      <p className="click">(Click on card to view team member)</p>
       <div className="team">
         <div className={showCardMM ? "card" : "dev"}>
           <h3>Moe</h3>

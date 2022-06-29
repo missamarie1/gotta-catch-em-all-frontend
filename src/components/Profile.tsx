@@ -71,6 +71,7 @@ const Profile = () => {
           <p>Total Score: {account?.totalScore}</p>
           <p>Pokémon Caught: {account?.caught.length}</p>
           <h3>Pokémon Collection:</h3>
+          <p className="click">(Click on a Pokémon to view Pokédex)</p>
           {filter === "id" ? (
             <button
               className="sort"

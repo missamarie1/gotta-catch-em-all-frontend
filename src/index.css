@@ -111,6 +111,11 @@ p {
   flex-wrap: wrap;
 }
 
+.click {
+  color: #3761a8;
+  font-size: 8px;
+}
+
 button {
   height: 50px;
   width: 250px;
@@ -221,5 +226,9 @@ input:checked + label {
 
   #answer {
     font-size: 16px;
+  }
+
+  .click {
+    font-size: 10px;
   }
 }

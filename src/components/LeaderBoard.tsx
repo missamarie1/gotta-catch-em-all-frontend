@@ -55,6 +55,7 @@ const LeaderBoard = () => {
   return (
     <div className="LeaderBoard">
       <h2>LeaderBoard:</h2>
+      <p className="click">(Click on a player to view their profile)</p>
       {filter === "score" ? (
         <button className="sort" onClick={() => setFilter("pokemon")}>
           Sort by Pokémon Caught
