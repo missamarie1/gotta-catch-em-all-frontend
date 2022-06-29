@@ -13,6 +13,9 @@ button {
   justify-content: center;
   align-items: center;
 }
+.LeaderBoard .caught {
+  height: 60px;
+}
 .LeaderBoard table {
   width: 100%;
 }
@@ -39,6 +42,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 15px;
 }
 
 .LeaderBoard .player-img {
