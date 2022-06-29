@@ -19,7 +19,7 @@ const useAudio = (url: string) => {
       audio.removeEventListener("ended", () => setPlaying(false));
     };
   }, []);
-
+  audio.volume = 0.1;
   return { playing, toggle };
 };
 
