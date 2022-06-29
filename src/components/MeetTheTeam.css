@@ -43,14 +43,19 @@
 }
 
 .MeetTheTeam .thanks {
-  width: 45vw;
+  width: 50vw;
   font-size: 10px;
 }
 
 @media only screen and (min-width: 768px) {
-  .MeetTheTeam .team {
+  .MeetTheTeam .team,
+  .thanks {
     display: flex;
     justify-content: space-between;
+  }
+
+  .MeetTheTeam .team p,
+  .thanks p {
     font-size: 12px;
   }
 
@@ -67,9 +72,15 @@
     height: 200px;
   }
 
-  .MeetTheTeam .thanks {
+  .MeetTheTeam .moe,
+  .duy,
+  .marissa,
+  .laurie,
+  .andrea,
+  .jeff {
     display: flex;
-    justify-content: space-around;
-    font-size: 12px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }

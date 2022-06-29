@@ -86,6 +86,7 @@ const HardOne = () => {
               id={answers[0]}
               onChange={(e) => setSelected(e.target.value)}
               value={answers[0]}
+              required
             />
             <label id="answer" htmlFor={answers[0]}>
               {toTitleCase(answers[0])}
@@ -97,6 +98,7 @@ const HardOne = () => {
               id={answers[1]}
               onChange={(e) => setSelected(e.target.value)}
               value={answers[1]}
+              required
             />
             <label id="answer" htmlFor={answers[1]}>
               {toTitleCase(answers[1])}
@@ -108,6 +110,7 @@ const HardOne = () => {
               id={answers[2]}
               onChange={(e) => setSelected(e.target.value)}
               value={answers[2]}
+              required
             />
             <label id="answer" htmlFor={answers[2]}>
               {toTitleCase(answers[2])}
@@ -119,6 +122,7 @@ const HardOne = () => {
               id={answers[3]}
               onChange={(e) => setSelected(e.target.value)}
               value={answers[3]}
+              required
             />
             <label id="answer" htmlFor={answers[3]}>
               {toTitleCase(answers[3])}

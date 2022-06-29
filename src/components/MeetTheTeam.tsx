@@ -38,7 +38,7 @@ const MeetTheTeam = () => {
               }}
             />
           ) : (
-            <div>
+            <div className="moe">
               <img
                 src={Maurice}
                 alt="Moe"
@@ -54,20 +54,22 @@ const MeetTheTeam = () => {
                 building others for success. Detail-oriented, reliable, and
                 committed to providing the highest degree of service excellence.
               </p>
-              <a
-                href="https://www.linkedin.com/in/maurice-mason/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/Momason97"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/maurice-mason/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/Momason97"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -82,7 +84,7 @@ const MeetTheTeam = () => {
               }}
             />
           ) : (
-            <div>
+            <div className="duy">
               <img
                 src={Duy}
                 alt="Duy"
@@ -104,20 +106,22 @@ const MeetTheTeam = () => {
                 successfully transition into a role as a web developer with a
                 focus on simple, intuitive and effective software design.
               </p>
-              <a
-                href="https://www.linkedin.com/in/dvpham89/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/dvpham89"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/dvpham89/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/dvpham89"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -132,7 +136,7 @@ const MeetTheTeam = () => {
               }}
             />
           ) : (
-            <div>
+            <div className="marissa">
               <img
                 src={Marissa}
                 alt="Marissa"
@@ -151,12 +155,22 @@ const MeetTheTeam = () => {
                 traveling and being out in nature whether it be walking,
                 bonfires, and dirt bikes!
               </p>
-              <a href="https://www.linkedin.com/in/marissa-jacklyn/">
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a href="https://github.com/missamarie1">
-                <i className="fa-brands fa-github"></i>
-              </a>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/marissa-jacklyn/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/missamarie1"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -171,7 +185,7 @@ const MeetTheTeam = () => {
               }}
             />
           ) : (
-            <div>
+            <div className="laurie">
               <img
                 src={Laurie}
                 alt="Laurie"
@@ -187,20 +201,22 @@ const MeetTheTeam = () => {
                 help others thrive. Detail-oriented, reliable, and committed to
                 providing the highest degree of service excellence.
               </p>
-              <a
-                href="https://www.linkedin.com/in/lnmclaughlin/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://github.com/lnmclaughlin"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
+              <div>
+                <a
+                  href="https://www.linkedin.com/in/lnmclaughlin/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://github.com/lnmclaughlin"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-github"></i>
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -219,7 +235,7 @@ const MeetTheTeam = () => {
                 }}
               />
             ) : (
-              <div>
+              <div className="andrea">
                 <img
                   src={Andrea}
                   alt="Andrea"
@@ -244,7 +260,7 @@ const MeetTheTeam = () => {
                 }}
               />
             ) : (
-              <div>
+              <div className="jeff">
                 <img
                   src={Jeff}
                   alt="Jeff"

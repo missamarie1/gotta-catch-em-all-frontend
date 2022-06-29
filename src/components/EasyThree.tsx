@@ -83,6 +83,7 @@ const EasyThree = () => {
               id={answers[0].toString()}
               onChange={(e) => setSelected3(+e.target.value)}
               value={answers[0]}
+              required
             />
             <label id="answer" htmlFor={answers[0].toString()}>
               {answers[0]}
@@ -94,6 +95,7 @@ const EasyThree = () => {
               id={answers[1].toString()}
               onChange={(e) => setSelected3(+e.target.value)}
               value={answers[1]}
+              required
             />
             <label id="answer" htmlFor={answers[1].toString()}>
               {answers[1]}
@@ -105,6 +107,7 @@ const EasyThree = () => {
               id={answers[2].toString()}
               onChange={(e) => setSelected3(+e.target.value)}
               value={answers[2]}
+              required
             />
             <label id="answer" htmlFor={answers[2].toString()}>
               {answers[2]}
@@ -116,6 +119,7 @@ const EasyThree = () => {
               id={answers[3].toString()}
               onChange={(e) => setSelected3(+e.target.value)}
               value={answers[3]}
+              required
             />
             <label id="answer" htmlFor={answers[3].toString()}>
               {answers[3]}
