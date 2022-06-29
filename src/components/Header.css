@@ -16,17 +16,11 @@
   text-align: center;
 }
 
-.Header .fa-volume-high {
+.Header .fa-volume-high,
+.fa-volume-xmark {
   position: fixed;
   top: 25px;
   right: 23px;
-  font-size: 24px;
-}
-
-.Header .fa-volume-xmark {
-  position: fixed;
-  top: 50px;
-  right: 25px;
   font-size: 24px;
 }
 
