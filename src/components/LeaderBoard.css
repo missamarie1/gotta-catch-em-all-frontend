@@ -1,21 +1,10 @@
 .LeaderBoard {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100vw;
+  align-items: center;
 }
 
-.LeaderBoard h2,
-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.LeaderBoard .caught {
-  height: 32px;
-}
 .LeaderBoard table {
   width: 100%;
 }
@@ -23,31 +12,36 @@ button {
 .LeaderBoard tbody {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
-.LeaderBoard th {
-  padding: 12px 12px 12px 0;
+.LeaderBoard .headers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .LeaderBoard tr {
-  width: 75%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 0;
 }
 
-.LeaderBoard .player-name {
+.LeaderBoard .player {
+  width: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  width: 250px;
   text-align: center;
 }
 
 .LeaderBoard .player-img {
-  padding-right: 10px;
+  width: 45px;
+  position: relative;
+  left: 0;
 }
 
 .LeaderBoard .score-num,
@@ -71,12 +65,12 @@ button {
 }
 
 .LeaderBoard .rival-avatar {
-  height: 100px;
+  height: 75px;
   margin-bottom: 25px;
 }
 
 .LeaderBoard .rival-profile-ul {
-  width: 95vw;
+  width: 75vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,13 +81,12 @@ button {
 
 .LeaderBoard .rival-profile-li {
   list-style: none;
-  font-size: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 }
 
-.LeaderBoard .rival-profile-img {
-  height: 96px;
+.LeaderBoard .rival-profile-li p {
+  font-size: 8px;
 }

@@ -1,6 +1,5 @@
 import "./Header.css";
 import logo from "../assets/logo.png";
-import { Howl } from "howler";
 import { useEffect, useState } from "react";
 
 const useAudio = (url: string) => {
@@ -24,24 +23,9 @@ const useAudio = (url: string) => {
 };
 
 const Header = () => {
-  // const [play, setPlay] = useState(false);
   const { playing, toggle } = useAudio(
     "https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ncplxpiydy/03%20Title%20Screen.mp3"
   );
-
-  // const music = new Howl({
-  //   src: [
-  //     "https://vgmsite.com/soundtracks/pokemon-red-green-blue-yellow/ncplxpiydy/03%20Title%20Screen.mp3",
-  //   ],
-  //   volume: 0.1,
-  // });
-  // useEffect(() => {
-  //   if (play) {
-  //     music.play();
-  //   } else {
-  //     music.stop();
-  //   }
-  // }, [play]);
 
   return (
     <header className="Header">
@@ -52,9 +36,7 @@ const Header = () => {
       )}
 
       <img src={logo} alt="pokemon" className="logo" />
-      <div className="gotta-catch-em-all">
-        <h1>GOTTA CATCH EM ALL</h1>
-      </div>
+      <h1>GOTTA CATCH EM ALL</h1>
     </header>
   );
 };

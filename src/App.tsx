@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import LeaderBoard from "./components/LeaderBoard";
+import Main from "./components/Main";
 import Difficulty from "./components/Difficulty";
 import Profile from "./components/Profile";
+import LeaderBoard from "./components/LeaderBoard";
 import MeetTheTeam from "./components/MeetTheTeam";
-import Main from "./components/Main";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
