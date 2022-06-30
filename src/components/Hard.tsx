@@ -39,7 +39,7 @@ const Hard = () => {
             You have already caught all the Pokémon in this difficulty please
             select another difficulty
           </p>
-          <button onClick={submitHandler}>okay</button>
+          <button onClick={submitHandler}>Close</button>
         </div>
       )}
 
