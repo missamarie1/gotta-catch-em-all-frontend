@@ -15,30 +15,10 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
 
   const OneThirdsChance = [false, false, true];
   const TwoThirdsChance = [true, true, false];
-  const TwoSixthsChance = [true, true, false, false, false, false];
-  const FourSixthsChance = [true, true, false, false, false, false];
-  const ThreeNinthsChance = [
-    true,
-    true,
-    true,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ];
-  const SixNinthsChance = [
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    false,
-    false,
-    false,
-  ];
+  const OneFifthsChance = [true, false, false, false, false];
+  const TwoFifthsChance = [true, true, false, false, false];
+  const OneSeventhsChance = [true, false, false, false, false, false, false];
+  const TwoSeventhsChance = [true, true, false, false, false, false, false];
   const updateScore = () => {
     setCurrentScore((prev) => {
       return prev - 1;
@@ -81,30 +61,28 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         let result = TwoThirdsChance[randomNumber];
         setCaught(result);
       }
-    }
-    if (questionsAnswered === 3 && challengeLevel === "med") {
+    } else if (questionsAnswered === 3 && challengeLevel === "med") {
       if (!currentScore) {
         setCaught(true);
       } else if (currentScore === 2 && challengeLevel === "med") {
-        let result = TwoSixthsChance[randomNumber];
+        let result = OneFifthsChance[randomNumber];
         setCaught(result);
       } else if (currentScore === 1 && challengeLevel === "med") {
-        let result = FourSixthsChance[randomNumber];
+        let result = TwoFifthsChance[randomNumber];
         setCaught(result);
       }
-    }
-    if (questionsAnswered === 3 && challengeLevel === "hard") {
+    } else if (questionsAnswered === 3 && challengeLevel === "hard") {
       if (!currentScore) {
         setCaught(true);
       } else if (currentScore === 2 && challengeLevel === "hard") {
-        let result = ThreeNinthsChance[randomNumber];
+        let result = OneSeventhsChance[randomNumber];
         setCaught(result);
       } else if (currentScore === 1 && challengeLevel === "hard") {
-        let result = SixNinthsChance[randomNumber];
+        let result = TwoSeventhsChance[randomNumber];
         setCaught(result);
       }
     }
-  }, [questionsAnswered]);
+  }, [questionsAnswered, challengeLevel]);
 
   return (
     <GameContext.Provider
