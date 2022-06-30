@@ -278,7 +278,7 @@ const MeetTheTeam = () => {
         </div>
       }
       <button>
-        <Link to="/">Return Home</Link>
+        <Link to="/play">Return Home</Link>
       </button>
     </div>
   );

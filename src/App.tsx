@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import LeaderBoard from "./components/LeaderBoard";
 import MeetTheTeam from "./components/MeetTheTeam";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Landing from "./components/Landing";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/play" element={<Main />} />
           <Route path="/difficulty" element={<Difficulty />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/leaderboard" element={<LeaderBoard />} />

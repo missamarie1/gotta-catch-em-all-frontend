@@ -60,11 +60,9 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
       } else if (currentScore === 2 && challengeLevel === "easy") {
         let result = OneThirdsChance[randomNumberEasy];
         setCaught(result);
-        console.log("1/3");
       } else if (currentScore === 1 && challengeLevel === "easy") {
         let result = TwoThirdsChance[randomNumberEasy];
         setCaught(result);
-        console.log("2/3");
       }
     } else if (questionsAnswered === 3 && challengeLevel === "med") {
       if (!currentScore) {
@@ -73,11 +71,9 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
       } else if (currentScore === 2 && challengeLevel === "med") {
         let result = OneFourthsChance[randomNumberMed];
         setCaught(result);
-        console.log("1/5");
       } else if (currentScore === 1 && challengeLevel === "med") {
         let result = TwoFourthsChance[randomNumberMed];
         setCaught(result);
-        console.log("2/5");
       }
     } else if (questionsAnswered === 3 && challengeLevel === "hard") {
       if (!currentScore) {
@@ -86,11 +82,9 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
       } else if (currentScore === 2 && challengeLevel === "hard") {
         let result = OneFifthsChance[randomNumberHard];
         setCaught(result);
-        console.log("1/7");
       } else if (currentScore === 1 && challengeLevel === "hard") {
         let result = TwoFifthsChance[randomNumberHard];
         setCaught(result);
-        console.log("2/7");
       }
     }
   }, [questionsAnswered, challengeLevel]);

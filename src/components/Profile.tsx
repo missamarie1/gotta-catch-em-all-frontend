@@ -135,7 +135,7 @@ const Profile = () => {
               <button onClick={() => setShowDelete(false)}>No</button>
             </div>
           )}
-          <Link to="/">
+          <Link to="/play">
             <button>Return Home</button>
           </Link>
         </>

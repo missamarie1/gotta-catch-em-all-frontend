@@ -66,7 +66,7 @@ const Summary = () => {
         <button onClick={refreshPage}>Play Again</button>
       </Link>
       <button>
-        <Link to="/">Return Home</Link>
+        <Link to="/play">Return Home</Link>
       </button>
     </div>
   );

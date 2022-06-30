@@ -120,7 +120,7 @@ const LeaderBoard = () => {
           <button onClick={() => setShowRivalProfile(false)}>Close</button>
         </div>
       )}
-      <Link to="/">
+      <Link to="/play">
         <button>Return Home</button>
       </Link>
     </div>
