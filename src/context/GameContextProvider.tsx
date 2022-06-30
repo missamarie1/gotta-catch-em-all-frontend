@@ -14,12 +14,12 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
 
   const OneThirdsChance = [false, false, true];
   const TwoThirdsChance = [true, true, false];
+  const OneFourthsChance = [true, false, false, false];
+  const TwoFourthsChance = [true, true, false, false];
+  const ThreeFourthsChance = [true, true, true, false];
   const OneFifthsChance = [true, false, false, false, false];
   const TwoFifthsChance = [true, true, false, false, false];
   const ThreeFifthsChance = [true, true, true, false, false];
-  const OneSeventhsChance = [true, false, false, false, false, false, false];
-  const TwoSeventhsChance = [true, true, false, false, false, false, false];
-  const ThreeSeventhsChance = [true, true, true, false, false, false, false];
   const updateScore = () => {
     setCurrentScore((prev) => {
       return prev - 1;
@@ -68,27 +68,27 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
       }
     } else if (questionsAnswered === 3 && challengeLevel === "med") {
       if (!currentScore) {
-        let result = ThreeFifthsChance[randomNumberMed];
+        let result = ThreeFourthsChance[randomNumberMed];
         setCaught(result);
       } else if (currentScore === 2 && challengeLevel === "med") {
-        let result = OneFifthsChance[randomNumberMed];
+        let result = OneFourthsChance[randomNumberMed];
         setCaught(result);
         console.log("1/5");
       } else if (currentScore === 1 && challengeLevel === "med") {
-        let result = TwoFifthsChance[randomNumberMed];
+        let result = TwoFourthsChance[randomNumberMed];
         setCaught(result);
         console.log("2/5");
       }
     } else if (questionsAnswered === 3 && challengeLevel === "hard") {
       if (!currentScore) {
-        let result = ThreeSeventhsChance[randomNumberHard];
+        let result = ThreeFifthsChance[randomNumberHard];
         setCaught(result);
       } else if (currentScore === 2 && challengeLevel === "hard") {
-        let result = OneSeventhsChance[randomNumberHard];
+        let result = OneFifthsChance[randomNumberHard];
         setCaught(result);
         console.log("1/7");
       } else if (currentScore === 1 && challengeLevel === "hard") {
-        let result = TwoSeventhsChance[randomNumberHard];
+        let result = TwoFifthsChance[randomNumberHard];
         setCaught(result);
         console.log("2/7");
       }

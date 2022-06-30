@@ -110,11 +110,8 @@ const Profile = () => {
                   src={pokedex?.sprites?.front_default}
                   alt={pokedex?.name}
                 />
-                <p>Name: {toTitleCase(pokedex?.name!)}</p>
-                <p>
-                  Type:{" "}
-                  {pokedex?.types && toTitleCase(pokedex?.types[0].type.name)}
-                </p>
+                <p>Name: {pokedex?.name}</p>
+                <p>Type: {pokedex?.types && pokedex?.types[0].type.name}</p>
                 <p>Number: {pokedex?.id}</p>
                 <button onClick={() => setShowPokedex(false)}>Close</button>
               </div>
