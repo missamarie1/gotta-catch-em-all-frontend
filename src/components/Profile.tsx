@@ -111,7 +111,7 @@ const Profile = () => {
               </li>
             ))}
           </ul>
-          {showPokedex && (
+          {showPokedex && pokedex && (
             <div className="pokedex-container">
               <div className="pokedex">
                 <h2>Pokédex:</h2>
@@ -119,8 +119,11 @@ const Profile = () => {
                   src={pokedex?.sprites?.front_default}
                   alt={pokedex?.name}
                 />
-                <p>Name: {pokedex?.name}</p>
-                <p>Type: {pokedex?.types && pokedex?.types[0].type.name}</p>
+                <p>Name: {toTitleCase(pokedex?.name)}</p>
+                <p>
+                  Type:{" "}
+                  {pokedex?.types && toTitleCase(pokedex?.types[0].type.name)}
+                </p>
                 <p>Number: {pokedex?.id}</p>
                 <button onClick={() => setShowPokedex(false)}>Close</button>
               </div>
