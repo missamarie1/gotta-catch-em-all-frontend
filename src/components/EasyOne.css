@@ -1,4 +1,4 @@
-.EasyOne {
+div.EasyOne {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -7,9 +7,6 @@
 
 @media only screen and (min-width: 768px) {
   .EasyOne {
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
   }
 }
