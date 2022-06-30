@@ -112,7 +112,7 @@ export const medQThree = [
   "poliwrath",
   "alakazam",
   "machamp",
-  "victreebell",
+  "victreebel",
   "golem",
   "gengar",
   "hitmonlee",
