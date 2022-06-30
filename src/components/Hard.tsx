@@ -14,12 +14,15 @@ const Hard = () => {
 
   useEffect(() => {
     if (!currentPokemon) {
-      let randomHard =
-        hardPokemonToBeCaught[
-          Math.floor(Math.random() * hardPokemonToBeCaught.length)
-        ];
-
-      getAndSetPokemon("hard", randomHard);
+      if (hardPokemonToBeCaught.length > 0) {
+        let randomHard =
+          hardPokemonToBeCaught[
+            Math.floor(Math.random() * hardPokemonToBeCaught.length)
+          ];
+        getAndSetPokemon("hard", randomHard);
+      } else {
+        alert("You have already caught all the Pokémon in this region");
+      }
     }
   }, [currentPokemon]);
 

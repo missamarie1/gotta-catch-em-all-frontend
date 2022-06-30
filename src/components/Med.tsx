@@ -14,12 +14,15 @@ const Med = () => {
 
   useEffect(() => {
     if (!currentPokemon) {
-      let randomMed =
-        medPokemonToBeCaught[
-          Math.floor(Math.random() * medPokemonToBeCaught.length)
-        ];
-
-      getAndSetPokemon("med", randomMed);
+      if (medPokemonToBeCaught.length > 0) {
+        let randomMed =
+          medPokemonToBeCaught[
+            Math.floor(Math.random() * medPokemonToBeCaught.length)
+          ];
+        getAndSetPokemon("med", randomMed);
+      } else {
+        alert("You have already caught all the Pokémon in this region");
+      }
     }
   }, [currentPokemon]);
 

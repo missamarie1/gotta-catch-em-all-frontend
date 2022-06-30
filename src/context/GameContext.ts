@@ -9,8 +9,6 @@ export interface GameContextModel {
   setChallengeLevel: (l: string) => void;
   questionsAnswered: number;
   setQuestionsAnswered: (n: number) => void;
-  gameInProgress: boolean;
-  setGameInProgress: (b: boolean) => void;
   currentPokemon: Pokemon | null;
   getAndSetPokemon: (s: string, n: number) => void;
   caught: boolean;
@@ -26,8 +24,6 @@ const defaultValues: GameContextModel = {
   setChallengeLevel: () => {},
   questionsAnswered: 0,
   setQuestionsAnswered: () => {},
-  gameInProgress: false,
-  setGameInProgress: () => {},
   currentPokemon: null,
   getAndSetPokemon: () => {},
   caught: false,

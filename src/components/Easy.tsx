@@ -14,11 +14,15 @@ const Easy = () => {
 
   useEffect(() => {
     if (!currentPokemon) {
-      let randomEasy =
-        easyPokemonToBeCaught[
-          Math.floor(Math.random() * easyPokemonToBeCaught.length)
-        ];
-      getAndSetPokemon("easy", randomEasy);
+      if (easyPokemonToBeCaught.length > 0) {
+        let randomEasy =
+          easyPokemonToBeCaught[
+            Math.floor(Math.random() * easyPokemonToBeCaught.length)
+          ];
+        getAndSetPokemon("easy", randomEasy);
+      } else {
+        alert("You have already caught all the Pokémon in this region");
+      }
     }
   }, [currentPokemon]);
 

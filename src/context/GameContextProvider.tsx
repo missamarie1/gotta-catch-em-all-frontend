@@ -9,7 +9,6 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [currentScore, setCurrentScore] = useState<number>(3);
   const [challengeLevel, setChallengeLevel] = useState("");
   const [questionsAnswered, setQuestionsAnswered] = useState(0);
-  const [gameInProgress, setGameInProgress] = useState(false);
   const [caught, setCaught] = useState(true);
   const [currentPokemon, setCurrentPokemon] = useState<Pokemon | null>(null);
 
@@ -17,8 +16,10 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const TwoThirdsChance = [true, true, false];
   const OneFifthsChance = [true, false, false, false, false];
   const TwoFifthsChance = [true, true, false, false, false];
+  const ThreeFifthsChance = [true, true, true, false, false];
   const OneSeventhsChance = [true, false, false, false, false, false, false];
   const TwoSeventhsChance = [true, true, false, false, false, false, false];
+  const ThreeSeventhsChance = [true, true, true, false, false, false, false];
   const updateScore = () => {
     setCurrentScore((prev) => {
       return prev - 1;
@@ -50,36 +51,46 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
-    let randomNumber = Math.floor(Math.random() * 3);
+    let randomNumberEasy = Math.floor(Math.random() * 3);
+    let randomNumberMed = Math.floor(Math.random() * 5);
+    let randomNumberHard = Math.floor(Math.random() * 7);
     if (questionsAnswered === 3 && challengeLevel === "easy") {
       if (!currentScore) {
         setCaught(true);
       } else if (currentScore === 2 && challengeLevel === "easy") {
-        let result = OneThirdsChance[randomNumber];
+        let result = OneThirdsChance[randomNumberEasy];
         setCaught(result);
+        console.log("1/3");
       } else if (currentScore === 1 && challengeLevel === "easy") {
-        let result = TwoThirdsChance[randomNumber];
+        let result = TwoThirdsChance[randomNumberEasy];
         setCaught(result);
+        console.log("2/3");
       }
     } else if (questionsAnswered === 3 && challengeLevel === "med") {
       if (!currentScore) {
-        setCaught(true);
+        let result = ThreeFifthsChance[randomNumberMed];
+        setCaught(result);
       } else if (currentScore === 2 && challengeLevel === "med") {
-        let result = OneFifthsChance[randomNumber];
+        let result = OneFifthsChance[randomNumberMed];
         setCaught(result);
+        console.log("1/5");
       } else if (currentScore === 1 && challengeLevel === "med") {
-        let result = TwoFifthsChance[randomNumber];
+        let result = TwoFifthsChance[randomNumberMed];
         setCaught(result);
+        console.log("2/5");
       }
     } else if (questionsAnswered === 3 && challengeLevel === "hard") {
       if (!currentScore) {
-        setCaught(true);
+        let result = ThreeSeventhsChance[randomNumberHard];
+        setCaught(result);
       } else if (currentScore === 2 && challengeLevel === "hard") {
-        let result = OneSeventhsChance[randomNumber];
+        let result = OneSeventhsChance[randomNumberHard];
         setCaught(result);
+        console.log("1/7");
       } else if (currentScore === 1 && challengeLevel === "hard") {
-        let result = TwoSeventhsChance[randomNumber];
+        let result = TwoSeventhsChance[randomNumberHard];
         setCaught(result);
+        console.log("2/7");
       }
     }
   }, [questionsAnswered, challengeLevel]);
@@ -94,8 +105,6 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         setChallengeLevel,
         questionsAnswered,
         setQuestionsAnswered,
-        gameInProgress,
-        setGameInProgress,
         currentPokemon,
         getAndSetPokemon,
         caught,
