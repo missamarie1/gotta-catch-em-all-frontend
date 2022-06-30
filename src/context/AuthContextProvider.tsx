@@ -58,7 +58,6 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-    // useEffect to only register once at start
     return auth.onAuthStateChanged((newUser) => {
       setUser(newUser);
       if (newUser) {
@@ -71,6 +70,8 @@ function AuthContextProvider({ children }: { children: ReactNode }) {
       }
     });
   }, []);
+
+  useEffect(() => {}, []);
 
   return (
     <AuthContext.Provider

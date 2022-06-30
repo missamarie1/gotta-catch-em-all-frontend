@@ -150,7 +150,7 @@ export const medPokemon: Pokemon[] = [
   },
   {
     id: 8,
-    name: "wartotle",
+    name: "wartortle",
     abilities: "torrent",
     evolvesFrom: "squirtle",
     evolvesTo: "blastoise",
@@ -171,7 +171,7 @@ export const medPokemon: Pokemon[] = [
   },
   {
     id: 17,
-    name: "pideotto",
+    name: "pidgeotto",
     abilities: "keen eye",
     evolvesFrom: "pidgey",
     evolvesTo: "pidgeot",
@@ -313,7 +313,7 @@ export const medPokemon: Pokemon[] = [
     id: 61,
     name: "poliwhirl",
     abilities: "water absorb",
-    evolvesFrom: "poliwhirl",
+    evolvesFrom: "poliwag",
     evolvesTo: "poliwrath",
   },
   {
@@ -439,7 +439,7 @@ export const medPokemon: Pokemon[] = [
     id: 105,
     name: "marowak",
     abilities: "rock hard",
-    evolvesFrom: "no evolution",
+    evolvesFrom: "cubone",
     evolvesTo: "no evolution",
   },
   {

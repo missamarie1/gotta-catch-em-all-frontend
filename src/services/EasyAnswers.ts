@@ -83,7 +83,6 @@ export const easyQTwo = [
   "Fighting",
   "Psychic",
   "Rock",
-  "Steel",
   "Ice",
   "Ghost",
   "Dragon",

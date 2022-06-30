@@ -128,7 +128,7 @@ const HardOne = () => {
               {toTitleCase(answers[3])}
             </label>
           </div>
-          <button disabled={effect}>Submit</button>
+          <button disabled={effect}>Attack</button>
         </form>
       )}
     </div>

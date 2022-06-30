@@ -28,45 +28,43 @@ export const hardQOne = [
   "articuno",
   "zapdos",
   "moltres",
+  "dragonite",
   "mewtwo",
   "mew",
-  "dragonite",
 ];
 
 export const hardQTwo = [
-  "ground",
+  "bug",
+  "dragon",
+  "electric",
   "fairy",
-  "grass",
   "fighting",
-  "psychic",
-  "normal",
   "fire",
-  "flying",
-  "ice",
   "ghost",
+  "grass",
+  "ground",
+  "normal",
+  "poison",
+  "psychic",
+  "rock",
   "water",
 ];
 
 export const hardQThree = [
-  "normal",
-  "fighting",
-  "flying",
-  "poison",
-  "ground",
-  "rock",
   "bug",
-  "ghost",
-  "steel",
-  "fire",
-  "water",
-  "grass",
-  "electric",
-  "psychic",
-  "ice",
   "dragon",
-  "dark",
+  "electric",
   "fairy",
-  "shadow",
+  "fighting",
+  "fire",
+  "ghost",
+  "grass",
+  "ground",
+  "normal",
+  "poison",
+  "psychic",
+  "rock",
+  "water",
   "no strengths",
 ];
 
@@ -99,7 +97,7 @@ export const hardPokemon: Pokemon[] = [
     id: 12,
     name: "butterfree",
     strengths: "grass",
-    weaknesses: "fire",
+    weaknesses: "rock",
     description:
       "In battle, it flaps its wings at great speed to release highly toxic dust into the air.",
   },
@@ -107,7 +105,7 @@ export const hardPokemon: Pokemon[] = [
     id: 15,
     name: "beedrill",
     strengths: "grass",
-    weaknesses: "fire",
+    weaknesses: "rock",
     description:
       "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
   },
@@ -115,7 +113,7 @@ export const hardPokemon: Pokemon[] = [
     id: 18,
     name: "pidgeot",
     strengths: "no strengths",
-    weaknesses: "electric",
+    weaknesses: "fighting",
     description:
       "This Pokémon flies at Mach 2 speed, seeking prey. Its large talons are feared as wicked weapons.",
   },
@@ -123,7 +121,7 @@ export const hardPokemon: Pokemon[] = [
     id: 31,
     name: "nidoqueen",
     strengths: "fairy",
-    weaknesses: "water",
+    weaknesses: "ground",
     description:
       "It is better at defense than offense. With scales like armor, this Pokémon will shield its children from any kind of attack.",
   },
@@ -131,14 +129,14 @@ export const hardPokemon: Pokemon[] = [
     id: 34,
     name: "nidoking",
     strengths: "fairy",
-    weaknesses: "water",
+    weaknesses: "ground",
     description:
       "When it goes on a rampage, it’s impossible to control. But in the presence of a female it’s lived with for a long time, it calms down.",
   },
   {
     id: 45,
     name: "vileplume",
-    strengths: "ground",
+    strengths: "water",
     weaknesses: "fire",
     description:
       "It has the world’s largest petals. With every step, the petals shake out heavy clouds of toxic pollen.",
@@ -146,8 +144,8 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 62,
     name: "poliwrath",
-    strengths: "water",
-    weaknesses: "fairy",
+    strengths: "fire",
+    weaknesses: "grass",
     description:
       "Its body is solid muscle. When swimming through cold seas, it uses its impressive arms to smash through drift ice and plow forward.",
   },
@@ -162,7 +160,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 68,
     name: "machamp",
-    strengths: "rock",
+    strengths: "normal",
     weaknesses: "psychic",
     description:
       "It quickly swings its four arms to rock its opponents with ceaseless punches and chops from all angles.",
@@ -170,7 +168,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 71,
     name: "victreebell",
-    strengths: "ground",
+    strengths: "water",
     weaknesses: "fire",
     description:
       "Lures prey with the sweet aroma of honey. Swallowed whole, the prey is dissolved in a day, bones and all.",
@@ -178,7 +176,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 76,
     name: "golem",
-    strengths: "flying",
+    strengths: "bug",
     weaknesses: "fighting",
     description:
       "Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it’s exposed to air.",
@@ -186,7 +184,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 94,
     name: "gengar",
-    strengths: "ghost",
+    strengths: "psychic",
     weaknesses: "ghost",
     description:
       "On the night of a full moon, if shadows move on their own and laugh, it must be it’s doing.",
@@ -234,7 +232,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 135,
     name: "jolteon",
-    strengths: "flying",
+    strengths: "water",
     weaknesses: "ground",
     description:
       "If it is angered or startled, the fur all over its body bristles like sharp needles that pierce foes.",
@@ -242,7 +240,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 136,
     name: "flareon",
-    strengths: "ice",
+    strengths: "grass",
     weaknesses: "water",
     description:
       "Once it has stored up enough heat, this Pokémon’s body temperature can reach up to 1,700 degrees Fahrenheit.",
@@ -250,8 +248,8 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 142,
     name: "aerodactyl",
-    strengths: "flying",
-    weaknesses: "water",
+    strengths: "bug",
+    weaknesses: "fighting",
     description:
       "This is a ferocious Pokémon from ancient times. Apparently even modern technology is incapable of producing a perfectly restored specimen.",
   },
@@ -266,7 +264,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 144,
     name: "articuno",
-    strengths: "flying",
+    strengths: "grass",
     weaknesses: "fire",
     description:
       "It’s said that this Pokémon’s beautiful blue wings are made of ice. It flies over snowy mountains, its long tail fluttering along behind it.",
@@ -274,15 +272,15 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 145,
     name: "zapdos",
-    strengths: "flying",
-    weaknesses: "ice",
+    strengths: "water",
+    weaknesses: "ground",
     description:
       "This Pokémon has complete control over electricity. There are tales of it nesting in the dark depths of pitch-black thunderclouds.",
   },
   {
     id: 146,
     name: "moltres",
-    strengths: "ice",
+    strengths: "grass",
     weaknesses: "water",
     description:
       "It’s one of the legendary bird Pokémon. When it flaps its flaming wings, they glimmer with a dazzling red glow.",
@@ -298,7 +296,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 150,
     name: "mewtwo",
-    strengths: "pyschic",
+    strengths: "fighting",
     weaknesses: "ghost",
     description:
       "Its DNA is almost the same as another pokemon’s. However, its size and disposition are vastly different.",
@@ -306,7 +304,7 @@ export const hardPokemon: Pokemon[] = [
   {
     id: 151,
     name: "mew",
-    strengths: "psychic",
+    strengths: "fighting",
     weaknesses: "ghost",
     description:
       "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen.",

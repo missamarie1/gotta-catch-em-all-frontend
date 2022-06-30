@@ -85,7 +85,7 @@ const EasyTwo = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What's {currentPokemon.name}'s type?</h2>
+          <h2>What's {currentPokemon.name}'s main type?</h2>
           <div className="answer-container">
             <input
               type="radio"
@@ -135,7 +135,7 @@ const EasyTwo = () => {
               {toTitleCase(answers[3])}
             </label>
           </div>
-          <button disabled={effect}>Submit</button>
+          <button disabled={effect}>Attack</button>
         </form>
       )}
     </div>

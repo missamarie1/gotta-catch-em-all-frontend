@@ -30,9 +30,9 @@ const Header = () => {
   return (
     <header className="Header">
       {!playing ? (
-        <i className="fa-solid fa-volume-high" onClick={toggle}></i>
-      ) : (
         <i className="fa-solid fa-volume-xmark" onClick={toggle}></i>
+      ) : (
+        <i className="fa-solid fa-volume-high" onClick={toggle}></i>
       )}
 
       <img src={logo} alt="pokemon" className="logo" />
