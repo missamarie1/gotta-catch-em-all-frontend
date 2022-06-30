@@ -69,26 +69,35 @@ const Profile = () => {
           <p>Total Score: {account?.totalScore}</p>
           <p>Pokémon Caught: {account?.caught.length}</p>
           <h3>Pokémon Collection:</h3>
-          <p className="click">(Click on a Pokémon to view their Pokédex)</p>
-          {filter === "id" ? (
-            <button
-              className="sort"
-              onClick={() => {
-                setFilter("abc");
-              }}
-            >
-              Sort by Name
-            </button>
+          {account && account.caught.length > 0 ? (
+            <p className="click">(Click on a Pokémon to view their Pokédex)</p>
           ) : (
-            <button
-              className="sort"
-              onClick={() => {
-                setFilter("id");
-              }}
-            >
-              Sort by Pokédex Number
-            </button>
+            <p className="click">Start playing to Catch Em All!</p>
           )}
+          {account && account.caught.length > 1 ? (
+            filter === "id" ? (
+              <button
+                className="sort"
+                onClick={() => {
+                  setFilter("abc");
+                }}
+              >
+                Sort by Name
+              </button>
+            ) : (
+              <button
+                className="sort"
+                onClick={() => {
+                  setFilter("id");
+                }}
+              >
+                Sort by Pokédex Number
+              </button>
+            )
+          ) : (
+            <></>
+          )}
+
           <ul>
             {showPokemon?.map((pokemon, index) => (
               <li

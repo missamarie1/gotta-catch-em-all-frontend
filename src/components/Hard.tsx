@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import GameContext from "../context/GameContext";
 import "./Hard.css";
@@ -11,6 +11,7 @@ const Hard = () => {
   const { questionsAnswered, currentPokemon, getAndSetPokemon } =
     useContext(GameContext);
   const { hardPokemonToBeCaught } = useContext(AuthContext);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (!currentPokemon) {
@@ -21,16 +22,27 @@ const Hard = () => {
           ];
         getAndSetPokemon("hard", randomHard);
       } else {
-        alert(
-          "You have already caught all the Pokémon in this difficulty please select another difficulty"
-        );
-        window.location.assign("/difficulty");
+        setShowAlert(true);
       }
     }
   }, [currentPokemon]);
+  const submitHandler = () => {
+    setShowAlert(false);
+    window.location.assign("/difficulty");
+  };
 
   return (
     <div className="Hard">
+      {showAlert && (
+        <div className="alert">
+          <p>
+            You have already caught all the Pokémon in this difficulty please
+            select another difficulty
+          </p>
+          <button onClick={submitHandler}>okay</button>
+        </div>
+      )}
+
       {!questionsAnswered ? (
         <HardOne />
       ) : questionsAnswered === 1 ? (

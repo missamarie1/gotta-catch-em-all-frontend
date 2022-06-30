@@ -7,6 +7,9 @@
 
 @media only screen and (min-width: 768px) {
   .EasyOne {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: row;
   }
 }

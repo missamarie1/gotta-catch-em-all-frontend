@@ -19,6 +19,8 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
   const [userName, setUserName] = useState(usernameProp);
   const [avatar, setAvatar] = useState(avatarProp);
   const { user, setAccount, account } = useContext(AuthContext);
+  const [showAlert, setShowAlert] = useState(false);
+  const [message, setMessage] = useState("");
 
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
@@ -36,18 +38,22 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
           return account.userName.toLowerCase() === userName.toLowerCase();
         });
         if (foundDuplicate) {
-          alert("That username is taken please select another username");
+          setMessage("That username is taken please select another username");
+          setShowAlert(true);
         } else {
           if (avatar && userName) {
             makeNewAccount(newAccount).then((res) => {
               setAccount(res);
             });
           } else if (!avatar && userName) {
-            alert("Please select an avatar");
+            setMessage("Please select an avatar");
+            setShowAlert(true);
           } else if (avatar && !userName) {
-            alert("Please enter a username");
+            setMessage("Please enter a username");
+            setShowAlert(true);
           } else {
-            alert("Please enter a username and select an avatar");
+            setMessage("Please enter a username and select an avatar");
+            setShowAlert(true);
           }
         }
       });
@@ -65,7 +71,8 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
           );
         });
         if (foundDuplicate) {
-          alert("That username is taken please select another username");
+          setMessage("That username is taken please select another username");
+          setShowAlert(true);
         } else {
           if (avatar && userName) {
             updateAccount(updatedAccount, account?._id!).then((res) => {
@@ -73,11 +80,14 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
               window.location.reload();
             });
           } else if (!avatar && userName) {
-            alert("Please select an avatar");
+            setMessage("Please select an avatar");
+            setShowAlert(true);
           } else if (avatar && !userName) {
-            alert("Please enter a username");
+            setMessage("Please enter a username");
+            setShowAlert(true);
           } else {
-            alert("Please enter a username and select an avatar");
+            setMessage("Please enter a username and select an avatar");
+            setShowAlert(true);
           }
         }
       });
@@ -86,6 +96,13 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
 
   return (
     <div className="Signup">
+      {showAlert && (
+        <div className="alert">
+          <p>{message}</p>
+          <button onClick={() => setShowAlert(false)}>okay</button>
+        </div>
+      )}
+
       <form className="signup-form" onSubmit={submitHandler}>
         <label htmlFor="username">
           {!editMode ? "Create" : "Update"} Username:
