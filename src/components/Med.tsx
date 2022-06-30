@@ -34,7 +34,7 @@ const Med = () => {
 
   return (
     <div className="Med">
-      {showAlert && (
+      {showAlert ? (
         <div className="alert">
           <p>
             You have already caught all the Pokémon in this difficulty please
@@ -42,9 +42,7 @@ const Med = () => {
           </p>
           <button onClick={submitHandler}>Close</button>
         </div>
-      )}
-
-      {!questionsAnswered ? (
+      ) : !questionsAnswered ? (
         <MedOne />
       ) : questionsAnswered === 1 ? (
         <MedTwo />

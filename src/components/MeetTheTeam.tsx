@@ -8,7 +8,7 @@ import Andrea from "../assets/team/Andrea.jpg";
 import Jeff from "../assets/team/Jeff.jpg";
 import Blastoise from "../assets/team/blastoise.gif";
 import Charizard from "../assets/team/charizard.gif";
-import Pikachu from "../assets/team/pikachu.gif";
+import Snorlax from "../assets/team/snorlax.gif";
 import Venusaur from "../assets/team/venusaur.gif";
 import Eevee from "../assets/team/eevee.gif";
 import Mew from "../assets/team/mew.gif";
@@ -129,8 +129,8 @@ const MeetTheTeam = () => {
           <h3>Marissa</h3>
           {showCardMJ ? (
             <img
-              src={Pikachu}
-              alt={Pikachu}
+              src={Snorlax}
+              alt={Snorlax}
               onClick={() => {
                 setShowCardMJ(false);
               }}

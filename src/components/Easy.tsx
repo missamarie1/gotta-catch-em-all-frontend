@@ -33,7 +33,7 @@ const Easy = () => {
 
   return (
     <div className="Easy">
-      {showAlert && (
+      {showAlert ? (
         <div className="alert">
           <p>
             You have already caught all the Pokémon in this difficulty please
@@ -41,9 +41,7 @@ const Easy = () => {
           </p>
           <button onClick={submitHandler}>Close</button>
         </div>
-      )}
-
-      {!questionsAnswered ? (
+      ) : !questionsAnswered ? (
         <EasyOne />
       ) : questionsAnswered === 1 ? (
         <EasyTwo />
