@@ -10,22 +10,24 @@ import Summary from "./Summary";
 const Med = () => {
   const { questionsAnswered, currentPokemon, getAndSetPokemon } =
     useContext(GameContext);
-  const { medPokemonToBeCaught } = useContext(AuthContext);
+  const { medPokemonToBeCaught, account } = useContext(AuthContext);
   const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (!currentPokemon) {
-      if (medPokemonToBeCaught.length > 0) {
-        let randomMed =
-          medPokemonToBeCaught[
-            Math.floor(Math.random() * medPokemonToBeCaught.length)
-          ];
-        getAndSetPokemon("med", randomMed);
-      } else {
-        setShowAlert(true);
+      if (account) {
+        if (medPokemonToBeCaught.length > 0) {
+          let randomMed =
+            medPokemonToBeCaught[
+              Math.floor(Math.random() * medPokemonToBeCaught.length)
+            ];
+          getAndSetPokemon("med", randomMed);
+        } else {
+          setShowAlert(true);
+        }
       }
     }
-  }, [currentPokemon]);
+  }, [currentPokemon, account]);
 
   const submitHandler = () => {
     setShowAlert(false);

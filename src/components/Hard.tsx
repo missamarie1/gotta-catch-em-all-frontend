@@ -10,22 +10,24 @@ import Summary from "./Summary";
 const Hard = () => {
   const { questionsAnswered, currentPokemon, getAndSetPokemon } =
     useContext(GameContext);
-  const { hardPokemonToBeCaught } = useContext(AuthContext);
+  const { hardPokemonToBeCaught, account } = useContext(AuthContext);
   const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     if (!currentPokemon) {
-      if (hardPokemonToBeCaught.length > 0) {
-        let randomHard =
-          hardPokemonToBeCaught[
-            Math.floor(Math.random() * hardPokemonToBeCaught.length)
-          ];
-        getAndSetPokemon("hard", randomHard);
-      } else {
-        setShowAlert(true);
+      if (account) {
+        if (hardPokemonToBeCaught.length > 0) {
+          let randomHard =
+            hardPokemonToBeCaught[
+              Math.floor(Math.random() * hardPokemonToBeCaught.length)
+            ];
+          getAndSetPokemon("hard", randomHard);
+        } else {
+          setShowAlert(true);
+        }
       }
     }
-  }, [currentPokemon]);
+  }, [currentPokemon, account]);
   const submitHandler = () => {
     setShowAlert(false);
     window.location.assign("/difficulty");
