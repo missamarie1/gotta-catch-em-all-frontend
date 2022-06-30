@@ -12,6 +12,10 @@ const Summary = () => {
   const { account, user, setAccount, isCaught, setAvailiblePokemonPool } =
     useContext(AuthContext);
 
+  const refreshPage = () => {
+    window.location.assign("/difficulty");
+  };
+
   useEffect(() => {
     if (caught) {
       const newPokemon: CaughtPokemon = {
@@ -58,6 +62,9 @@ const Summary = () => {
       ) : (
         <h2>Wild {currentPokemon?.name} has Fled!</h2>
       )}
+      <Link to="/difficulty">
+        <button onClick={refreshPage}>Play Again</button>
+      </Link>
       <button>
         <Link to="/">Return Home</Link>
       </button>
