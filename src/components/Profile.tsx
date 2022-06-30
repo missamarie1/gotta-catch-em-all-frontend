@@ -98,17 +98,26 @@ const Profile = () => {
               >
                 <img src={pokemon.image} alt={pokemon.name} />
                 <p>{toTitleCase(pokemon.name)}</p>
+                <p>{`#${pokemon.id}`}</p>
               </li>
             ))}
           </ul>
           {showPokedex && (
-            <div className="pokedex">
-              <h2>Pokédex:</h2>
-              <img src={pokedex?.sprites?.front_default} alt={pokedex?.name} />
-              <p>Name: {pokedex?.name}</p>
-              <p>Type: {pokedex?.types && pokedex?.types[0].type.name}</p>
-              <p>Number: {pokedex?.id}</p>
-              <button onClick={() => setShowPokedex(false)}>Close</button>
+            <div className="pokedex-container">
+              <div className="pokedex">
+                <h2>Pokédex:</h2>
+                <img
+                  src={pokedex?.sprites?.front_default}
+                  alt={pokedex?.name}
+                />
+                <p>Name: {toTitleCase(pokedex?.name!)}</p>
+                <p>
+                  Type:{" "}
+                  {pokedex?.types && toTitleCase(pokedex?.types[0].type.name)}
+                </p>
+                <p>Number: {pokedex?.id}</p>
+                <button onClick={() => setShowPokedex(false)}>Close</button>
+              </div>
             </div>
           )}
           <button onClick={() => showSetupProfile(true)}>Edit Profile</button>

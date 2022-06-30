@@ -113,6 +113,7 @@ const LeaderBoard = () => {
                   alt={pokemon.name}
                 />
                 <p>{toTitleCase(pokemon.name)}</p>
+                <p>{`#${pokemon.id}`}</p>
               </li>
             ))}
           </ul>

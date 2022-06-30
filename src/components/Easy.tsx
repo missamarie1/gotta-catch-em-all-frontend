@@ -21,7 +21,10 @@ const Easy = () => {
           ];
         getAndSetPokemon("easy", randomEasy);
       } else {
-        alert("You have already caught all the Pokémon in this region");
+        alert(
+          "You have already caught all the Pokémon in this difficulty please select another difficulty"
+        );
+        window.location.assign("/difficulty");
       }
     }
   }, [currentPokemon]);

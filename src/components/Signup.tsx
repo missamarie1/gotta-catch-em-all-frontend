@@ -36,7 +36,7 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
           return account.userName.toLowerCase() === userName.toLowerCase();
         });
         if (foundDuplicate) {
-          alert("Username taken, please select another username");
+          alert("That username is taken please select another username");
         } else {
           if (avatar && userName) {
             makeNewAccount(newAccount).then((res) => {
@@ -65,7 +65,7 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
           );
         });
         if (foundDuplicate) {
-          alert("Username taken, please select another username");
+          alert("That username is taken please select another username");
         } else {
           if (avatar && userName) {
             updateAccount(updatedAccount, account?._id!).then((res) => {
