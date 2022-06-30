@@ -53,9 +53,8 @@ const EasyThree = () => {
                 : "zero"
             } hp`}
             style={{ width: getPercent(currentScore) }}
-          >
-            <p className="hp-text">HP: {getPercent(currentScore)}</p>
-          </div>
+          ></div>
+          <p className="hp-text">HP: {getPercent(currentScore)}</p>
         </div>
         <div className="image-container">
           {effect && (
@@ -75,7 +74,7 @@ const EasyThree = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What's {currentPokemon.name}'s' Pokédex number?</h2>
+          <h2>What's {currentPokemon.name}'s Pokédex number?</h2>
           <div className="answer-container">
             <input
               type="radio"

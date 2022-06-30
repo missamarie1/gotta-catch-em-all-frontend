@@ -62,9 +62,8 @@ const EasyTwo = () => {
                 : "zero"
             } hp`}
             style={{ width: getPercent(currentScore) }}
-          >
-            <p className="hp-text">HP: {getPercent(currentScore)}</p>
-          </div>
+          ></div>
+          <p className="hp-text">HP: {getPercent(currentScore)}</p>
         </div>
         <div className="image-container">
           {effect && (

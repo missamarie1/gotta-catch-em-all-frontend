@@ -39,10 +39,20 @@ p {
 }
 
 .hp-container {
+  height: 32px;
   width: 200px;
   margin: 10px;
-  border: 1px solid white;
+  border: 3px solid white;
   display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.hp-container p {
+  position: absolute;
+
+  z-index: 1;
 }
 
 .hp {
@@ -50,6 +60,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  left: 0;
 }
 
 .full {
