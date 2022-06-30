@@ -99,7 +99,7 @@ const Signup = ({ usernameProp, avatarProp, editMode }: Props) => {
       {showAlert && (
         <div className="alert">
           <p>{message}</p>
-          <button onClick={() => setShowAlert(false)}>okay</button>
+          <button onClick={() => setShowAlert(false)}>Close</button>
         </div>
       )}
 
