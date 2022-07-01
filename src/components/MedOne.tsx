@@ -80,7 +80,7 @@ const MedOne = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What ability does this Pokemon have?</h2>
+          <h2>Which ability does {toTitleCase(currentPokemon.name)} have?</h2>
           <div className="answer-container">
             <input
               type="radio"

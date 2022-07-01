@@ -76,7 +76,7 @@ const HardOne = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What Pokemon is being described below?</h2>
+          <h2>What Pokémon is being described below?</h2>
           <h3>"{currentPokemon.description}"</h3>
           <div className="answer-container">
             <input

@@ -80,7 +80,9 @@ const HardTwo = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What type is {currentPokemon.name} weakest against?</h2>
+          <h2>
+            What type is {toTitleCase(currentPokemon.name)} weakest against?
+          </h2>
           <div className="answer-container">
             <input
               type="radio"

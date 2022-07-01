@@ -11,10 +11,15 @@ const Summary = () => {
   const { currentPokemon, caught, challengeLevel } = useContext(GameContext);
   const { account, user, setAccount, isCaught, setAvailiblePokemonPool } =
     useContext(AuthContext);
-
   const refreshPage = () => {
     window.location.assign("/difficulty");
   };
+
+  function toTitleCase(str: string) {
+    return str.replace(/\w\S*/g, function (txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
 
   useEffect(() => {
     if (caught) {
@@ -58,9 +63,9 @@ const Summary = () => {
         />
       </div>
       {caught ? (
-        <h2>Gotcha! {currentPokemon?.name} was caught!</h2>
+        <h2>Gotcha! {toTitleCase(currentPokemon?.name!)} was caught!</h2>
       ) : (
-        <h2>Wild {currentPokemon?.name} has Fled!</h2>
+        <h2>Wild {toTitleCase(currentPokemon?.name!)} has Fled!</h2>
       )}
       <Link to="/difficulty">
         <button onClick={refreshPage}>Play Again</button>

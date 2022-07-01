@@ -80,7 +80,7 @@ const MedThree = () => {
       </div>
       {currentPokemon && answers?.length > 0 && (
         <form onSubmit={submitHandler} className="question-form">
-          <h2>What does {currentPokemon.name} evolve to?</h2>
+          <h2>What does {toTitleCase(currentPokemon.name)} evolve to?</h2>
           <div className="answer-container">
             <input
               type="radio"
